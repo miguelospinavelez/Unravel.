@@ -1,10 +1,36 @@
+<?php
+
+include 'config.php';
+
+
+if (isset($_POST['submit'])) {
+    $name = mysqli_real_escape_string($conn, $_POST['name']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
+    $cpass = mysqli_real_escape_string($conn, md5($_POST['cpassword']));
+
+    $select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE email = '$email' AND password = '$pass' ") or die('query failed');
+
+    if (mysqli_num_rows($select) > 0) {
+        $message[] = 'user already exists';
+    } else {
+        mysqli_query($conn, "INSERT INTO `user_form`(name, email, password) VALUES('$name','$email','$pass')") or die('query failed');
+        $message[] = 'registered successfully';
+    }
+}
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log in</title>
+    <title>Registration</title>
 
     <!-- swiper css link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
@@ -30,7 +56,7 @@
             <a href="book.php">products</a>
             <a href="login.php">Log in</a>
         </nav>
-        
+
         <div id="menu-btn" class="fas fa-bars"></div>
 
 
@@ -43,32 +69,42 @@
 
     <section class="login-box">
 
-    <h1 class="heading-title">Register</h1>
-    <a href="login.php"><h3>Already have an account? Sign up</h3></a>
-        <form action="book_form.php" method="post" class="book-form">
-
-            <div class="flex">
-            <div class="inputBox">
-                    <span>name :</span>
-                    <input type="email" required placeholder="Enter your name" name="name">
+        <h1 class="heading-title">Registration</h1>
+        <a href="login.php">
+            <h3>Already have an account? Log in</h3>
+        </a>
+        <div class="form-container">
+            <form action="" method="post" class="book-form">
+                <div class="flex">
+                    <div class="inputBox">
+                        <span>name :</span>
+                        <input type="text" required placeholder="Enter your name" name="name" class="box">
+                    </div>
+                    <div class="inputBox">
+                        <span>email :</span>
+                        <input type="email" required placeholder="Enter your email" name="email">
+                    </div>
+                    <div class="inputBox">
+                        <span>password :</span>
+                        <input type="password" required placeholder="Set password" name="password" class="box">
+                    </div>
+                    <div class="inputBox">
+                        <span>Confirm password :</span>
+                        <input type="password" required placeholder="Re-enter password" name="cpassword" class="box">
+                    </div>
                 </div>
-                <div class="inputBox">
-                    <span>email :</span>
-                    <input type="email" required placeholder="Enter your email" name="email">
-                </div>
-                <div class="inputBox">
-                    <span>password :</span>
-                    <input type="text" required placeholder="Set password" name="password">
-                </div>
-                <div class="inputBox">
-                    <span>Confirm password :</span>
-                    <input type="text" required placeholder="Re-enter password" name="cpassword">
-                </div>
-            </div>
-            <input type="submit" value="Register now" class="btn" name="send">
-
-        </form>
+                <input type="submit" value="Register now" class="btn" name="submit">
+            </form>
+        </div>
+        <?php
+        if (isset($message)) {
+            foreach ($message as $message) {
+                echo '<div class="message" onclick="this.remove();">' . $message . '</div>';
+            }
+        }
+        ?>
     </section>
+
 
     <!-- login section ends -->
 
@@ -121,7 +157,7 @@
     <!-- footer section ends -->
 
 
-    
+
 
     <!-- custom js file link -->
     <script src="js/script.js"></script>
@@ -129,4 +165,3 @@
 </body>
 
 </html>
-

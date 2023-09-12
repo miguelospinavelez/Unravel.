@@ -1,3 +1,26 @@
+<?php
+
+include 'config.php';
+
+
+if (isset($_POST['submit'])) {
+    $name = mysqli_real_escape_string($conn, $_POST['name']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
+
+    $select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE email = '$email' AND password = '$pass' ") or die('query failed');
+
+    if (mysqli_num_rows($select) > 0) {
+        $row = mysqli_fetch_assoc($select);
+        echo $_SESSION['user_id'] = $row['id'];
+    } else {
+        $message[] = 'incorrect password or email';
+    }
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,6 +41,14 @@
 
 <body class="login">
 
+    <?php
+    if (isset($message)) {
+        foreach ($message as $message) {
+            echo '<div class="message" onclick="this.remove();">' . $message . '</div>';
+        }
+    }
+    ?>
+
     <!-- header section starts -->
 
     <section class="header">
@@ -30,7 +61,7 @@
             <a href="book.php">products</a>
             <a href="login.php">Log in</a>
         </nav>
-        
+
         <div id="menu-btn" class="fas fa-bars"></div>
 
 
@@ -43,23 +74,27 @@
 
     <section class="login-box">
 
-    <h1 class="heading-title">Log in</h1>
-    <a href="register.php"><h3>Don't have an account? Sign up</h3></a>
-        <form action="book_form.php" method="post" class="book-form">
+        <h1 class="heading-title">Log in</h1>
+        <a href="register.php">
+            <h3>Don't have an account? Sign up</h3>
+        </a>
+        <div class="form-container">
+        <form action="" method="post" class="book-form">
 
             <div class="flex">
                 <div class="inputBox">
                     <span>email :</span>
-                    <input type="email" required placeholder="Enter your email" name="user">
+                    <input type="email" required placeholder="Email" name="user">
                 </div>
                 <div class="inputBox">
                     <span>password :</span>
-                    <input type="text" required placeholder="password" name="password">
+                    <input type="password" required placeholder="Password" name="password">
                 </div>
             </div>
             <input type="submit" value="Log in" class="btn" name="send">
 
         </form>
+        </div>
     </section>
 
     <!-- login section ends -->
@@ -113,7 +148,7 @@
     <!-- footer section ends -->
 
 
-    
+
 
     <!-- custom js file link -->
     <script src="js/script.js"></script>
@@ -121,4 +156,3 @@
 </body>
 
 </html>
-

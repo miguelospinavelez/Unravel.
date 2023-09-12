@@ -48,7 +48,7 @@
     <h1 class="heading-title">contact us</h1>
 
     <section class="login">
-        <form action="book_form.php" method="post" class="book-form">
+        <form action="" method="post" class="">
 
             <div class="flex">
                 <div class="inputBox">
@@ -66,22 +66,6 @@
                 <div class="inputBox">
                     <span>address :</span>
                     <input type="text" placeholder="Enter your adress" name="address">
-                </div>
-                <div class="inputBox">
-                    <span>shopping cart :</span>
-                    <input type="text" placeholder="Products" name="products">
-                </div>
-                <div class="inputBox">
-                    <span>Delivery info :</span>
-                    <input type="text" placeholder="Delivery details" name="delivery">
-                </div>
-                <div class="inputBox">
-                    <span>Delivery date :</span>
-                    <input type="date" name="date">
-                </div>
-                <div class="inputBox">
-                    <span>Payment info :</span>
-                    <input type="text" placeholder="Payment details" name="payment">
                 </div>
             </div>
 
