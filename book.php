@@ -57,102 +57,57 @@ if (isset($_GET['logout'])) {
 
     <section class="home">
 
-<div class="swiper home-slider">
+        <div class="swiper home-slider">
 
-    <div class="swiper-wrapper">
+            <div class="swiper-wrapper">
 
-        <div class="swiper-slide slide" style="background-image: url(imgs/microdose.jpg);">
-            <div class="content">
-                <span>microdose</span>
-                <h3>Psilocibin & Lion's Mane Capsules</h3>
-                <form>
-            <script src='https://checkout.epayco.co/checkout.js'
-                data-epayco-key='0fc69c553288c82a6a6e83653039b150' 
-                class='epayco-button' 
-                data-epayco-amount='120000' 
-                data-epayco-tax='0.00'  
-                data-epayco-tax-ico='0.00'               
-                data-epayco-tax-base='120000'
-                data-epayco-name='microdosis' 
-                data-epayco-description='microdosis' 
-                data-epayco-currency='cop'    
-                data-epayco-country='CO' 
-                data-epayco-test='false' 
-                data-epayco-external='false' 
-                data-epayco-response=''  
-                data-epayco-confirmation='' 
-                data-epayco-button='https://multimedia.epayco.co/dashboard/btns/btn2.png'> 
-            </script> 
-        </form>
+                <div class="swiper-slide slide" style="background-image: url(imgs/microdose.jpg);">
+                    <div class="content">
+                        <span>microdose</span>
+                        <h3>Psilocibin & Lion's Mane Capsules</h3>
+                        <form>
+                            <script src='https://checkout.epayco.co/checkout.js' data-epayco-key='0fc69c553288c82a6a6e83653039b150' class='epayco-button' data-epayco-amount='120000' data-epayco-tax='0.00' data-epayco-tax-ico='0.00' data-epayco-tax-base='120000' data-epayco-name='microdosis' data-epayco-description='microdosis' data-epayco-currency='cop' data-epayco-country='CO' data-epayco-test='false' data-epayco-external='false' data-epayco-response='' data-epayco-confirmation='' data-epayco-button='https://multimedia.epayco.co/dashboard/btns/btn2.png'>
+                            </script>
+                        </form>
+                    </div>
+                </div>
+
+
+
+                <div class="swiper-slide slide" style="background-image:url(imgs/dust.jpg)">
+                    <div class="content">
+                        <span>mushroom powders</span>
+                        <h3>Psilocibin Mushroom Powder</h3>
+                        <form>
+                            <script src='https://checkout.epayco.co/checkout.js' data-epayco-key='0fc69c553288c82a6a6e83653039b150' class='epayco-button' data-epayco-amount='180000' data-epayco-tax='0.00' data-epayco-tax-ico='0.00' data-epayco-tax-base='180000' data-epayco-name='Botanicos' data-epayco-description='Botanicos' data-epayco-currency='cop' data-epayco-country='CO' data-epayco-test='false' data-epayco-external='false' data-epayco-response='' data-epayco-confirmation='' data-epayco-button='https://multimedia.epayco.co/dashboard/btns/btn2.png'>
+                            </script>
+                        </form>
+
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide" style="background-image:url(imgs/cubensis.jpg)">
+                    <div class="content">
+                        <span>Grow</span>
+                        <h3>Psilocibin Starter Kit</h3>
+                        <form>
+                            <script src='https://checkout.epayco.co/checkout.js' data-epayco-key='0fc69c553288c82a6a6e83653039b150' class='epayco-button' data-epayco-amount='60000' data-epayco-tax='0.00' data-epayco-tax-ico='0.00' data-epayco-tax-base='60000' data-epayco-name='kit cultivo' data-epayco-description='kit cultivo' data-epayco-currency='cop' data-epayco-country='CO' data-epayco-test='false' data-epayco-external='false' data-epayco-response='' data-epayco-confirmation='' data-epayco-button='https://multimedia.epayco.co/dashboard/btns/btn2.png'>
+                            </script>
+                        </form>
+                    </div>
+                </div>
+
             </div>
+
         </div>
 
-        
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
 
-        <div class="swiper-slide slide" style="background-image:url(imgs/dust.jpg)">
-            <div class="content">
-                <span>mushroom powders</span>
-                <h3>Psilocibin Mushroom Powder</h3>
-                <form>
-            <script src='https://checkout.epayco.co/checkout.js'
-                data-epayco-key='0fc69c553288c82a6a6e83653039b150' 
-                class='epayco-button' 
-                data-epayco-amount='180000' 
-                data-epayco-tax='0.00'  
-                data-epayco-tax-ico='0.00'               
-                data-epayco-tax-base='180000'
-                data-epayco-name='Botanicos' 
-                data-epayco-description='Botanicos' 
-                data-epayco-currency='cop'    
-                data-epayco-country='CO' 
-                data-epayco-test='false' 
-                data-epayco-external='false' 
-                data-epayco-response=''  
-                data-epayco-confirmation='' 
-                data-epayco-button='https://multimedia.epayco.co/dashboard/btns/btn2.png'> 
-            </script> 
-        </form>
-                
-            </div>
         </div>
+    </section>
 
-        <div class="swiper-slide slide" style="background-image:url(imgs/cubensis.jpg)">
-            <div class="content">
-                <span>Grow</span>
-                <h3>Psilocibin Starter Kit</h3>
-                <form>
-            <script src='https://checkout.epayco.co/checkout.js'
-                data-epayco-key='0fc69c553288c82a6a6e83653039b150' 
-                class='epayco-button' 
-                data-epayco-amount='60000' 
-                data-epayco-tax='0.00'  
-                data-epayco-tax-ico='0.00'               
-                data-epayco-tax-base='60000'
-                data-epayco-name='kit cultivo' 
-                data-epayco-description='kit cultivo' 
-                data-epayco-currency='cop'    
-                data-epayco-country='CO' 
-                data-epayco-test='false' 
-                data-epayco-external='false' 
-                data-epayco-response=''  
-                data-epayco-confirmation='' 
-                data-epayco-button='https://multimedia.epayco.co/dashboard/btns/btn2.png'> 
-            </script> 
-        </form>
-            </div>
-        </div>
 
-    </div>
-
-</div>
-
-<div class="swiper-button-next"></div>
-<div class="swiper-button-prev"></div>
-
-</div>
-</section>
-
-    
 
     <!-- products section starts -->
 
@@ -162,29 +117,31 @@ if (isset($_GET['logout'])) {
             <?php
             $select_product = mysqli_query($conn, "SELECT * FROM `products`") or die('query failed');
             if (mysqli_num_rows($select_product) > 0) {
-                while($fetch_product = mysqli_fetch_assoc($select_product)){
+                while ($fetch_product = mysqli_fetch_assoc($select_product)) {
             ?>
-            <div>
-            <form method="post" class="box" action="">
-                    <img class="image" alt="" src="imgs/<?php echo $fetch_product['image'];?>">
-                    <div class="name"><?php echo $fetch_product['name'];?></div>
-                    <div class="price"><?php echo $fetch_product['price'];?></div>
-                    <input type="number" min="1" name="product_quantity" value="1">
-                    <input type="hidden" name="product_name" value="<?php echo $fetch_product['image'];?>">
-                    <input type="hidden" name="product_price" value="<?php echo $fetch_product['price'];?>">
-                    <input type="submit" value="add to cart" name="add_to_cart" class="btn">
-            </form>
-                
+                    <div>
+                        <form method="post" class="box" action="">
+                            <div class="name"><?php echo $fetch_product['name']; ?></div>
+                            <div class="price">$<?php echo $fetch_product['price']; ?> COP</div>
+                            <img class="image" alt="" src="imgs/<?php echo $fetch_product['image']; ?>">
 
-            <?php
+                            
+                            <div class="amount"><input type="number" class="amount" min="1" name="product_quantity" value="1"></div>
+                            <input type="hidden" name="product_name" value="<?php echo $fetch_product['image']; ?>">
+                            <input type="hidden" name="product_price" value="<?php echo $fetch_product['price']; ?>">
+                            <input type="submit" value="add to cart" class="btn">
+                        </form>
+
+
+                <?php
                 };
             };
-            ?>
-            </div>
-            </div>
-         
-        
-            <!-- <div class="box">
+                ?>
+                    </div>
+        </div>
+
+
+        <!-- <div class="box">
                 <div class="image"><img src="imgs/microd.jpg" alt=""></div>
                 <h3>Psilocibin & Lion's Mane Microdoses</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo iure eius provident. Ducimus aliquid reiciendis adipisci eum cupiditate amet explicabo aspernatur quae dolorum accusantium perspiciatis eaque, suscipit odit expedita molestias.</p>
@@ -259,7 +216,7 @@ if (isset($_GET['logout'])) {
         </div>
     </section>
 
-  
+
 
 
     <!-- products section ends -->
@@ -323,5 +280,3 @@ if (isset($_GET['logout'])) {
 
     <!-- custom js file link -->
     <script src="js\script.js"></script>
-
-

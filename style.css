@@ -568,33 +568,49 @@ section {
     padding: 1.5rem;
 }
 
+.products form .amount{
+    opacity:0.75;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    font-weight: bold;
+    width: 40%;
+    margin: 2rem;
+   
+}
+
+
+
+.products form .price{
+    font-weight: bold;
+    font-size: larger;
+}
+
+.products form .name{
+    font-weight: bold;
+    font-size: larger;
+}
+
 
 .products .box-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
     gap: 2rem;
 }
 
-.products .box-container .box {
+.products .box-container .box{
     padding: 2rem;
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
 }
 
 .products .box-container .box img{
-    width: 50%;
+    width: 100%;
+}
+.products .box-container .box .btn{
+    margin: 2rem;
+    position: relative;
 }
 
-.products .box-container{
-    background: opacity(0.8);
-}
-
-.products .box-container {
-    min-height: 50vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 50px;
-    padding-bottom: 30vh;
-}
 
 
 /* LOGIN/REGISTRATION */
