@@ -74,6 +74,23 @@ section {
     text-shadow: var(--text-shadow);
 }
 
+.message {
+    position:sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 5px 5px;
+    text-align: center;
+    z-index: 1000;
+    background-color: opacity(0.2rem);
+    box-shadow: var(--box-shadow);
+    font-size: 17px;
+    text-transform: capitalize;
+    cursor: pointer;
+    border-radius: 100px;
+
+}
+
 .btn {
     margin-top: 1rem;
     display: inline-block;
@@ -91,9 +108,9 @@ section {
 .delete-btn,
 .option-btn {
     display: inline-block;
-    padding: 10px 30px;
+    padding: 1rem 3rem;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 1.7rem;
     color: var(--white);
 }
 
@@ -218,8 +235,6 @@ section {
     right: 7rem;
 }
 
-/* SERVICES */
-
 .services .box-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
@@ -246,8 +261,6 @@ section {
     font-size: 1.7rem;
     padding-top: 1rem;
 }
-
-/* HOME ABOUT */
 
 .home-about {
     display: flex;
@@ -280,8 +293,6 @@ section {
     color: var(--black);
     line-height: 2;
 }
-
-/* HOME PACKAGES */
 
 .home-packages {
     background: var(--light-bg);
@@ -336,8 +347,6 @@ section {
     text-align: center;
     margin-top: 2rem;
 }
-
-/* HOME OFFER */
 
 .home-offer {
     text-align: center;
@@ -430,8 +439,6 @@ section {
 .reviews {
     background: var(--light-bg);
 }
-
-/* ABOUT REVIEWS */
 
 .reviews .slide {
     padding: 2rem;
@@ -540,16 +547,27 @@ section {
 
 /* CONTACT */
 
+
+
 /* PRODUCTS */
+
+
+.products{
+    background-image: url(imgs/wavy.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
 
 .products h1 {
     font-size: 5rem;
     padding-bottom: 5rem;
 }
 
-.products form {
+.products form{
     padding: 1.5rem;
 }
+
 
 .products .box-container {
     display: grid;
@@ -561,12 +579,25 @@ section {
     padding: 2rem;
 }
 
-.products .box-container .box .image img {
+.products .box-container .box img{
     width: 50%;
-    display: inline-block;
 }
 
-/* LOGIN */
+.products .box-container{
+    background: opacity(0.8);
+}
+
+.products .box-container {
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    padding-bottom: 30vh;
+}
+
+
+/* LOGIN/REGISTRATION */
 
 .login {
     background-image: url(imgs/wavy.jpg);
@@ -604,28 +635,13 @@ section {
     padding-bottom: 30vh;
 }
 
-.login .form-container form {
-    border-radius: 5px;
-    border: var(--border);
-}
-
-.message {
-    position: sticky;
-    top: 0;
-    left: 0;
-    right: 0;
-    padding: 5px 5px;
-    text-align: center;
-    z-index: 1000;
-    background-color: opacity(0.2rem);
-    box-shadow: var(--box-shadow);
-    font-size: 17px;
-    text-transform: capitalize;
-    cursor: pointer;
-}
-
 .login .book-form {
     background-color: opacity(0.3px);
+}
+
+.login .form-container form{
+    width: 600px;
+    display: inline-block;
 }
 
 .login .book-form .flex {
@@ -665,8 +681,38 @@ section {
 }
 
 .login .book-form .flex .btn {
-    margin-top: 5rem;
+    margin-top: 7rem;
 }
+
+/* PROFILE */
+
+.profile{
+    background-image: url(imgs/wavy.jpg);
+    background-position: fixed;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.container{
+   
+    padding: 0 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+    padding-bottom: 70px;
+}
+
+.container .user-profile{
+    padding: 20px;
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    border-radius: 5px;
+    margin: 20px auto;
+    max-width: 500px;
+}
+
+
+
+/* FOOTER */
 
 .footer {
     background: url(./imgs/thumb-1920-974622-2470758164) no-repeat;
@@ -716,7 +762,7 @@ section {
     color: var(--main-color);
 }
 
-/* media queries */
+/* MEDIA QUERIES */
 
 @media (max-width: 1200px) {
     section {

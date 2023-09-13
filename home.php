@@ -55,7 +55,7 @@
                     <div class="content">
                         <span>discover, heal, connect</span>
                         <h3>integrate the power of mushrooms into your life</h3>
-                        <a href="#package.php" class="btn">discover more</a>
+                        <a href="book.php" class="btn">discover more</a>
                     </div>
                 </div>
 
@@ -63,7 +63,7 @@
                     <div class="content">
                         <span>discover, heal, connect</span>
                         <h3>unravel your self</h3>
-                        <a href="#package.php" class="btn">discover more</a>
+                        <a href="book.php" class="btn">discover more</a>
                     </div>
                 </div>
 
@@ -71,7 +71,7 @@
                     <div class="content">
                         <span>discover, heal, connect</span>
                         <h3>connect with those you love</h3>
-                        <a href="#package.php" class="btn">discover more</a>
+                        <a href="book.php" class="btn">discover more</a>
                     </div>
                 </div>
 
@@ -166,7 +166,7 @@
                     <img src="imgs/labs.jpg" alt="">
                 </div>
                 <div class="content">
-                    <h3>Studies on Psylocibin</h3>
+                    <h3>Studies on Psilocibin</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores eveniet sequi omnis ipsam exercitationem, corrupti illo quis rerum facere! Voluptatum quibusdam debitis facere magni sunt error voluptas beatae commodi optio.</p>
                     <a href="package.php" class="btn">Read</a>
                 </div>

@@ -1,3 +1,20 @@
+<?php
+
+include 'config.php';
+session_start();
+$user_id =  $_SESSION['user_id'];
+
+if (!isset($user_id)) {
+    header('location:login.php');
+};
+
+if (isset($_GET['logout'])) {
+    unset($user_id);
+    session_destroy();
+    header('location:login.php');
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,7 +64,7 @@
         <div class="swiper-slide slide" style="background-image: url(imgs/microdose.jpg);">
             <div class="content">
                 <span>microdose</span>
-                <h3>Psylocibin & Lion's Mane Capsules</h3>
+                <h3>Psilocibin & Lion's Mane Capsules</h3>
                 <form>
             <script src='https://checkout.epayco.co/checkout.js'
                 data-epayco-key='0fc69c553288c82a6a6e83653039b150' 
@@ -75,7 +92,7 @@
         <div class="swiper-slide slide" style="background-image:url(imgs/dust.jpg)">
             <div class="content">
                 <span>mushroom powders</span>
-                <h3>Psylocibin Mushroom Powder</h3>
+                <h3>Psilocibin Mushroom Powder</h3>
                 <form>
             <script src='https://checkout.epayco.co/checkout.js'
                 data-epayco-key='0fc69c553288c82a6a6e83653039b150' 
@@ -102,7 +119,7 @@
         <div class="swiper-slide slide" style="background-image:url(imgs/cubensis.jpg)">
             <div class="content">
                 <span>Grow</span>
-                <h3>Psylocibin Starter Kit</h3>
+                <h3>Psilocibin Starter Kit</h3>
                 <form>
             <script src='https://checkout.epayco.co/checkout.js'
                 data-epayco-key='0fc69c553288c82a6a6e83653039b150' 
@@ -142,9 +159,34 @@
     <section class="products">
         <h1>Try our Products</h1>
         <div class="box-container">
-            <div class="box">
+            <?php
+            $select_product = mysqli_query($conn, "SELECT * FROM `products`") or die('query failed');
+            if (mysqli_num_rows($select_product) > 0) {
+                while($fetch_product = mysqli_fetch_assoc($select_product)){
+            ?>
+            <div>
+            <form method="post" class="box" action="">
+                    <img class="image" alt="" src="imgs/<?php echo $fetch_product['image'];?>">
+                    <div class="name"><?php echo $fetch_product['name'];?></div>
+                    <div class="price"><?php echo $fetch_product['price'];?></div>
+                    <input type="number" min="1" name="product_quantity" value="1">
+                    <input type="hidden" name="product_name" value="<?php echo $fetch_product['image'];?>">
+                    <input type="hidden" name="product_price" value="<?php echo $fetch_product['price'];?>">
+                    <input type="submit" value="add to cart" name="add_to_cart" class="btn">
+            </form>
+                
+
+            <?php
+                };
+            };
+            ?>
+            </div>
+            </div>
+         
+        
+            <!-- <div class="box">
                 <div class="image"><img src="imgs/microd.jpg" alt=""></div>
-                <h3>Psylocibin Microdoses</h3>
+                <h3>Psilocibin & Lion's Mane Microdoses</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo iure eius provident. Ducimus aliquid reiciendis adipisci eum cupiditate amet explicabo aspernatur quae dolorum accusantium perspiciatis eaque, suscipit odit expedita molestias.</p>
                 <form>
             <script src='https://checkout.epayco.co/checkout.js'
@@ -165,11 +207,10 @@
                 data-epayco-button='https://multimedia.epayco.co/dashboard/btns/btn2.png'> 
             </script> 
         </form>
-        </form> 
             </div>
             <div class="box">
                 <div class="image"><img src="imgs/powder.jpg"  alt=""></div>
-                <h3>Psylocibin Mushroom powder</h3>
+                <h3>Psilocybin Mushroom Powder</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, nemo molestiae laudantium blanditiis nam voluptas exercitationem amet voluptates ratione ab, modi rem praesentium non inventore iste. Ab eos obcaecati at.</p>
                 <form>
             <script src='https://checkout.epayco.co/checkout.js'
@@ -214,7 +255,7 @@
                 data-epayco-button='https://multimedia.epayco.co/dashboard/btns/btn2.png'> 
             </script> 
         </form>
-            </div>
+            </div> -->
         </div>
     </section>
 

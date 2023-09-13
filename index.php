@@ -1,27 +1,20 @@
 <?php
 
 include 'config.php';
+session_start();
+$user_id =  $_SESSION['user_id'];
 
+if (!isset($user_id)) {
+    header('location:login.php');
+};
 
-if (isset($_POST['submit'])) {
-    $name = mysqli_real_escape_string($conn, $_POST['name']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
-    $cpass = mysqli_real_escape_string($conn, md5($_POST['cpassword']));
-
-    $select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE email = '$email' AND password = '$pass' ") or die('query failed');
-
-    if (mysqli_num_rows($select) > 0) {
-        $message[] = 'user already exists';
-    } else {
-        mysqli_query($conn, "INSERT INTO `user_form`(name, email, password) VALUES('$name','$email','$pass')") or die('query failed');
-        $message[] = 'registered successfully';
-    }
+if (isset($_GET['logout'])) {
+    unset($user_id);
+    session_destroy();
+    header('location:login.php');
 }
 
-
 ?>
-
 
 
 <!DOCTYPE html>
@@ -30,7 +23,7 @@ if (isset($_POST['submit'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
+    <title>Profile</title>
 
     <!-- swiper css link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
@@ -42,9 +35,7 @@ if (isset($_POST['submit'])) {
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="login">
-
-    <!-- header section starts -->
+<body class="profile">
 
     <section class="header">
 
@@ -56,63 +47,51 @@ if (isset($_POST['submit'])) {
             <a href="book.php">products</a>
             <a href="login.php">Log in</a>
         </nav>
-
         <div id="menu-btn" class="fas fa-bars"></div>
 
 
     </section>
 
-    <!-- header section ends -->
+    <?php
+    if (isset($message)) {
+        foreach ($message as $message) {
+            echo '<div class="message" onclick="this.remove();">' . $message . '</div>';
+        }
+    }
+    ?>
 
+    <div class="container">
 
-    <!-- login section starts -->
+        <div class="user-profile">
 
-    <section class="login-box">
-
-        <h1 class="heading-title">Registration</h1>
-        <a href="login.php">
-            <h3>Already have an account? Log in</h3>
-            <div>
-                <?php
-                if (isset($message)) {
-                    foreach ($message as $message) {
-                        echo '<div class="message" onclick="this.remove();">' . $message . '</div>';
-                    }
-                }
-                ?>
-            </div>
-        </a>
-        <div class="form-container">
-            <form action="" method="post" class="book-form">
-                <div class="flex">
-                    <div class="inputBox">
-                        <span>name :</span>
-                        <input type="text" required placeholder="Enter your name" name="name" class="box">
-                    </div>
-                    <div class="inputBox">
-                        <span>email :</span>
-                        <input type="email" required placeholder="Enter your email" name="email">
-                    </div>
-                    <div class="inputBox">
-                        <span>password :</span>
-                        <input type="password" required placeholder="Set password" name="password" class="box">
-                    </div>
-                    <div class="inputBox">
-                        <span>Confirm password :</span>
-                        <input type="password" required placeholder="Re-enter password" name="cpassword" class="box">
-                    </div>
+            <?php
+            $select_user = mysqli_query($conn, "SELECT * FROM `user_form` WHERE id = '$user_id'") or die('query failed');
+            if (mysqli_num_rows($select_user) > 0) {
+                $fetch_user = mysqli_fetch_assoc($select_user);
+            }
+            ?>
+            <h1>Profile</h1>
+            <p> username : <span><?php echo $fetch_user['name']; ?></span> </p>
+            <div class="flex">
+                <div>
+                    <h1>Contact information</h1>
+                    <p class="box"> email : <span><?php echo $fetch_user['email']; ?></span> </p>
+                    <p class="box">phone : <span><?php echo $fetch_user['phone']; ?></span> </p>
                 </div>
-                <input type="submit" value="Register now" class="btn" name="submit">
-            </form>
+                <div>
+                    <h1>Shipping information</h1>
+                    <p class="box">address : <span><?php echo $fetch_user['address']; ?></span> </p>
+                    <p class="box">city : <span><?php echo $fetch_user['city']; ?></span></p>
+                    <p class="box">state : <span><?php echo $fetch_user['state']; ?></span> </p>
+                    <p class="box">Country : <span><?php echo $fetch_user['country']; ?></span> </p>
+                </div>
+                <a href="" class="btn">Edit</a>
+                
+                <a href="index.php?logout=<?php echo $user_id; ?>" onclick="return confirm('are you sure you want to log out?')" class="delete-btn">log out</a>
+            </div>
         </div>
 
-    </section>
-
-
-    <!-- login section ends -->
-
-
-    <!-- footer section starts -->
+    </div>
 
     <section class="footer">
 
@@ -129,7 +108,7 @@ if (isset($_POST['submit'])) {
             <div class="box">
                 <h3>extra links</h3>
                 <a href="#"> <i class="fas fa-angle-right"></i>ask questions</a>
-                <a href="contact.php"> <i class="fas fa-angle-right"></i>Contact us</a>
+                <a href="contact.php"> <i class="fas fa-angle-right"></i>contact us</a>
                 <a href="#"> <i class="fas fa-angle-right"></i>privacy policy</a>
                 <a href="#"> <i class="fas fa-angle-right"></i>terms of use</a>
             </div>
@@ -157,14 +136,14 @@ if (isset($_POST['submit'])) {
         </div>
     </section>
 
-    <!-- footer section ends -->
-
-
+    <!-- swiper js link -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
 
     <!-- custom js file link -->
     <script src="js/script.js"></script>
 
 </body>
+
 
 </html>

@@ -1,10 +1,10 @@
 <?php
 
 include 'config.php';
+session_start();
 
 
 if (isset($_POST['submit'])) {
-    $name = mysqli_real_escape_string($conn, $_POST['name']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
 
@@ -12,7 +12,8 @@ if (isset($_POST['submit'])) {
 
     if (mysqli_num_rows($select) > 0) {
         $row = mysqli_fetch_assoc($select);
-        echo $_SESSION['user_id'] = $row['id'];
+        $_SESSION['user_id'] = $row['id'];
+        header('location:index.php');
     } else {
         $message[] = 'incorrect password or email';
     }
@@ -41,13 +42,7 @@ if (isset($_POST['submit'])) {
 
 <body class="login">
 
-    <?php
-    if (isset($message)) {
-        foreach ($message as $message) {
-            echo '<div class="message" onclick="this.remove();">' . $message . '</div>';
-        }
-    }
-    ?>
+    
 
     <!-- header section starts -->
 
@@ -77,6 +72,13 @@ if (isset($_POST['submit'])) {
         <h1 class="heading-title">Log in</h1>
         <a href="register.php">
             <h3>Don't have an account? Sign up</h3>
+            <?php
+        if (isset($message)) {
+            foreach ($message as $message) {
+                echo '<div class="message" onclick="this.remove();">' . $message . '</div>';
+            }
+        }
+        ?>
         </a>
         <div class="form-container">
         <form action="" method="post" class="book-form">
@@ -84,14 +86,14 @@ if (isset($_POST['submit'])) {
             <div class="flex">
                 <div class="inputBox">
                     <span>email :</span>
-                    <input type="email" required placeholder="Email" name="user">
+                    <input type="email" required placeholder="Email" name="email">
                 </div>
                 <div class="inputBox">
                     <span>password :</span>
                     <input type="password" required placeholder="Password" name="password">
                 </div>
             </div>
-            <input type="submit" value="Log in" class="btn" name="send">
+            <input type="submit" value="Log in" class="btn" name="submit">
 
         </form>
         </div>
