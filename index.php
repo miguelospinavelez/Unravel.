@@ -45,7 +45,7 @@ if (isset($_GET['logout'])) {
             <a href="about.php">about</a>
             <a href="package.php">archive</a>
             <a href="book.php">products</a>
-            <a href="login.php">Log in</a>
+            <a href="index.php">profile</a>
         </nav>
         <div id="menu-btn" class="fas fa-bars"></div>
 

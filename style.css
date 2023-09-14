@@ -559,57 +559,79 @@ section {
     background-size: 100%;
 }
 
-.products h1 {
+ .products h1 {
     font-size: 5rem;
     padding-bottom: 5rem;
 }
+
+
 
 .products form{
     padding: 1.5rem;
 }
 
 .products form .amount{
-    opacity:0.75;
+    opacity:0.7;
     background-color: whitesmoke;
     border-radius: 10px;
     font-weight: bold;
-    width: 40%;
     margin: 2rem;
-   
+    padding: 1rem;
 }
 
+.products form .amount:hover{
+    cursor: pointer;
+}
 
+.products form .amount:focus{
+    opacity: 1;
+    background-color: var(--light-black);
+    color: var(--white);
+    cursor: pointer;
+}
 
 .products form .price{
     font-weight: bold;
-    font-size: larger;
+    font-size: large;
 }
 
 .products form .name{
     font-weight: bold;
-    font-size: larger;
+    font-size: 25px;
+    margin: 2rem;
+    gap: 15px;
+    justify-content: center;
 }
 
-
-.products .box-container {
-    display: inline-grid;
-    grid-template-columns: auto auto auto;
-    gap: 2rem;
+.products .box-container{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .products .box-container .box{
-    padding: 2rem;
-    display: inline-grid;
-    grid-template-columns: auto auto auto;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+    position: relative;
+    padding: 20px;
+    margin: 10px;
+    width: 310px;
+}
+
+.products .box-container .box:hover{
+    transform: scale(1.1);
+    opacity: 2;
 }
 
 .products .box-container .box img{
-    width: 100%;
+    height: 150px;
 }
+
 .products .box-container .box .btn{
-    margin: 2rem;
-    position: relative;
-}
+    margin: 1rem;
+    padding: 1rem;
+} 
 
 
 

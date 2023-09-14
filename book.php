@@ -64,11 +64,9 @@ if (isset($_GET['logout'])) {
                 <div class="swiper-slide slide" style="background-image: url(imgs/microdose.jpg);">
                     <div class="content">
                         <span>microdose</span>
-                        <h3>Psilocibin & Lion's Mane Capsules</h3>
-                        <form>
-                            <script src='https://checkout.epayco.co/checkout.js' data-epayco-key='0fc69c553288c82a6a6e83653039b150' class='epayco-button' data-epayco-amount='120000' data-epayco-tax='0.00' data-epayco-tax-ico='0.00' data-epayco-tax-base='120000' data-epayco-name='microdosis' data-epayco-description='microdosis' data-epayco-currency='cop' data-epayco-country='CO' data-epayco-test='false' data-epayco-external='false' data-epayco-response='' data-epayco-confirmation='' data-epayco-button='https://multimedia.epayco.co/dashboard/btns/btn2.png'>
-                            </script>
-                        </form>
+                        <h3>Psilocybin & Lion's Mane Capsules</h3>
+
+                        <a href="book.php" class="btn">Buy now</a>
                     </div>
                 </div>
 
@@ -77,11 +75,9 @@ if (isset($_GET['logout'])) {
                 <div class="swiper-slide slide" style="background-image:url(imgs/dust.jpg)">
                     <div class="content">
                         <span>mushroom powders</span>
-                        <h3>Psilocibin Mushroom Powder</h3>
-                        <form>
-                            <script src='https://checkout.epayco.co/checkout.js' data-epayco-key='0fc69c553288c82a6a6e83653039b150' class='epayco-button' data-epayco-amount='180000' data-epayco-tax='0.00' data-epayco-tax-ico='0.00' data-epayco-tax-base='180000' data-epayco-name='Botanicos' data-epayco-description='Botanicos' data-epayco-currency='cop' data-epayco-country='CO' data-epayco-test='false' data-epayco-external='false' data-epayco-response='' data-epayco-confirmation='' data-epayco-button='https://multimedia.epayco.co/dashboard/btns/btn2.png'>
-                            </script>
-                        </form>
+                        <h3>Psilocybin Mushroom Powder</h3>
+
+                        <a href="book.php" class="btn">Buy now</a>
 
                     </div>
                 </div>
@@ -89,11 +85,9 @@ if (isset($_GET['logout'])) {
                 <div class="swiper-slide slide" style="background-image:url(imgs/cubensis.jpg)">
                     <div class="content">
                         <span>Grow</span>
-                        <h3>Psilocibin Starter Kit</h3>
-                        <form>
-                            <script src='https://checkout.epayco.co/checkout.js' data-epayco-key='0fc69c553288c82a6a6e83653039b150' class='epayco-button' data-epayco-amount='60000' data-epayco-tax='0.00' data-epayco-tax-ico='0.00' data-epayco-tax-base='60000' data-epayco-name='kit cultivo' data-epayco-description='kit cultivo' data-epayco-currency='cop' data-epayco-country='CO' data-epayco-test='false' data-epayco-external='false' data-epayco-response='' data-epayco-confirmation='' data-epayco-button='https://multimedia.epayco.co/dashboard/btns/btn2.png'>
-                            </script>
-                        </form>
+                        <h3>Psilocybin Starter Kit</h3>
+
+                        <a href="book.php" class="btn">Buy now</a>
                     </div>
                 </div>
 
@@ -119,25 +113,34 @@ if (isset($_GET['logout'])) {
             if (mysqli_num_rows($select_product) > 0) {
                 while ($fetch_product = mysqli_fetch_assoc($select_product)) {
             ?>
-                    <div>
-                        <form method="post" class="box" action="">
-                            <div class="name"><?php echo $fetch_product['name']; ?></div>
-                            <div class="price">$<?php echo $fetch_product['price']; ?> COP</div>
-                            <img class="image" alt="" src="imgs/<?php echo $fetch_product['image']; ?>">
 
-                            
-                            <div class="amount"><input type="number" class="amount" min="1" name="product_quantity" value="1"></div>
-                            <input type="hidden" name="product_name" value="<?php echo $fetch_product['image']; ?>">
-                            <input type="hidden" name="product_price" value="<?php echo $fetch_product['price']; ?>">
-                            <input type="submit" value="add to cart" class="btn">
-                        </form>
+                    <form method="post" class="box" action="">
+
+                        <div class="name"><?php echo $fetch_product['name']; ?></div>
+
+                        <img class="image" alt="" src="imgs/<?php echo $fetch_product['image']; ?>">
+
+                        <div class="description"><?php echo $fetch_product['description']; ?></div>
+
+                        <div class="price">$<?php echo $fetch_product['price']; ?> USD</div>
+
+                        <input type="number" class="amount" min="1" name="product_quantity" value="1">
+
+                        <input type="hidden" name="product_image" value="<?php echo $fetch_product['image']; ?>">
+
+                        <input type="hidden" name="product_name" value="<?php echo $fetch_product['name']; ?>">
+
+                        <input type="hidden" name="product_price" value="<?php echo $fetch_product['price']; ?>">
+
+                        <input type="submit" value="add to cart" name="add_to_cart" class="btn">
+
+                    </form>
 
 
-                <?php
+            <?php
                 };
             };
-                ?>
-                    </div>
+            ?>
         </div>
 
 
