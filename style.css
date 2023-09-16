@@ -593,6 +593,7 @@ section {
 .products form .price{
     font-weight: bold;
     font-size: large;
+    margin-top: 2rem;
 }
 
 .products form .name{
@@ -603,6 +604,10 @@ section {
     justify-content: center;
 }
 
+.products .box-container form .description{
+   font-size: 15px;
+}
+
 .products .box-container{
     justify-content: center;
     display: flex;
@@ -611,7 +616,7 @@ section {
 
 .products .box-container .box{
     text-align: center;
-    border-radius: 5px;
+    border-radius: 50px;
     box-shadow: var(--box-shadow);
     position: relative;
     padding: 20px;
@@ -625,7 +630,7 @@ section {
 }
 
 .products .box-container .box img{
-    height: 150px;
+    height: 130px;
 }
 
 .products .box-container .box .btn{
@@ -633,6 +638,14 @@ section {
     padding: 1rem;
 } 
 
+/* SHOPPING CART */
+
+.cart{
+    background-image: url(imgs/wavy.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
 
 
 /* LOGIN/REGISTRATION */
@@ -741,11 +754,11 @@ section {
 
 .container .user-profile{
     padding: 20px;
-    border: var(--border);
     box-shadow: var(--box-shadow);
     border-radius: 5px;
     margin: 20px auto;
     max-width: 500px;
+
 }
 
 
@@ -872,3 +885,4 @@ section {
         width: 600px;
     }
 }
+

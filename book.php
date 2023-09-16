@@ -4,14 +4,29 @@ include 'config.php';
 session_start();
 $user_id =  $_SESSION['user_id'];
 
-if (!isset($user_id)) {
-    header('location:login.php');
-};
-
 if (isset($_GET['logout'])) {
     unset($user_id);
     session_destroy();
     header('location:login.php');
+};
+
+if(isset($_POST['add_to_cart'])){
+
+    $product_name = $_POST['product_name'];
+    $product_price = $_POST['product_price'];
+    $product_image = $_POST['product_image'];
+    $product_quantity = $_POST['product_quantity'];
+
+    
+
+    $select_cart = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
+
+    if(mysqli_num_rows($select_cart) > 0){
+        $message[] = 'product already in cart';
+    }else{
+        mysqli_query($conn, "INSERT INTO `cart`(user_id, name, price, image, quantity) VALUES ('$user_id', '$product_name','$product_price', '$product_image', '$product_quantity')" ) or die('query failed');
+        $message[] = 'product added to cart';
+    }
 }
 
 ?>
@@ -64,7 +79,7 @@ if (isset($_GET['logout'])) {
                 <div class="swiper-slide slide" style="background-image: url(imgs/microdose.jpg);">
                     <div class="content">
                         <span>microdose</span>
-                        <h3>Psilocybin & Lion's Mane Capsules</h3>
+                        <h3>Psilocybin & Lion Mane Capsules</h3>
 
                         <a href="book.php" class="btn">Buy now</a>
                     </div>
@@ -110,8 +125,8 @@ if (isset($_GET['logout'])) {
         <div class="box-container">
             <?php
             $select_product = mysqli_query($conn, "SELECT * FROM `products`") or die('query failed');
-            if (mysqli_num_rows($select_product) > 0) {
-                while ($fetch_product = mysqli_fetch_assoc($select_product)) {
+            if(mysqli_num_rows($select_product) > 0) {
+                while($fetch_product = mysqli_fetch_assoc($select_product)) {
             ?>
 
                     <form method="post" class="box" action="">
@@ -141,81 +156,8 @@ if (isset($_GET['logout'])) {
                 };
             };
             ?>
+            
         </div>
-
-
-        <!-- <div class="box">
-                <div class="image"><img src="imgs/microd.jpg" alt=""></div>
-                <h3>Psilocibin & Lion's Mane Microdoses</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo iure eius provident. Ducimus aliquid reiciendis adipisci eum cupiditate amet explicabo aspernatur quae dolorum accusantium perspiciatis eaque, suscipit odit expedita molestias.</p>
-                <form>
-            <script src='https://checkout.epayco.co/checkout.js'
-                data-epayco-key='0fc69c553288c82a6a6e83653039b150' 
-                class='epayco-button' 
-                data-epayco-amount='120000' 
-                data-epayco-tax='0.00'  
-                data-epayco-tax-ico='0.00'               
-                data-epayco-tax-base='120000'
-                data-epayco-name='microdosis' 
-                data-epayco-description='microdosis' 
-                data-epayco-currency='cop'    
-                data-epayco-country='CO' 
-                data-epayco-test='false' 
-                data-epayco-external='false' 
-                data-epayco-response=''  
-                data-epayco-confirmation='' 
-                data-epayco-button='https://multimedia.epayco.co/dashboard/btns/btn2.png'> 
-            </script> 
-        </form>
-            </div>
-            <div class="box">
-                <div class="image"><img src="imgs/powder.jpg"  alt=""></div>
-                <h3>Psilocybin Mushroom Powder</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, nemo molestiae laudantium blanditiis nam voluptas exercitationem amet voluptates ratione ab, modi rem praesentium non inventore iste. Ab eos obcaecati at.</p>
-                <form>
-            <script src='https://checkout.epayco.co/checkout.js'
-                data-epayco-key='0fc69c553288c82a6a6e83653039b150' 
-                class='epayco-button' 
-                data-epayco-amount='180000' 
-                data-epayco-tax='0.00'  
-                data-epayco-tax-ico='0.00'               
-                data-epayco-tax-base='180000'
-                data-epayco-name='Botanicos' 
-                data-epayco-description='Botanicos' 
-                data-epayco-currency='cop'    
-                data-epayco-country='CO' 
-                data-epayco-test='false' 
-                data-epayco-external='false' 
-                data-epayco-response=''  
-                data-epayco-confirmation='' 
-                data-epayco-button='https://multimedia.epayco.co/dashboard/btns/btn2.png'> 
-            </script> 
-        </form>
-            </div>
-            <div class="box">
-                <div class="image"><img src="imgs/growbox.jpg"  alt=""></div>
-                <h3>Starter Grow-Kit</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est quia impedit aliquam adipisci aperiam laborum sequi necessitatibus delectus ex neque? Doloribus consequatur eaque illum excepturi a praesentium et ducimus perferendis.</p>
-                <form>
-            <script src='https://checkout.epayco.co/checkout.js'
-                data-epayco-key='0fc69c553288c82a6a6e83653039b150' 
-                class='epayco-button' 
-                data-epayco-amount='60000' 
-                data-epayco-tax='0.00'  
-                data-epayco-tax-ico='0.00'               
-                data-epayco-tax-base='60000'
-                data-epayco-name='kit cultivo' 
-                data-epayco-description='kit cultivo' 
-                data-epayco-currency='cop'    
-                data-epayco-country='CO' 
-                data-epayco-test='false' 
-                data-epayco-external='false' 
-                data-epayco-response=''  
-                data-epayco-confirmation='' 
-                data-epayco-button='https://multimedia.epayco.co/dashboard/btns/btn2.png'> 
-            </script> 
-        </form>
-            </div> -->
         </div>
     </section>
 
@@ -225,7 +167,15 @@ if (isset($_GET['logout'])) {
     <!-- products section ends -->
 
 
-
+    <div>
+                <?php
+                if (isset($message)) {
+                    foreach ($message as $message) {
+                        echo '<div class="message" onclick="this.remove();">' . $message . '</div>';
+                    }
+                }
+                ?>
+            </div>
 
 
 
@@ -283,3 +233,5 @@ if (isset($_GET['logout'])) {
 
     <!-- custom js file link -->
     <script src="js\script.js"></script>
+
+    
