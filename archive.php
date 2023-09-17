@@ -2,17 +2,17 @@
 
 include 'config.php';
 
+if (!isset($user_id)) {
+   
+}else{
 session_start();
 $user_id =  $_SESSION['user_id'];
-
-if (!isset($user_id)) {
-    header('location:archive.php');
 }
 
 if (isset($_GET['logout'])) {
     unset($user_id);
     session_destroy();
-    header('location:archive.php');
+    header('location:login.php');
 };
 
 
@@ -49,10 +49,7 @@ if (isset($_GET['logout'])) {
             <a href="about.php">about</a>
             <a href="package.php">archive</a>
             <a href="book.php">products</a>
-            <a href="cart.php">cart</a>
-            <a href="index.php">Profile</a>
-            <a href="package.php?logout=<?php echo $user_id; ?>" onclick="return confirm('are you sure you want to log out?')">log out</a>
-        </nav>
+            <a href="login.php">Log in</a>
         </nav>
 
         <div id="menu-btn" class="fas fa-bars"></div>

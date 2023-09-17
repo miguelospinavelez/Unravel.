@@ -65,14 +65,12 @@ if (isset($_POST['add_to_cart'])) {
             <a href="package.php">archive</a>
             <a href="book.php">products</a>
             <a href="index.php">Profile</a>
+            <a href="book.php?logout=<?php echo $user_id; ?>" onclick="return confirm('are you sure you want to log out?')">log out</a>
         </nav>
         <div id="menu-btn" class="fas fa-bars"></div>
 
 
     </section>
-
-
-
 
     <!-- cart -->
 
@@ -140,8 +138,6 @@ if (isset($_POST['add_to_cart'])) {
         ?>
     </div>
 
-
-
     <!-- footer -->
 
     <section class="footer">
@@ -186,10 +182,6 @@ if (isset($_POST['add_to_cart'])) {
             <p>© 2021 Unravel. All rights reserved | Created by <span>Myself</span> Web Design</p>
         </div>
     </section>
-
-
-    <!-- swiper js link -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
 
     <!-- custom js file link -->

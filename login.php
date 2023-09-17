@@ -53,7 +53,7 @@ if (isset($_POST['submit'])) {
             <a href="home.php">home</a>
             <a href="about.php">about</a>
             <a href="package.php">archive</a>
-            <a href="book.php">products</a>
+            <a href="products.php">products</a>
         </nav>
 
         <div id="menu-btn" class="fas fa-bars"></div>

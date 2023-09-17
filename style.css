@@ -640,16 +640,11 @@ section {
 
 /* SHOPPING CART */
 
-.cart{
+.cart {
     background-image: url(imgs/wavy.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
-}
-
-.cart h1{
-    font-size: 5rem;
-    padding-bottom: 5rem;
 }
 
 /* LOGIN/REGISTRATION */
