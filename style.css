@@ -485,7 +485,7 @@ section {
 
 /* ARCHIVE */
 
-.packages .box-container {
+.archive .box-container {
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 2rem;
@@ -498,49 +498,49 @@ section {
     display: none;
 }
 
-.packages .box-container .box:nth-child(1),
-.packages .box-container .box:nth-child(2),
-.packages .box-container .box:nth-child(3),
-.packages .box-container .box:nth-child(4),
-.packages .box-container .box:nth-child(5),
-.packages .box-container .box:nth-child(6) {
+.archive .box-container .box:nth-child(1),
+.archive .box-container .box:nth-child(2),
+.archive .box-container .box:nth-child(3),
+.archive .box-container .box:nth-child(4),
+.archive .box-container .box:nth-child(5),
+.archive .box-container .box:nth-child(6) {
     display: inline-block;
 }
 
-.packages .box-container .box:hover .image img {
+.archive .box-container .box:hover .image img {
     transform: scale(1.1);
 }
 
-.packages .box-container .box .image {
+.archive .box-container .box .image {
     height: 25rem;
     overflow: hidden;
 }
 
-.packages .box-container .box .image img {
+.archive .box-container .box .image img {
     height: 100%;
     width: 100%;
     object-fit: cover;
     transition: 0.2s linear;
 }
 
-.packages .box-container .box .content {
+.archive .box-container .box .content {
     padding: 2rem;
     text-align: center;
 }
 
-.packages .box-container .box .content h3 {
+.archive .box-container .box .content h3 {
     font-size: 2.5rem;
     color: var(--black);
 }
 
-.packages .box-container .box .content p {
+.archive .box-container .box .content p {
     font-size: 1.4rem;
     color: var(--light-black);
     line-height: 2;
     padding: 1rem 0;
 }
 
-.packages .load-more {
+.archive .load-more {
     text-align: center;
     margin-top: 2rem;
 }
@@ -647,6 +647,10 @@ section {
     background-size: 100%;
 }
 
+.cart h1{
+    font-size: 5rem;
+    padding-bottom: 5rem;
+}
 
 /* LOGIN/REGISTRATION */
 

@@ -116,13 +116,6 @@
                     <a href="" class="btn">Read</a>
                 </div>
             </div>
-
-            <div class="box">
-                <div class="image">
-                    <img src="imgs/labs.jpg" alt="">
-                </div>
-                
-
         </div>
 
         <div class="load-more"><span class="btn">load more</span></div>

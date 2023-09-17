@@ -14,21 +14,21 @@ if (isset($_GET['logout'])) {
     header('location:login.php');
 };
 
-if(isset($_POST['add_to_cart'])){
+if (isset($_POST['add_to_cart'])) {
 
     $product_name = $_POST['product_name'];
     $product_price = $_POST['product_price'];
     $product_image = $_POST['product_image'];
     $product_quantity = $_POST['product_quantity'];
 
-    
+
 
     $select_cart = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
 
-    if(mysqli_num_rows($select_cart) > 0){
+    if (mysqli_num_rows($select_cart) > 0) {
         $message[] = 'product already in cart';
-    }else{
-        mysqli_query($conn, "INSERT INTO `cart`(user_id, name, price, image, quantity) VALUES ('$user_id', '$product_name','$product_price', '$product_image', '$product_quantity')" ) or die('query failed');
+    } else {
+        mysqli_query($conn, "INSERT INTO `cart`(user_id, name, price, image, quantity) VALUES ('$user_id', '$product_name','$product_price', '$product_image', '$product_quantity')") or die('query failed');
         $message[] = 'product added to cart';
     }
 }
@@ -54,7 +54,7 @@ if(isset($_POST['add_to_cart'])){
 
 <body>
 
-    <!-- header section starts -->
+    <!-- header -->
 
     <section class="header">
 
@@ -71,67 +71,78 @@ if(isset($_POST['add_to_cart'])){
 
     </section>
 
-    <!-- header section ends -->
 
 
 
-
-    <!-- cart section starts -->
+    <!-- cart -->
 
     <section class="cart">
         <h1>Shopping cart</h1>
-            
-       <table>
-        <thead>
-            <th>image</th>
-            <th>name</th>
-            <th>price</th>
-            <th>quantity</th>
-            <th>total price</th>
-            <th>action</th>
-        </thead>
-        <tbody>
 
-       
-        <?php
-            $cart_query = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id=user_id") or die('query failed');
-            if(mysqli_num_rows($cart_query) > 0) {
-                while($fetch_cart = mysqli_fetch_assoc($cart_query)) {
-            ?>
-            <tr>
-                <td>
-                    <img src="imgs/<?php echo $fetch_cart['image']?>" alt= "">
-                </td>
-            </tr>
-            <?php
+        <table>
+            <thead>
+                <th>image</th>
+                <th>name</th>
+                <th>price</th>
+                <th>quantity</th>
+                <th>total price</th>
+                <th>action</th>
+            </thead>
+            <tbody>
+
+
+                <?php
+                $grand_total = 0;
+                $cart_query = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id=user_id") or die('query failed');
+                if (mysqli_num_rows($cart_query) > 0) {
+                    while ($fetch_cart = mysqli_fetch_assoc($cart_query)) {
+                ?>
+                        <tr>
+                            <td>
+                                <img src="imgs/<?php echo $fetch_cart['image'] ?>" height=100 alt="">
+                            </td>
+                            <td><?php echo $fetch_cart['name'] ?></td>
+                            <td><?php echo $fetch_cart['price'] ?>/-</td>
+                            <td>
+                                <form action="" method="post">
+                                    <input type="hidden" name="cart_id" value="<?php echo $fetch_cart['id'] ?>">
+                                    <input type="number" min="1" name="cart_quantity" value="<?php echo $fetch_cart['quantity'] ?>">
+                                    <input type="submit" name="update_cart" value="update" class="option-btn">
+                                </form>
+                            </td>
+                            <td>$<?php echo $sub_total = number_format($fetch_cart['price'] * $fetch_cart['quantity']); ?>/-</td>
+                            <td><a href="cart.php?remove=<?php echo $fetch_cart['id']; ?>" class="delete-btn" onclick="return confirm('remove item from cart?')" ;>remove</a></td>
+                        </tr>
+                <?php
+                        $grand_total += $sub_total;
+                    };
                 };
-            };
-            
-            ?>
-             </tbody>
-       </table>
+
+                ?>
+                <tr class="table_bottom">
+                    <td colspan="4">grand total :</td>
+                    <td><?php echo $grand_total ?></td>
+                    <td><a href="cart.php?delete_all" onclick="return confirm('delete all from cart?')" class="delete-btn">delete all</a></td>
+
+                </tr>
+            </tbody>
+        </table>
 
     </section>
 
-
-
-
-    <!-- products section ends -->
-
-
     <div>
-                <?php
-                if (isset($message)) {
-                    foreach ($message as $message) {
-                        echo '<div class="message" onclick="this.remove();">' . $message . '</div>';
-                    }
-                }
-                ?>
-            </div>
+        <?php
+        if (isset($message)) {
+            foreach ($message as $message) {
+                echo '<div class="message" onclick="this.remove();">' . $message . '</div>';
+            }
+        }
+        ?>
+    </div>
 
 
 
-    <!-- footer section starts -->
+    <!-- footer -->
 
     <section class="footer">
 
@@ -176,8 +187,6 @@ if(isset($_POST['add_to_cart'])){
         </div>
     </section>
 
-    <!-- footer section ends -->
-
 
     <!-- swiper js link -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
@@ -185,5 +194,3 @@ if(isset($_POST['add_to_cart'])){
 
     <!-- custom js file link -->
     <script src="js\script.js"></script>
-
-    
