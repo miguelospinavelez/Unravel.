@@ -87,7 +87,7 @@ if(isset($_POST['add_to_cart'])){
                         <span>microdose</span>
                         <h3>Psilocybin & Lion Mane Capsules</h3>
 
-                        <a href="book.php" class="btn">learn more</a>
+                        <a href="micro.php" class="btn">learn more</a>
                     </div>
                 </div>
 
@@ -98,7 +98,7 @@ if(isset($_POST['add_to_cart'])){
                         <span>mushroom powders</span>
                         <h3>Psilocybin Mushroom Powder</h3>
 
-                        <a href="book.php" class="btn">learn more</a>
+                        <a href="powder.php" class="btn">learn more</a>
 
                     </div>
                 </div>
@@ -108,7 +108,7 @@ if(isset($_POST['add_to_cart'])){
                         <span>Grow</span>
                         <h3>Psilocybin Starter Kit</h3>
 
-                        <a href="book.php" class="btn">learn more</a>
+                        <a href="grow.php" class="btn">learn more</a>
                     </div>
                 </div>
 

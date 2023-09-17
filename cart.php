@@ -11,27 +11,23 @@ if (!isset($user_id)) {
 if (isset($_GET['logout'])) {
     unset($user_id);
     session_destroy();
-    header('location:login.php');
+    header('location:products.php');
+
+    
 };
 
-if (isset($_POST['add_to_cart'])) {
+if(isset($_POST['add_to_cart'])){
 
     $product_name = $_POST['product_name'];
     $product_price = $_POST['product_price'];
     $product_image = $_POST['product_image'];
     $product_quantity = $_POST['product_quantity'];
 
-
+    
 
     $select_cart = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
-
-    if (mysqli_num_rows($select_cart) > 0) {
-        $message[] = 'product already in cart';
-    } else {
-        mysqli_query($conn, "INSERT INTO `cart`(user_id, name, price, image, quantity) VALUES ('$user_id', '$product_name','$product_price', '$product_image', '$product_quantity')") or die('query failed');
-        $message[] = 'product added to cart';
-    }
 }
+
 
 ?>
 <!DOCTYPE html>
@@ -40,10 +36,7 @@ if (isset($_POST['add_to_cart'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products</title>
-
-    <!-- swiper css link -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <title>Cart</title>
 
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -76,6 +69,7 @@ if (isset($_POST['add_to_cart'])) {
 
     <section class="cart">
         <h1>Shopping cart</h1>
+        
 
         <table>
             <thead>
@@ -87,18 +81,14 @@ if (isset($_POST['add_to_cart'])) {
                 <th>action</th>
             </thead>
             <tbody>
-
-
                 <?php
                 $grand_total = 0;
-                $cart_query = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id=user_id") or die('query failed');
+                $cart_query = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = 'user_id'") or die('query failed');
                 if (mysqli_num_rows($cart_query) > 0) {
                     while ($fetch_cart = mysqli_fetch_assoc($cart_query)) {
                 ?>
                         <tr>
-                            <td>
-                                <img src="imgs/<?php echo $fetch_cart['image'] ?>" height=100 alt="">
-                            </td>
+                            <td><img src="imgs/<?php echo $fetch_cart['image'] ?>" height=100 alt=""></td>
                             <td><?php echo $fetch_cart['name'] ?></td>
                             <td><?php echo $fetch_cart['price'] ?>/-</td>
                             <td>

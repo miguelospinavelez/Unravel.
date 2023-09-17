@@ -647,6 +647,10 @@ section {
     background-size: 100%;
 }
 
+.cart h1{
+    font-size: 5rem;
+}
+
 /* LOGIN/REGISTRATION */
 
 .login {
