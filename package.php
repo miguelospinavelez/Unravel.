@@ -47,7 +47,6 @@ if (isset($_GET['logout'])) {
         <nav class="navbar">
             <a href="home.php">home</a>
             <a href="about.php">about</a>
-            <a href="package.php">archive</a>
             <a href="book.php">products</a>
             <a href="cart.php">cart</a>
             <a href="index.php">Profile</a>
