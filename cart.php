@@ -49,7 +49,7 @@ if (isset($_GET['logout'])) {
             <a href="package.php">archive</a>
             <a href="book.php">products</a>
             <a href="index.php">Profile</a>
-            <a href="book.php?logout=<?php echo $user_id; ?>" onclick="return confirm('are you sure you want to log out?')">log out</a>
+            <a href="cart.php?logout=<?php echo $user_id; ?>" onclick="return confirm('are you sure you want to log out?')">log out</a>
         </nav>
         <div id="menu-btn" class="fas fa-bars"></div>
 
@@ -91,7 +91,7 @@ if (isset($_GET['logout'])) {
                         </form>
                     </td>
                     <td>$<?php echo $sub_total = number_format($fetch_cart['price'] * $fetch_cart['quantity']); ?>.00 USD</td>
-                    <td><a href="index.php?remove=<?php echo $fetch_cart['id'] ?>" class="delete-btn" onclick="return confirm('remove item from cart?')">remove</a></td>
+                    <td><a href="cart.php?remove=<?php echo $fetch_cart['id'] ?>" class="delete-btn" onclick="return confirm('remove item from cart?')">remove</a></td>
                 </tr>
             <?php
             $grand_total += $sub_total;

@@ -654,6 +654,7 @@ section {
 
 .cart table{
     min-height: 500px;
+    width: 100%;
 }
 
 .cart table thead{
