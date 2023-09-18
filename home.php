@@ -27,7 +27,7 @@ if (isset($_GET['logout'])) {
     <title>Unravel</title>
 
     <!-- favicon link -->
-    <link rel="icon" type="image/x-icon" href="/imgs/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="imgs/icons/favicon.ico">
 
     <!-- swiper css link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />

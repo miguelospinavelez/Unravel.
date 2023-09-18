@@ -23,6 +23,9 @@ if (isset($_GET['logout'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cart</title>
 
+    <!-- favicon link -->
+    <link rel="icon" type="image/x-icon" href="imgs/icons/favicon.ico">
+
     <!-- swiper css link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
@@ -68,6 +71,7 @@ if (isset($_GET['logout'])) {
                 <th>total price</th>
                 <th>action</th>
             </thead>
+            
             <tbody>
             <?php
             $cart_query = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id ='$user_id'") or die('query failed');

@@ -42,6 +42,9 @@ if(isset($_POST['add_to_cart'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
 
+    <!-- favicon link -->
+    <link rel="icon" type="image/x-icon" href="imgs/icons/favicon.ico">
+
     <!-- swiper css link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 

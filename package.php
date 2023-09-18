@@ -27,6 +27,9 @@ if (isset($_GET['logout'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Archive</title>
 
+    <!-- favicon link -->
+    <link rel="icon" type="image/x-icon" href="imgs/icons/favicon.ico">
+
     <!-- swiper css link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
@@ -39,7 +42,7 @@ if (isset($_GET['logout'])) {
 
 <body>
 
-    <!-- header section starts -->
+    <!-- header -->
 
     <section class="header">
 
@@ -59,14 +62,13 @@ if (isset($_GET['logout'])) {
 
     </section>
 
-    <!-- header section ends -->
 
+     <!-- archive -->
 
-<div class="heading" style="background: url(imgs/archive.jpg) no-repeat;">
-    <h1>Archive</h1>
-</div>
+    <div class="heading" style="background: url(imgs/archive.jpg) no-repeat;">
+        <h1>Archive</h1>
+    </div>
 
-<!-- archive section starts -->
 
     <section class="archive">
 
@@ -145,16 +147,8 @@ if (isset($_GET['logout'])) {
 
     </section>
 
-<!-- archive section ends -->
 
-
-
-
-
-
-
-
-    <!-- footer section starts -->
+    <!-- footer -->
 
     <section class="footer">
 
@@ -198,8 +192,6 @@ if (isset($_GET['logout'])) {
             <p>© 2021 Unravel. All rights reserved | Created by <span>Myself</span> Web Design</p>
         </div>
     </section>
-
-    <!-- footer section ends -->
 
 
     <!-- swiper js link -->

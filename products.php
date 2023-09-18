@@ -3,10 +3,9 @@
 include 'config.php';
 
 if (!isset($user_id)) {
-   
-}else{
-session_start();
-$user_id =  $_SESSION['user_id'];
+} else {
+    session_start();
+    $user_id =  $_SESSION['user_id'];
 }
 
 if (isset($_GET['logout'])) {
@@ -25,6 +24,9 @@ if (isset($_GET['logout'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
+
+    <!-- favicon link -->
+    <link rel="icon" type="image/x-icon" href="imgs/icons/favicon.ico">
 
     <!-- swiper css link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
@@ -55,66 +57,66 @@ if (isset($_GET['logout'])) {
 
     </section>
 
-    <!-- header section ends -->
+    <!-- home -->
 
 
     <section class="home">
 
-<div class="swiper home-slider">
+        <div class="swiper home-slider">
 
-    <div class="swiper-wrapper">
+            <div class="swiper-wrapper">
 
-        <div class="swiper-slide slide" style="background-image: url(imgs/microdose.jpg);">
-            <div class="content">
-                <span>microdose</span>
-                <h3>Psilocybin & Lion Mane Capsules</h3>
+                <div class="swiper-slide slide" style="background-image: url(imgs/microdose.jpg);">
+                    <div class="content">
+                        <span>microdose</span>
+                        <h3>Psilocybin & Lion Mane Capsules</h3>
 
-                <a href="book.php" class="btn">learn more</a>
+                        <a href="book.php" class="btn">learn more</a>
+                    </div>
+                </div>
+
+
+
+                <div class="swiper-slide slide" style="background-image:url(imgs/dust.jpg)">
+                    <div class="content">
+                        <span>mushroom powders</span>
+                        <h3>Psilocybin Mushroom Powder</h3>
+
+                        <a href="book.php" class="btn">learn more</a>
+
+                    </div>
+                </div>
+
+                <div class="swiper-slide slide" style="background-image:url(imgs/cubensis.jpg)">
+                    <div class="content">
+                        <span>Grow</span>
+                        <h3>Psilocybin Starter Kit</h3>
+
+                        <a href="book.php" class="btn">learn more</a>
+                    </div>
+                </div>
+
             </div>
+
         </div>
 
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
 
-
-        <div class="swiper-slide slide" style="background-image:url(imgs/dust.jpg)">
-            <div class="content">
-                <span>mushroom powders</span>
-                <h3>Psilocybin Mushroom Powder</h3>
-
-                <a href="book.php" class="btn">learn more</a>
-
-            </div>
         </div>
-
-        <div class="swiper-slide slide" style="background-image:url(imgs/cubensis.jpg)">
-            <div class="content">
-                <span>Grow</span>
-                <h3>Psilocybin Starter Kit</h3>
-
-                <a href="book.php" class="btn">learn more</a>
-            </div>
-        </div>
-
-    </div>
-
-</div>
-
-<div class="swiper-button-next"></div>
-<div class="swiper-button-prev"></div>
-
-</div>
-</section>
+    </section>
 
 
 
-    <!-- products section starts -->
+    <!-- products -->
 
     <section class="products">
         <h1>Try our Products</h1>
         <div class="box-container">
             <?php
             $select_product = mysqli_query($conn, "SELECT * FROM `products`") or die('query failed');
-            if(mysqli_num_rows($select_product) > 0) {
-                while($fetch_product = mysqli_fetch_assoc($select_product)) {
+            if (mysqli_num_rows($select_product) > 0) {
+                while ($fetch_product = mysqli_fetch_assoc($select_product)) {
             ?>
 
                     <form method="post" class="box" action="">
@@ -144,30 +146,26 @@ if (isset($_GET['logout'])) {
                 };
             };
             ?>
-            
+
         </div>
         </div>
     </section>
 
 
-
-
-    <!-- products section ends -->
-
+    <!-- message -->
 
     <div>
-                <?php
-                if (isset($message)) {
-                    foreach ($message as $message) {
-                        echo '<div class="message" onclick="this.remove();">' . $message . '</div>';
-                    }
-                }
-                ?>
-            </div>
+        <?php
+        if (isset($message)) {
+            foreach ($message as $message) {
+                echo '<div class="message" onclick="this.remove();">' . $message . '</div>';
+            }
+        }
+        ?>
+    </div>
 
 
-
-    <!-- footer section starts -->
+    <!-- footer -->
 
     <section class="footer">
 
@@ -212,8 +210,6 @@ if (isset($_GET['logout'])) {
         </div>
     </section>
 
-    <!-- footer section ends -->
-
 
     <!-- swiper js link -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
@@ -222,7 +218,6 @@ if (isset($_GET['logout'])) {
     <!-- custom js file link -->
     <script src="js\script.js"></script>
 
-    </body>
-    </html>
+</body>
 
-    
+</html>

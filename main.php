@@ -28,7 +28,7 @@ if (isset($_GET['logout'])) {
     <title>Unravel</title>
 
     <!-- favicon link -->
-    <link rel="icon" type="image/x-icon" href="/imgs/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="imgs/icons/favicon.ico">
 
     <!-- swiper css link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
@@ -42,7 +42,7 @@ if (isset($_GET['logout'])) {
 
 <body>
 
-    <!-- header section starts -->
+    <!-- header -->
 
     <section class="header">
 
@@ -59,12 +59,10 @@ if (isset($_GET['logout'])) {
 
     </section>
 
-    <!-- header section ends -->
 
 
 
-
-    <!-- home section starts -->
+    <!-- home -->
 
     <section class="home">
 
@@ -106,12 +104,10 @@ if (isset($_GET['logout'])) {
         </div>
     </section>
 
-    <!-- home section ends -->
 
 
 
-
-    <!-- services section starts -->
+    <!-- benefits -->
 
     <section class="services">
 
@@ -141,12 +137,10 @@ if (isset($_GET['logout'])) {
         </div>
     </section>
 
-    <!-- services section ends -->
 
 
 
-
-    <!-- home about section starts -->
+    <!-- about -->
 
     <section class="home-about">
         <div class="image">
@@ -160,12 +154,9 @@ if (isset($_GET['logout'])) {
         </div>
     </section>
 
-    <!-- home about section ends -->
 
 
-
-
-    <!-- home packages section starts -->
+    <!-- archive -->
 
     <section class="home-packages">
         <h1 class="heading-title"> articles & studies </h1>
@@ -222,11 +213,8 @@ if (isset($_GET['logout'])) {
     </section>
 
 
-    <!-- home packages section ends -->
 
-
-
-    <!-- home offer section starts -->
+    <!-- offer -->
 
     <section class="home-offer">
         <div class="content">
@@ -237,11 +225,9 @@ if (isset($_GET['logout'])) {
         </div>
     </section>
 
-    <!-- home offer section ends -->
 
 
-
-    <!-- footer section starts -->
+    <!-- footer -->
 
     <section class="footer">
 
@@ -285,8 +271,6 @@ if (isset($_GET['logout'])) {
             <p>© 2021 Unravel. All rights reserved | Created by <span>Myself</span> Web Design</p>
         </div>
     </section>
-
-    <!-- footer section ends -->
 
 
 
