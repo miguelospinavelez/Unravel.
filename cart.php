@@ -1,33 +1,38 @@
 <?php
 
 include 'config.php';
+
 session_start();
 $user_id =  $_SESSION['user_id'];
 
 if (!isset($user_id)) {
-    header('location:login.php');
-};
+    header('location:products.php');
+}
 
 if (isset($_GET['logout'])) {
     unset($user_id);
     session_destroy();
     header('location:products.php');
-
-    
 };
 
-if(isset($_POST['add_to_cart'])){
+if (isset($_POST['add_to_cart'])) {
 
     $product_name = $_POST['product_name'];
     $product_price = $_POST['product_price'];
     $product_image = $_POST['product_image'];
     $product_quantity = $_POST['product_quantity'];
 
-    
+
 
     $select_cart = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
-}
 
+    if (mysqli_num_rows($select_cart) > 0) {
+        $message[] = 'product already in cart';
+    } else {
+        mysqli_query($conn, "INSERT INTO `cart`(user_id, name, price, image, quantity) VALUES ('$user_id', '$product_name','$product_price', '$product_image', '$product_quantity')") or die('query failed');
+        $message[] = 'product added to cart';
+    }
+}
 
 ?>
 <!DOCTYPE html>
@@ -36,7 +41,10 @@ if(isset($_POST['add_to_cart'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart</title>
+    <title>Products</title>
+
+    <!-- swiper css link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
 
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -47,7 +55,7 @@ if(isset($_POST['add_to_cart'])){
 
 <body>
 
-    <!-- header -->
+    <!-- header section -->
 
     <section class="header">
 
@@ -56,7 +64,7 @@ if(isset($_POST['add_to_cart'])){
             <a href="home.php">home</a>
             <a href="about.php">about</a>
             <a href="package.php">archive</a>
-            <a href="book.php">products</a>
+            <a href="cart.php">cart</a>
             <a href="index.php">Profile</a>
             <a href="book.php?logout=<?php echo $user_id; ?>" onclick="return confirm('are you sure you want to log out?')">log out</a>
         </nav>
@@ -65,58 +73,54 @@ if(isset($_POST['add_to_cart'])){
 
     </section>
 
-    <!-- cart -->
 
-    <section class="cart">
-        <h1>Shopping cart</h1>
-        
 
-        <table>
-            <thead>
-                <th>image</th>
-                <th>name</th>
-                <th>price</th>
-                <th>quantity</th>
-                <th>total price</th>
-                <th>action</th>
-            </thead>
-            <tbody>
-                <?php
-                $grand_total = 0;
-                $cart_query = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id = 'user_id'") or die('query failed');
-                if (mysqli_num_rows($cart_query) > 0) {
-                    while ($fetch_cart = mysqli_fetch_assoc($cart_query)) {
-                ?>
-                        <tr>
-                            <td><img src="imgs/<?php echo $fetch_cart['image'] ?>" height=100 alt=""></td>
-                            <td><?php echo $fetch_cart['name'] ?></td>
-                            <td><?php echo $fetch_cart['price'] ?>/-</td>
-                            <td>
-                                <form action="" method="post">
-                                    <input type="hidden" name="cart_id" value="<?php echo $fetch_cart['id'] ?>">
-                                    <input type="number" min="1" name="cart_quantity" value="<?php echo $fetch_cart['quantity'] ?>">
-                                    <input type="submit" name="update_cart" value="update" class="option-btn">
-                                </form>
-                            </td>
-                            <td>$<?php echo $sub_total = number_format($fetch_cart['price'] * $fetch_cart['quantity']); ?>/-</td>
-                            <td><a href="cart.php?remove=<?php echo $fetch_cart['id']; ?>" class="delete-btn" onclick="return confirm('remove item from cart?')" ;>remove</a></td>
-                        </tr>
-                <?php
-                        $grand_total += $sub_total;
-                    };
+    <!-- products section -->
+
+    <section class="products">
+        <h1>Try our Products</h1>
+        <div class="box-container">
+            <?php
+            $select_product = mysqli_query($conn, "SELECT * FROM `products`") or die('query failed');
+            if (mysqli_num_rows($select_product) > 0) {
+                while ($fetch_product = mysqli_fetch_assoc($select_product)) {
+            ?>
+
+                    <form method="post" class="box" action="">
+
+                        <div class="name"><?php echo $fetch_product['name']; ?></div>
+
+                        <img class="image" alt="" src="imgs/<?php echo $fetch_product['image']; ?>">
+
+                        <div class="description"><?php echo $fetch_product['description']; ?></div>
+
+                        <div class="price">$<?php echo $fetch_product['price']; ?> USD</div>
+
+                        <input type="number" class="amount" min="1" name="product_quantity" value="1">
+
+                        <input type="hidden" name="product_image" value="<?php echo $fetch_product['image']; ?>">
+
+                        <input type="hidden" name="product_name" value="<?php echo $fetch_product['name']; ?>">
+
+                        <input type="hidden" name="product_price" value="<?php echo $fetch_product['price']; ?>">
+
+                        <input type="submit" value="add to cart" name="add_to_cart" class="btn">
+
+                    </form>
+            <?php
                 };
+            };
+            ?>
 
-                ?>
-                <tr class="table_bottom">
-                    <td colspan="4">grand total :</td>
-                    <td><?php echo $grand_total ?></td>
-                    <td><a href="cart.php?delete_all" onclick="return confirm('delete all from cart?')" class="delete-btn">delete all</a></td>
+        </div>
+        <div class="cart">
 
-                </tr>
-            </tbody>
-        </table>
-
+        </div>
     </section>
+
+
+
+    <!-- button -->
 
     <div>
         <?php
@@ -128,7 +132,9 @@ if(isset($_POST['add_to_cart'])){
         ?>
     </div>
 
-    <!-- footer -->
+
+
+   <!-- footer section starts -->
 
     <section class="footer">
 
@@ -174,5 +180,13 @@ if(isset($_POST['add_to_cart'])){
     </section>
 
 
+
+    <!-- swiper js link -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+
     <!-- custom js file link -->
     <script src="js\script.js"></script>
+ 
+    </body>
+    </html>
