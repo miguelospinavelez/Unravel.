@@ -94,9 +94,15 @@ if (isset($_GET['logout'])) {
                     <td><a href="index.php?remove=<?php echo $fetch_cart['id'] ?>" class="delete-btn" onclick="return confirm('remove item from cart?')">remove</a></td>
                 </tr>
             <?php
+            $grand_total += $sub_total;
                 }
             }
             ?>
+            <tr class="table-bottom">
+                <td colspan="4">grand total :</td>
+                <td>$<?php echo $grand_total; ?>.00 USD</td>
+                <td><a href="cart.php?delete_all" onclick="return confirm('delete all from cart?');" class="delete-btn">delete all</a></td>
+            </tr>
             </tbody>
         </table>
 

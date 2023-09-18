@@ -697,6 +697,23 @@ section {
     padding: 1rem;
 }
 
+.cart table tbody tr td img{
+    padding-left: 5rem;
+}
+
+.cart table tbody .table-bottom{
+    border-radius: none;
+    box-shadow: none;
+}
+
+.cart table tbody .table-bottom:hover{
+    transform: none;
+}
+
+.cart table tbody .table-bottom td{
+    font-size: 20px;
+}
+
 /* LOGIN/REGISTRATION */
 
 .login {
