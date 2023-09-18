@@ -110,7 +110,7 @@ section {
     display: inline-block;
     padding: 1rem 3rem;
     cursor: pointer;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     color: var(--white);
 }
 
@@ -649,6 +649,52 @@ section {
 
 .cart h1{
     font-size: 5rem;
+    padding-bottom: 1.5rem;
+}
+
+.cart table{
+    min-height: 500px;
+}
+
+.cart table thead{
+    padding: 1.5rem;
+}
+
+.cart table thead th{
+    font-size: large;
+}
+
+.cart table tbody{
+    padding: 1.5rem;
+}
+
+.cart table tbody td{
+    font-size: 15px;
+    padding: 1rem;
+}
+
+.cart table tbody td form .quantity{
+    opacity:0.7;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    font-weight: bold;
+    margin: 2rem;
+    padding: 1rem;
+}
+
+.cart table tbody tr{
+    border-radius: 50px;
+    box-shadow: var(--box-shadow);
+}
+
+.cart table tbody tr:hover{
+    transform: scale(1.1);
+    margin: 1rem;
+}
+
+.cart table tbody tr .options-btn{
+    margin: 1rem;
+    padding: 1rem;
 }
 
 /* LOGIN/REGISTRATION */

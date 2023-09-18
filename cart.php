@@ -71,15 +71,27 @@ if (isset($_GET['logout'])) {
                 <th>total price</th>
                 <th>action</th>
             </thead>
-            
+
             <tbody>
             <?php
+            $grand_total = 0;
             $cart_query = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id ='$user_id'") or die('query failed');
             if (mysqli_num_rows($cart_query) > 0) {
                 while ($fetch_cart = mysqli_fetch_assoc($cart_query)) {
             ?>
                 <tr>
-                    <td><img src="imgs/<?php echo $fetch_cart['image']; ?>" alt=""></td>
+                    <td><img src="imgs/<?php echo $fetch_cart['image']; ?>" alt="" height="130"></td>
+                    <td><?php echo $fetch_cart['name']; ?></td>
+                    <td>$<?php echo $fetch_cart['price']; ?> USD</td>
+                    <td>
+                        <form action="" method="post">
+                            <input type="hidden" name="cart_id" value="<?php echo $fetch_cart['id']; ?>">
+                            <input type="number" min="1" class="quantity" name="cart_quantity" value="<?php echo $fetch_cart['quantity']; ?>">
+                            <input type="submit" name="update_cart" value="update" class="option-btn" id="">
+                        </form>
+                    </td>
+                    <td>$<?php echo $sub_total = number_format($fetch_cart['price'] * $fetch_cart['quantity']); ?>.00 USD</td>
+                    <td><a href="index.php?remove=<?php echo $fetch_cart['id'] ?>" class="delete-btn" onclick="return confirm('remove item from cart?')">remove</a></td>
                 </tr>
             <?php
                 }
