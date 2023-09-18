@@ -44,7 +44,7 @@ if (isset($_POST['submit'])) {
 
 <body class="login">
 
-    <!-- header section starts -->
+    <!-- header -->
 
     <section class="header">
 
@@ -62,10 +62,8 @@ if (isset($_POST['submit'])) {
 
     </section>
 
-    <!-- header section ends -->
 
-
-    <!-- login section starts -->
+    <!-- login -->
 
     <section class="login-box">
 
@@ -109,10 +107,7 @@ if (isset($_POST['submit'])) {
     </section>
 
 
-    <!-- login section ends -->
-
-
-    <!-- footer section starts -->
+    <!-- footer -->
 
     <section class="footer">
 
@@ -156,10 +151,6 @@ if (isset($_POST['submit'])) {
             <p>© 2021 Unravel. All rights reserved | Created by <span>Myself</span> Web Design</p>
         </div>
     </section>
-
-    <!-- footer section ends -->
-
-
 
 
     <!-- custom js file link -->

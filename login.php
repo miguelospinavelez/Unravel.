@@ -30,9 +30,6 @@ if (isset($_POST['submit'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log in</title>
 
-    <!-- swiper css link -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -44,7 +41,7 @@ if (isset($_POST['submit'])) {
 
     
 
-    <!-- header section starts -->
+    <!-- header -->
 
     <section class="header">
 
@@ -61,10 +58,10 @@ if (isset($_POST['submit'])) {
 
     </section>
 
-    <!-- header section ends -->
+    <!-- header -->
 
 
-    <!-- login section starts -->
+    <!-- login -->
 
     <section class="login-box">
 
@@ -98,10 +95,8 @@ if (isset($_POST['submit'])) {
         </div>
     </section>
 
-    <!-- login section ends -->
 
-
-    <!-- footer section starts -->
+    <!-- footer -->
 
     <section class="footer">
 
@@ -145,9 +140,6 @@ if (isset($_POST['submit'])) {
             <p>© 2021 Unravel. All rights reserved | Created by <span>Myself</span> Web Design</p>
         </div>
     </section>
-
-    <!-- footer section ends -->
-
 
 
 
