@@ -55,7 +55,7 @@ if(isset($_POST['add_to_cart'])){
 
 <body>
 
-    <!-- header section starts -->
+    <!-- header -->
 
     <section class="header">
 
@@ -73,7 +73,9 @@ if(isset($_POST['add_to_cart'])){
 
     </section>
 
-    <!-- header section ends -->
+
+
+    <!-- home -->
 
 
     <section class="home">
@@ -124,7 +126,7 @@ if(isset($_POST['add_to_cart'])){
 
 
 
-    <!-- products section starts -->
+    <!-- products -->
 
     <section class="products">
         <h1>Try our Products</h1>
@@ -164,13 +166,12 @@ if(isset($_POST['add_to_cart'])){
             ?>
             
         </div>
-        </div>
     </section>
 
 
 
 
-    <!-- products section ends -->
+    <!-- button -->
 
 
     <div>
@@ -185,7 +186,7 @@ if(isset($_POST['add_to_cart'])){
 
 
 
-    <!-- footer section starts -->
+    <!-- footer -->
 
     <section class="footer">
 
@@ -230,8 +231,6 @@ if(isset($_POST['add_to_cart'])){
         </div>
     </section>
 
-    <!-- footer section ends -->
-
 
     <!-- swiper js link -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
@@ -240,4 +239,6 @@ if(isset($_POST['add_to_cart'])){
     <!-- custom js file link -->
     <script src="js\script.js"></script>
 
-    
+    </body>
+
+</html>
