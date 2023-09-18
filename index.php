@@ -37,6 +37,8 @@ if (isset($_GET['logout'])) {
 
 <body class="profile">
 
+    <!-- header -->
+
     <section class="header">
 
         <a href="home.php" class="logo">Unravel.</a>
@@ -46,12 +48,14 @@ if (isset($_GET['logout'])) {
             <a href="package.php">archive</a>
             <a href="book.php">products</a>
             <a href="cart.php">cart</a>
-           <a href="index.php?logout=<?php echo $user_id; ?>" onclick="return confirm('are you sure you want to log out?')">log out</a>
+            <a href="index.php?logout=<?php echo $user_id; ?>" onclick="return confirm('are you sure you want to log out?')">log out</a>
         </nav>
         <div id="menu-btn" class="fas fa-bars"></div>
 
 
     </section>
+
+    <!-- message -->
 
     <?php
     if (isset($message)) {
@@ -60,6 +64,8 @@ if (isset($_GET['logout'])) {
         }
     }
     ?>
+
+    <!-- profile -->
 
     <div class="container">
 
@@ -87,12 +93,14 @@ if (isset($_GET['logout'])) {
                     <p class="box">Country : <span><?php echo $fetch_user['country']; ?></span> </p>
                 </div>
                 <a href="" class="btn">Edit</a>
-                
-                
+
+
             </div>
         </div>
 
     </div>
+
+    <!-- footer -->
 
     <section class="footer">
 
@@ -144,4 +152,3 @@ if (isset($_GET['logout'])) {
 </body>
 
 </html>
-
