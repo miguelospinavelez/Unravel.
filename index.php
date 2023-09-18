@@ -75,7 +75,7 @@ if (isset($_GET['logout'])) {
             $select_user = mysqli_query($conn, "SELECT * FROM `user_form` WHERE id = '$user_id'") or die('query failed');
             if (mysqli_num_rows($select_user) > 0) {
                 $fetch_user = mysqli_fetch_assoc($select_user);
-            }
+            };
             ?>
             <h1>Profile</h1>
             <p> username : <span><?php echo $fetch_user['name']; ?></span> </p>
@@ -93,9 +93,8 @@ if (isset($_GET['logout'])) {
                     <p class="box">Country : <span><?php echo $fetch_user['country']; ?></span> </p>
                 </div>
                 <a href="" class="btn">Edit</a>
-
-
             </div>
+
         </div>
 
     </div>
@@ -150,5 +149,4 @@ if (isset($_GET['logout'])) {
     <script src="js/script.js"></script>
 
 </body>
-
 </html>

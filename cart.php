@@ -6,7 +6,7 @@ $user_id =  $_SESSION['user_id'];
 
 if (!isset($user_id)) {
     header('location:login.php');
-}
+};
 
 if (isset($_GET['logout'])) {
     unset($user_id);
@@ -54,17 +54,11 @@ if (isset($_GET['logout'])) {
     </section>
 
 
-
     <!-- cart -->
 
     <section class="cart">
+
         <h1>shopping cart</h1>
-        <?php
-            $select_user = mysqli_query($conn, "SELECT * FROM `user_form` WHERE id = '$user_id'") or die('query failed');
-            if (mysqli_num_rows($select_user) > 0) {
-                $fetch_user = mysqli_fetch_assoc($select_user);
-            }
-            ?>
         <table>
             <thead>
                 <th>image</th>
@@ -76,7 +70,7 @@ if (isset($_GET['logout'])) {
             </thead>
             <tbody>
             <?php
-            $cart_query = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id ='user_id'") or die('query failed');
+            $cart_query = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id ='$user_id'") or die('query failed');
             if (mysqli_num_rows($cart_query) > 0) {
                 while ($fetch_cart = mysqli_fetch_assoc($cart_query)) {
             ?>
@@ -104,7 +98,6 @@ if (isset($_GET['logout'])) {
         }
         ?>
     </div>
-
 
 
     <!-- footer -->
@@ -157,5 +150,4 @@ if (isset($_GET['logout'])) {
     <script src="js\script.js"></script>
 
 </body>
-
 </html>

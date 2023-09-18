@@ -6,7 +6,7 @@ $user_id =  $_SESSION['user_id'];
 
 if (!isset($user_id)) {
     header('location:products.php');
-}
+};
 
 if (isset($_GET['logout'])) {
     unset($user_id);
@@ -73,7 +73,6 @@ if(isset($_POST['add_to_cart'])){
     </section>
 
 
-
     <!-- home -->
 
     <section class="home">
@@ -123,7 +122,6 @@ if(isset($_POST['add_to_cart'])){
     </section>
 
 
-
     <!-- products -->
 
     <section class="products">
@@ -167,12 +165,9 @@ if(isset($_POST['add_to_cart'])){
     </section>
 
 
-
-
     <!-- button -->
 
-
-    <div>
+            <div>
                 <?php
                 if (isset($message)) {
                     foreach ($message as $message) {
@@ -181,7 +176,6 @@ if(isset($_POST['add_to_cart'])){
                 }
                 ?>
             </div>
-
 
 
     <!-- footer -->
@@ -238,5 +232,4 @@ if(isset($_POST['add_to_cart'])){
     <script src="js\script.js"></script>
 
     </body>
-
 </html>
