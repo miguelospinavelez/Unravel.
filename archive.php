@@ -68,7 +68,7 @@ if (isset($_GET['logout'])) {
 
     <section class="archive">
 
-        <h1 class="heading-title"> top readings </h1>
+        <h1 class="heading-title"> articles & studies </h1>
 
         <div class="box-container">
 
