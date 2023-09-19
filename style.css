@@ -121,10 +121,16 @@ section {
 
 .delete-btn {
     background-color: rgb(207, 90, 90);
+    border-radius: 50px;
+    margin-right: 1rem;
+    align-items: center;
+    display: block;
 }
 
 .option-btn {
     background: var(--light-black);
+    border-radius: 50px;
+    margin-right: 1rem;
 }
 
 .heading-title {
@@ -647,9 +653,9 @@ section {
     background-size: 100%;
 }
 
-.cart h1{
+.cart .container h1{
     font-size: 5rem;
-    padding-bottom: 1.5rem;
+    padding-bottom: 5rem;
 }
 
 .cart table{
@@ -714,6 +720,12 @@ section {
 .cart table tbody .table-bottom td{
     font-size: 20px;
 }
+
+.cart .cart-btn{
+    margin-top: 10px;
+    text-align: center;
+}
+
 
 /* LOGIN/REGISTRATION */
 
@@ -937,6 +949,26 @@ section {
         margin: 2rem;
         text-align: center;
     }
+
+    .cart .container{
+        align-items: center;
+        display: inline;
+        justify-content: center;
+    }
+
+    .cart .container h1{
+        padding-bottom: 5rem;
+    }
+
+    .cart .container thead{
+        display: none;
+    }
+
+    .cart .container tr{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
 }
 
 @media (max-width: 450px) {
