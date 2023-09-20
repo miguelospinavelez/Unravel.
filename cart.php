@@ -26,6 +26,9 @@ if(isset($_GET['remove'])){
     mysqli_query($conn, "DELETE FROM `cart` WHERE id = '$remove_id'") or die('query failed');
 }
 
+if(isset($_GET['delete_all'])){
+    mysqli_query($conn, "DELETE FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
+}
 
 ?>
 <!DOCTYPE html>
@@ -70,6 +73,19 @@ if(isset($_GET['remove'])){
     </section>
 
 
+        <!-- button -->
+
+    <div>
+        <?php
+        if (isset($message)) {
+            foreach ($message as $message) {
+                echo '<div class="message" onclick="this.remove();">' . $message . '</div>';
+            }
+        }
+        ?>
+    </div>
+
+
     <!-- cart -->
 
     <section class="cart">
@@ -99,7 +115,7 @@ if(isset($_GET['remove'])){
                     ?>
                             <tr>
 
-                                <td><img src="imgs/<?php echo $fetch_cart['image']; ?>" alt="" height="130"></td>
+                                <td><img src="imgs/<?php echo $fetch_cart['image']; ?>" alt="" height="110"></td>
 
                                 <td><?php echo $fetch_cart['name']; ?></td>
 
@@ -126,18 +142,20 @@ if(isset($_GET['remove'])){
                             </tr>
                     <?php
                             $grand_total += $sub_total;
-                        }
+                        };
+                    }else{ 
+                        echo '<tr class="empty"><td style="padding: 20px; text-transform: capitalize" colspan="6" >cart is empty</td></tr>';
                     }
                     ?>
 
                     <tr class="table-bottom">
 
-                        <td colspan="4">grand total :</td>
+                        <td colspan="4">total :</td>
 
                         <td>$<?php echo $grand_total; ?>.00 USD</td>
 
                         <td>
-                            <a href="cart.php?delete_all" onclick="return confirm('delete all from cart?');" class="delete-btn">remove all</a>
+                            <a href="cart.php?delete_all" onclick="return confirm('remove all from cart?');" class="delete-btn <?php echo ($grand_total > 1) ? '' : 'disabled'; ?>">remove all</a>
                         </td>
 
                     </tr>
@@ -154,18 +172,6 @@ if(isset($_GET['remove'])){
 
     </section>
 
-
-    <!-- button -->
-
-    <div>
-        <?php
-        if (isset($message)) {
-            foreach ($message as $message) {
-                echo '<div class="message" onclick="this.remove();">' . $message . '</div>';
-            }
-        }
-        ?>
-    </div>
 
 
     <!-- footer -->

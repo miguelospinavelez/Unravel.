@@ -714,10 +714,6 @@ section {
     box-shadow: none;
 }
 
-.cart table tbody .table-bottom:hover{
-    transform: none;
-}
-
 .cart table tbody .table-bottom td{
     font-size: 20px;
 }
@@ -725,6 +721,24 @@ section {
 .cart .cart-btn{
     margin-top: 10px;
     text-align: center;
+}
+
+.cart .cart-btn .disabled{
+    pointer-events: none;
+    opacity: 0.7;
+    user-select: none;
+}
+
+.delete-btn .disabled{
+    pointer-events: none;
+    opacity: 0.7;
+    user-select: none;
+}
+
+.cart .empty{
+    text-align: center;
+    align-items: center;
+    box-shadow: none;
 }
 
 

@@ -40,7 +40,7 @@ if(isset($_POST['add_to_cart'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unravel. | Products</title>
+    <title>Unravel. | Browse Our Products</title>
 
     <!-- favicon link -->
     <link rel="icon" type="image/x-icon" href="imgs/icons/favicon.ico">
@@ -74,6 +74,9 @@ if(isset($_POST['add_to_cart'])){
 
 
     </section>
+
+
+      
 
 
     <!-- home -->
@@ -155,6 +158,7 @@ if(isset($_POST['add_to_cart'])){
                         <input type="hidden" name="product_price" value="<?php echo $fetch_product['price']; ?>">
 
                         <input type="submit" value="add to cart" name="add_to_cart" class="btn">
+                        
 
                     </form>
 
@@ -165,12 +169,12 @@ if(isset($_POST['add_to_cart'])){
             ?>
             
         </div>
+        
     </section>
-
 
     <!-- button -->
 
-            <div>
+    <div>
                 <?php
                 if (isset($message)) {
                     foreach ($message as $message) {
