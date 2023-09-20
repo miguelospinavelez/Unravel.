@@ -1,7 +1,15 @@
+TO DO:
+
 -Redirect offline links for logged users
 -Cart styles
 -Cart functionalty
--terms of use
--privacy
+-Order form
+-Payment gateway
 -Edit profile and info
 -Profile management
+-terms of use
+-privacy
+-Sanitize forms
+-Languages
+-Dark mode
+-Content
