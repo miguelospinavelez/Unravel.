@@ -14,6 +14,19 @@ if (isset($_GET['logout'])) {
     header('location:products.php');
 };
 
+if(isset($_POST['update_cart'])){
+    $update_quantity = $_POST['cart_quantity'];
+    $update_id = $_POST['cart_id'];
+    mysqli_query($conn, "UPDATE `cart` SET quantity = '$update_quantity' WHERE id = '$update_id'") or die('query failed');
+    $message[] = 'cart quantity updated';
+};
+
+if(isset($_GET['remove'])){
+    $remove_id = $_GET['remove'];
+    mysqli_query($conn, "DELETE FROM `cart` WHERE id = '$remove_id'") or die('query failed');
+}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +34,7 @@ if (isset($_GET['logout'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unravel. | Cart</title>
+    <title>Unravel. | Shopping Cart</title>
 
     <!-- favicon link -->
     <link rel="icon" type="image/x-icon" href="imgs/icons/favicon.ico">
@@ -123,7 +136,9 @@ if (isset($_GET['logout'])) {
 
                         <td>$<?php echo $grand_total; ?>.00 USD</td>
 
-                        <td><a href="cart.php?delete_all" onclick="return confirm('delete all from cart?');" class="delete-btn">remove all</a></td>
+                        <td>
+                            <a href="cart.php?delete_all" onclick="return confirm('delete all from cart?');" class="delete-btn">remove all</a>
+                        </td>
 
                     </tr>
 

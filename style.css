@@ -662,6 +662,12 @@ section {
     padding: 1.5rem;
 }
 
+.cart .container{
+    align-items: center;
+    display: inline;
+    justify-content: center;
+}
+
 .cart table thead th{
     font-size: large;
 }
@@ -690,7 +696,7 @@ section {
 }
 
 .cart table tbody tr:hover{
-    transform: scale(1.1);
+    transform: scale(1.05);
     margin: 1rem;
 }
 
@@ -893,6 +899,19 @@ section {
     section {
         padding: 3rem 5%;
     }
+
+    .cart .container thead{
+        display: none;
+    }
+
+    .cart .container tr{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .cart table tbody .table-bottom:hover{
+        transform: none;
+    }
 }
 
 @media (max-width: 991px) {
@@ -910,6 +929,19 @@ section {
 
     .home .slide .content h3 {
         font-size: 10vw;
+    }
+
+    .cart .container thead{
+        display: none;
+    }
+
+    .cart .container tr{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .cart table tbody .table-bottom:hover{
+        transform: none;
     }
 }
 
@@ -964,6 +996,10 @@ section {
         flex-wrap: wrap;
     }
 
+    .cart table tbody .table-bottom:hover{
+        transform: none;
+    }
+
 }
 
 @media (max-width: 450px) {
@@ -977,6 +1013,10 @@ section {
 
     .login .form-container form{
         width: 600px;
+    }
+
+    .cart table tbody .table-bottom:hover{
+        transform: none;
     }
 }
 
