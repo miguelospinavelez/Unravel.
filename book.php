@@ -75,6 +75,18 @@ if(isset($_POST['add_to_cart'])){
 
     </section>
 
+     <!-- button -->
+
+     <div>
+                <?php
+                if (isset($message)) {
+                    foreach ($message as $message) {
+                        echo '<div class="message" onclick="this.remove();">' . $message . '</div>';
+                    }
+                }
+                ?>
+            </div>
+
 
       
 
@@ -171,18 +183,6 @@ if(isset($_POST['add_to_cart'])){
         </div>
         
     </section>
-
-    <!-- button -->
-
-    <div>
-                <?php
-                if (isset($message)) {
-                    foreach ($message as $message) {
-                        echo '<div class="message" onclick="this.remove();">' . $message . '</div>';
-                    }
-                }
-                ?>
-            </div>
 
 
     <!-- footer -->
