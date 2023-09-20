@@ -30,7 +30,7 @@ if (isset($_POST['submit'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
+    <title>Unravel. | Registration</title>
 
     <!-- favicon link -->
     <link rel="icon" type="image/x-icon" href="imgs/icons/favicon.ico">

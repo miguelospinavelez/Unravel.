@@ -21,7 +21,7 @@ if (isset($_GET['logout'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart</title>
+    <title>Unravel. | Cart</title>
 
     <!-- favicon link -->
     <link rel="icon" type="image/x-icon" href="imgs/icons/favicon.ico">

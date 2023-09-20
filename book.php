@@ -40,7 +40,7 @@ if(isset($_POST['add_to_cart'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products</title>
+    <title>Unravel. | Products</title>
 
     <!-- favicon link -->
     <link rel="icon" type="image/x-icon" href="imgs/icons/favicon.ico">
