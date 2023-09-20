@@ -1,0 +1,7 @@
+-Redirect offline links for logged users
+-Cart styles
+-Cart functionalty
+-terms of use
+-privacy
+-Edit profile and info
+-Profile management
