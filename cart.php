@@ -77,6 +77,7 @@ if (isset($_GET['logout'])) {
                 </thead>
 
                 <tbody>
+                    
                     <?php
                     $grand_total = 0;
                     $cart_query = mysqli_query($conn, "SELECT * FROM `cart` WHERE user_id ='$user_id'") or die('query failed');
@@ -86,7 +87,9 @@ if (isset($_GET['logout'])) {
                             <tr>
 
                                 <td><img src="imgs/<?php echo $fetch_cart['image']; ?>" alt="" height="130"></td>
+
                                 <td><?php echo $fetch_cart['name']; ?></td>
+
                                 <td>$<?php echo $fetch_cart['price']; ?> USD</td>
 
                                 <td>
@@ -100,7 +103,8 @@ if (isset($_GET['logout'])) {
                                 </td>
 
                                 <td>$<?php echo $sub_total = number_format($fetch_cart['price'] * $fetch_cart['quantity']); ?>.00 USD</td>
-                                <td><a href="cart.php?remove=<?php echo $fetch_cart['id'] ?>" class="delete-btn" onclick="return confirm('remove item from cart?')">remove</a></td>
+
+                                <td><a href="cart.php?remove=<?php echo $fetch_cart['id']; ?>" class="delete-btn" onclick="return confirm('remove item from cart?')">remove</a></td>
 
                             </tr>
                     <?php
@@ -112,7 +116,9 @@ if (isset($_GET['logout'])) {
                     <tr class="table-bottom">
 
                         <td colspan="4">grand total :</td>
+
                         <td>$<?php echo $grand_total; ?>.00 USD</td>
+
                         <td><a href="cart.php?delete_all" onclick="return confirm('delete all from cart?');" class="delete-btn">remove all</a></td>
 
                     </tr>
