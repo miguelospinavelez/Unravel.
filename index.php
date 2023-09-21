@@ -23,7 +23,7 @@ if (isset($_GET['logout'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unravel. | Profile</title>
+    <title>Unravel. | My Profile</title>
 
     <!-- favicon link -->
     <link rel="icon" type="image/x-icon" href="imgs/icons/favicon.ico">
@@ -71,35 +71,38 @@ if (isset($_GET['logout'])) {
     <!-- profile -->
 
     <div class="container">
+        <?php
+        $select_user = mysqli_query($conn, "SELECT * FROM `user_form` WHERE id = '$user_id'") or die('query failed');
+        if (mysqli_num_rows($select_user) > 0) {
+            $fetch_user = mysqli_fetch_assoc($select_user);
+        };
+        ?>
+
+        <h1>Welcome, <span><?php echo $fetch_user['name']; ?></span></h1>
 
         <div class="user-profile">
+            <h2>Profile</h2>
 
-            <?php
-            $select_user = mysqli_query($conn, "SELECT * FROM `user_form` WHERE id = '$user_id'") or die('query failed');
-            if (mysqli_num_rows($select_user) > 0) {
-                $fetch_user = mysqli_fetch_assoc($select_user);
-            };
-            ?>
-            <h1>Profile</h1>
             <p> username : <span><?php echo $fetch_user['name']; ?></span> </p>
+
             <div class="flex">
+
                 <div>
-                    <h1>Contact information</h1>
+                    <h3>Contact information</h3>
                     <p class="box"> email : <span><?php echo $fetch_user['email']; ?></span> </p>
                     <p class="box">phone : <span><?php echo $fetch_user['phone']; ?></span> </p>
                 </div>
+
                 <div>
-                    <h1>Shipping information</h1>
+                    <h3>Shipping information</h3>
                     <p class="box">address : <span><?php echo $fetch_user['address']; ?></span> </p>
                     <p class="box">city : <span><?php echo $fetch_user['city']; ?></span></p>
                     <p class="box">state : <span><?php echo $fetch_user['state']; ?></span> </p>
                     <p class="box">Country : <span><?php echo $fetch_user['country']; ?></span> </p>
                 </div>
-                <a href="" class="btn">Edit</a>
+
             </div>
-
         </div>
-
     </div>
 
     <!-- footer -->

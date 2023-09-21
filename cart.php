@@ -144,7 +144,7 @@ if(isset($_GET['delete_all'])){
                             $grand_total += $sub_total;
                         };
                     }else{ 
-                        echo '<tr class="empty"><td style="padding: 20px; text-transform: capitalize" colspan="6" >cart is empty</td></tr>';
+                        echo '<tr><td style="padding: 20px; text-transform: capitalize" colspan="6" >cart is empty</td></tr>';
                     }
                     ?>
 
@@ -164,7 +164,7 @@ if(isset($_GET['delete_all'])){
 
             </table>
 
-            <div class="cart-btn">
+            <div class="checkout-btn">
                 <a href="" class="btn <?php echo ($grand_total > 1) ? '' : 'disabled'; ?>">check out</a>
             </div>
 

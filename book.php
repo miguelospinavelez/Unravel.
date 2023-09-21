@@ -144,7 +144,9 @@ if (isset($_POST['add_to_cart'])) {
 
     <section class="products">
         <h1>Try our Products</h1>
+        <a href="cart.php" class="cart-btn">cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a></i>
         <div class="box-container">
+            
             <?php
             $select_product = mysqli_query($conn, "SELECT * FROM `products`") or die('query failed');
             if (mysqli_num_rows($select_product) > 0) {
@@ -181,6 +183,7 @@ if (isset($_POST['add_to_cart'])) {
             ?>
 
         </div>
+
 
     </section>
 
