@@ -1,20 +1,11 @@
 <?php
 
 include 'config.php';
-
-if (!isset($user_id)) {
-} else {
-    session_start();
-    $user_id =  $_SESSION['user_id'];
+session_start();
+if (isset($_SESSION['user_id'])) {
+    header('location:book.php');
+    exit; 
 }
-
-if (isset($_GET['logout'])) {
-    unset($user_id);
-    session_destroy();
-    header('location:login.php');
-};
-
-
 
 ?>
 <!DOCTYPE html>

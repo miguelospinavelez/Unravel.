@@ -25,7 +25,7 @@ if (isset($_GET['logout'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unravel. | About us</title>
+    <title>Unravel. | About Us</title>
 
     <!-- favicon link -->
     <link rel="icon" type="image/x-icon" href="imgs/icons/favicon.ico">

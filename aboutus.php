@@ -1,21 +1,11 @@
 <?php
 
 include 'config.php';
-
-if (!isset($user_id)) {
-   
-}else{
 session_start();
-$user_id =  $_SESSION['user_id'];
+if (isset($_SESSION['user_id'])) {
+    header('location:about.php');
+    exit; 
 }
-
-if (isset($_GET['logout'])) {
-    unset($user_id);
-    session_destroy();
-    header('location:login.php');
-};
-
-
 
 ?>
 
@@ -25,7 +15,7 @@ if (isset($_GET['logout'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unravel. | About us</title>
+    <title>Unravel. | About Us</title>
 
     <!-- favicon link -->
     <link rel="icon" type="image/x-icon" href="imgs/icons/favicon.ico">

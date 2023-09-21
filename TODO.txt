@@ -1,11 +1,10 @@
 TO DO:
 
 -Redirect offline links for logged users
+-nav highlight and fices
 -Cart styles
--Cart functionalty
 -Order form
 -Payment gateway
--Edit profile and info
 -Profile management
 -terms of use
 -privacy
