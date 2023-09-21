@@ -64,7 +64,7 @@ if (isset($_GET['logout'])) {
     <!-- header section ends -->
 
 
-    <div class="heading" style="background: url(imgs/wp4413789.jpg) no-repeat;">
+    <div class="heading" style="background: url(imgs/abt/morning.png) no-repeat;">
         <h1>about us</h1>
     </div>
 
