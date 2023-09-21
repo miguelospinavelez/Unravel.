@@ -53,7 +53,7 @@ if (isset($_SESSION['user_id'])) {
     <!-- header section ends -->
 
 
-    <div class="heading" style="background: url(imgs/wp4413789.jpg) no-repeat;">
+    <div class="heading" style="background: url(imgs/abt/noon.jpg) no-repeat;">
         <h1>about us</h1>
     </div>
 
