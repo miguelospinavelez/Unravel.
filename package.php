@@ -50,10 +50,10 @@ if (isset($_GET['logout'])) {
         <nav class="navbar">
             <a href="home.php">home</a>
             <a href="about.php">about</a>
+            <a style="color:blueviolet">archive</a>
             <a href="book.php">products</a>
-            <a href="cart.php">cart</a>
             <a href="index.php">Profile</a>
-            <a href="package.php?logout=<?php echo $user_id; ?>" onclick="return confirm('are you sure you want to log out?')">log out</a>
+            <a href="package.php?logout=<?php echo $user_id; ?>" onclick="return confirm('are you sure you want to log out?')">exit</a>
         </nav>
         </nav>
 
@@ -63,7 +63,7 @@ if (isset($_GET['logout'])) {
     </section>
 
 
-     <!-- archive -->
+    <!-- archive -->
 
     <div class="heading" style="background: url(imgs/archive.jpg) no-repeat;">
         <h1>Archive</h1>

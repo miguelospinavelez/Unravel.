@@ -65,7 +65,7 @@ if(isset($_GET['delete_all'])){
             <a href="package.php">archive</a>
             <a href="book.php">products</a>
             <a href="index.php">Profile</a>
-            <a href="cart.php?logout=<?php echo $user_id; ?>" onclick="return confirm('are you sure you want to log out?')">log out</a>
+            <a href="cart.php?logout=<?php echo $user_id; ?>" onclick="return confirm('are you sure you want to log out?')">exit</a>
         </nav>
         <div id="menu-btn" class="fas fa-bars"></div>
 

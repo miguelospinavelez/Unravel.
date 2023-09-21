@@ -40,7 +40,7 @@ if (isset($_SESSION['user_id'])) {
             <a href="home.php">home</a>
             <a href="about.php">about</a>
             <a href="package.php">archive</a>
-            <a href="products.php">products</a>
+            <a style="color:blueviolet">products</a>
             <a href="login.php">Log in</a>
         </nav>
         <div id="menu-btn" class="fas fa-bars"></div>

@@ -40,7 +40,7 @@ if (isset($_SESSION['user_id'])) {
         <nav class="navbar">
             <a href="home.php">home</a>
             <a href="about.php">about</a>
-            <a href="package.php">archive</a>
+            <a style="color:blueviolet">archive</a>
             <a href="book.php">products</a>
             <a href="login.php">Log in</a>
         </nav>

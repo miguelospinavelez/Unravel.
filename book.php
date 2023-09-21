@@ -14,21 +14,21 @@ if (isset($_GET['logout'])) {
     header('location:products.php');
 };
 
-if(isset($_POST['add_to_cart'])){
+if (isset($_POST['add_to_cart'])) {
 
     $product_name = $_POST['product_name'];
     $product_price = $_POST['product_price'];
     $product_image = $_POST['product_image'];
     $product_quantity = $_POST['product_quantity'];
 
-    
+
 
     $select_cart = mysqli_query($conn, "SELECT * FROM `cart` WHERE name = '$product_name' AND user_id = '$user_id'") or die('query failed');
 
-    if(mysqli_num_rows($select_cart) > 0){
+    if (mysqli_num_rows($select_cart) > 0) {
         $message[] = 'product already in cart';
-    }else{
-        mysqli_query($conn, "INSERT INTO `cart`(user_id, name, price, image, quantity) VALUES ('$user_id', '$product_name','$product_price', '$product_image', '$product_quantity')" ) or die('query failed');
+    } else {
+        mysqli_query($conn, "INSERT INTO `cart`(user_id, name, price, image, quantity) VALUES ('$user_id', '$product_name','$product_price', '$product_image', '$product_quantity')") or die('query failed');
         $message[] = 'product added to cart';
     }
 }
@@ -66,29 +66,29 @@ if(isset($_POST['add_to_cart'])){
             <a href="home.php">home</a>
             <a href="about.php">about</a>
             <a href="package.php">archive</a>
-            <a href="cart.php">cart</a>
+            <a style="color:blueviolet">products</a>
             <a href="index.php">Profile</a>
-            <a href="book.php?logout=<?php echo $user_id; ?>" onclick="return confirm('are you sure you want to log out?')">log out</a>
+            <a href="book.php?logout=<?php echo $user_id; ?>" onclick="return confirm('are you sure you want to log out?')">exit</a>
         </nav>
         <div id="menu-btn" class="fas fa-bars"></div>
 
 
     </section>
 
-     <!-- button -->
+    <!-- button -->
 
-     <div>
-                <?php
-                if (isset($message)) {
-                    foreach ($message as $message) {
-                        echo '<div class="message" onclick="this.remove();">' . $message . '</div>';
-                    }
-                }
-                ?>
-            </div>
+    <div>
+        <?php
+        if (isset($message)) {
+            foreach ($message as $message) {
+                echo '<div class="message" onclick="this.remove();">' . $message . '</div>';
+            }
+        }
+        ?>
+    </div>
 
 
-      
+
 
 
     <!-- home -->
@@ -147,8 +147,8 @@ if(isset($_POST['add_to_cart'])){
         <div class="box-container">
             <?php
             $select_product = mysqli_query($conn, "SELECT * FROM `products`") or die('query failed');
-            if(mysqli_num_rows($select_product) > 0) {
-                while($fetch_product = mysqli_fetch_assoc($select_product)) {
+            if (mysqli_num_rows($select_product) > 0) {
+                while ($fetch_product = mysqli_fetch_assoc($select_product)) {
             ?>
 
                     <form method="post" class="box" action="">
@@ -170,7 +170,7 @@ if(isset($_POST['add_to_cart'])){
                         <input type="hidden" name="product_price" value="<?php echo $fetch_product['price']; ?>">
 
                         <input type="submit" value="add to cart" name="add_to_cart" class="btn">
-                        
+
 
                     </form>
 
@@ -179,9 +179,9 @@ if(isset($_POST['add_to_cart'])){
                 };
             };
             ?>
-            
+
         </div>
-        
+
     </section>
 
 
@@ -238,5 +238,6 @@ if(isset($_POST['add_to_cart'])){
     <!-- custom js file link -->
     <script src="js\script.js"></script>
 
-    </body>
+</body>
+
 </html>
