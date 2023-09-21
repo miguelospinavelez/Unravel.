@@ -43,7 +43,7 @@ if (isset($_POST['add_to_cart'])) {
     <title>Unravel. | Browse Our Products</title>
 
     <!-- favicon link -->
-    <link rel="icon" type="image/x-icon" href="imgs/icons/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="imgs/icons/fav/6.ico">
 
     <!-- swiper css link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
