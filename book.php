@@ -66,7 +66,7 @@ if (isset($_POST['add_to_cart'])) {
             <a href="home.php">home</a>
             <a href="about.php">about</a>
             <a href="package.php">archive</a>
-            <a style="color:blueviolet">products</a>
+            <a style="color:blueviolet; pointer-events: none;">products</a>
             <a href="index.php">Profile</a>
             <a href="book.php?logout=<?php echo $user_id; ?>" onclick="return confirm('are you sure you want to log out?')">exit</a>
         </nav>

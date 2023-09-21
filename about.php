@@ -49,7 +49,7 @@ if (isset($_GET['logout'])) {
         <a href="home.php" class="logo">Unravel.</a>
         <nav class="navbar">
             <a href="home.php">home</a>
-            <a style="color:blueviolet">about</a>
+            <a style="color:blueviolet; pointer-events: none;">about</a>
             <a href="package.php">archive</a>
             <a href="book.php">products</a>
             <a href="index.php">Profile</a>

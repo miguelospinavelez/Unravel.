@@ -54,7 +54,7 @@ if (isset($_POST['submit'])) {
             <a href="about.php">about</a>
             <a href="package.php">archive</a>
             <a href="products.php">products</a>
-            <a style="color:blueviolet">log in</a>
+            <a style="color:blueviolet; pointer-events: none;">log in</a>
         </nav>
 
         <div id="menu-btn" class="fas fa-bars"></div>

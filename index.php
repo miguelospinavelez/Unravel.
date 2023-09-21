@@ -50,7 +50,7 @@ if (isset($_GET['logout'])) {
             <a href="about.php">about</a>
             <a href="package.php">archive</a>
             <a href="book.php">products</a>
-            <a style="color:blueviolet">Profile</a>
+            <a style="color:blueviolet; pointer-events: none;">Profile</a>
             <a href="index.php?logout=<?php echo $user_id; ?>" onclick="return confirm('are you sure you want to log out?')">exit</a>
         </nav>
         <div id="menu-btn" class="fas fa-bars"></div>

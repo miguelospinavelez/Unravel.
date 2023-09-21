@@ -1,6 +1,7 @@
 TO DO:
 
 -Nav sizes fix
+-Products fixes
 -Cart button
 -Cart styles
 -Order form
@@ -9,6 +10,7 @@ TO DO:
 -terms of use
 -privacy
 -Sanitize forms
+-Sizes
 -Languages
 -Dark mode
 -Content

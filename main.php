@@ -38,7 +38,7 @@ if (isset($_SESSION['user_id'])) {
 
         <a href="home.php" class="logo">Unravel.</a>
         <nav class="navbar">
-            <a style="color:blueviolet">home</a>
+            <a style="color:blueviolet; pointer-events: none;">home</a>
             <a href="about.php">about</a>
             <a href="package.php">archive</a>
             <a href="book.php">products</a>
