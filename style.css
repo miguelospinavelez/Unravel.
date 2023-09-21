@@ -645,7 +645,7 @@ section {
 }
 
 .products .box-container .box:hover{
-    transform: scale(1.03);
+    transform: scale(1.02);
     opacity: 2;
 }
 
@@ -660,7 +660,7 @@ section {
 
 .products .cart-btn{
     position:sticky;
-    left: 1500px;
+    left: 1600px;
 }
 
 .products .cart-btn:hover{
@@ -963,6 +963,7 @@ section {
     .cart table tbody .table-bottom:hover{
         transform: none;
     }
+
 }
 
 @media (max-width: 991px) {
@@ -994,6 +995,11 @@ section {
     .cart table tbody .table-bottom:hover{
         transform: none;
     }
+
+    .products .cart-btn{      
+        top: 125px;
+        font-size: 18px;
+        }
 }
 
 @media (max-width: 768px) {
@@ -1051,8 +1057,8 @@ section {
         transform: none;
     }
 
-    .cart .cart-btn{
-        font-size: 20px;
+    .products .cart-btn{      
+    top: 125px;
     }
 
 }
@@ -1072,6 +1078,10 @@ section {
 
     .cart table tbody .table-bottom:hover{
         transform: none;
+    }
+
+    .cart-btn{
+        transform: scale(1.1);
     }
 }
 

@@ -144,7 +144,7 @@ if (isset($_POST['add_to_cart'])) {
 
     <section class="products">
         <h1>Try our Products</h1>
-        <a href="cart.php" class="cart-btn">cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a></i>
+        <a href="cart.php" class="cart-btn">cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
         <div class="box-container">
             
             <?php
