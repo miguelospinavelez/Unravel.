@@ -64,7 +64,7 @@ if (isset($_GET['logout'])) {
     <!-- header section ends -->
 
 
-    <div class="heading" style="background: url(imgs/abt/morning.png) no-repeat;">
+    <div class="heading" style="background: url(imgs/abt/<?php echo (rand(1, 3));?>.png) no-repeat;">
         <h1>about us</h1>
     </div>
 

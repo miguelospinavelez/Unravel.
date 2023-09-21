@@ -53,7 +53,7 @@ if (isset($_SESSION['user_id'])) {
     <!-- header section ends -->
 
 
-    <div class="heading" style="background: url(imgs/abt/noon.jpg) no-repeat;">
+    <div class="heading" style="background: url(imgs/abt/<?php echo (rand(1, 3));?>.png) no-repeat;">
         <h1>about us</h1>
     </div>
 
