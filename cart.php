@@ -165,10 +165,33 @@ if(isset($_GET['delete_all'])){
             </table>
 
             <div class="checkout-btn">
-                <a href="" class="btn <?php echo ($grand_total > 1) ? '' : 'disabled'; ?>">check out</a>
-            </div>
+                <div class="checkout-btn <?php echo ($grand_total > 1) ? '' : 'disabled'; ?>">
 
-        </div>
+                    <!-- =====================================================================
+                ///////////   Este es su botón de Botón de pago ePayco   ///////////
+                ===================================================================== -->
+                     <form class="">
+                        <script src='https://checkout.epayco.co/checkout.js'
+                            data-epayco-key='0fc69c553288c82a6a6e83653039b150' 
+                            class='epayco-button' 
+                            data-epayco-amount='<?php echo $grand_total; ?>' 
+                            data-epayco-tax='0.00'  
+                            data-epayco-tax-ico='0.00'               
+                            data-epayco-tax-base='<?php echo $grand_total; ?>'
+                            data-epayco-name='Botánicos' 
+                            data-epayco-description='Productos botánicos a base de setas.' 
+                            data-epayco-currency='usd'    
+                            data-epayco-country='CO' 
+                            data-epayco-test='true' 
+                            data-epayco-external='false' 
+                            data-epayco-response=''  
+                            data-epayco-confirmation='confirmation.php' 
+                            data-epayco-button='https://multimedia.epayco.co/dashboard/btns/btn3.png'> 
+                        </script> 
+                     </form> <!-- ================================================================== -->
+                 </div>     
+             </div>
+     </div>
 
     </section>
 

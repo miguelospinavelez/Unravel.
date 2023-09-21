@@ -1,17 +1,20 @@
 TO DO:
 
--Nav sizes fix
+-Nav re-size fix
 -Products fixes
 -Cart button
 -Cart styles
 -Order form
 -Payment gateway
 -Profile
--terms of use
--privacy
+-Archive & home grid fixes
+-Terms of use
+-Privacy
 -Sanitize forms
 -Minify imgs
--Sizes
--Languages
--Dark mode
+-Responsiveness
 -Content
+-Languages
+-Confirmation emails
+-Newsletter
+-Dark mode

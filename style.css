@@ -91,6 +91,7 @@ section {
 
 }
 
+
 .btn {
     margin-top: 1rem;
     display: inline-block;
@@ -750,12 +751,20 @@ section {
 .cart .checkout-btn{
     margin-top: 10px;
     text-align: center;
+    transform: scale(1.18);
+}
+
+.cart .checkout-btn:hover{
+    color: var(--main-color);
+    transform: scale(1.2);
 }
 
 .cart .checkout-btn .disabled{
+    margin-top: 10px;
     pointer-events: none;
     opacity: 0.7;
     user-select: none;
+    transform: none;
 }
 
 .delete-btn .disabled{
@@ -769,7 +778,7 @@ section {
 
 .login {
     background-image: url(imgs/wavy.jpg);
-    background-position: fixed;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: 100%;
 }
