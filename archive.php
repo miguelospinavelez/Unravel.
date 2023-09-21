@@ -32,7 +32,7 @@ if (isset($_SESSION['user_id'])) {
 
 <body>
 
-    <!-- header section starts -->
+    <!-- header -->
 
     <section class="header">
 
@@ -50,14 +50,12 @@ if (isset($_SESSION['user_id'])) {
 
     </section>
 
-    <!-- header section ends -->
 
-
-<div class="heading" style="background: url(imgs/archive.jpg) no-repeat;">
+<div class="heading" style="background: url(imgs/bg/wallpaper-wavy.jpg) no-repeat;">
     <h1>Archive</h1>
 </div>
 
-<!-- archive section starts -->
+<!-- archive -->
 
     <section class="archive">
 
@@ -136,16 +134,12 @@ if (isset($_SESSION['user_id'])) {
 
     </section>
 
-<!-- archive section ends -->
 
 
 
 
 
-
-
-
-    <!-- footer section starts -->
+    <!-- footer -->
 
     <section class="footer">
 
@@ -189,8 +183,6 @@ if (isset($_SESSION['user_id'])) {
             <p>© 2021 Unravel. All rights reserved | Created by <span>Myself</span> Web Design</p>
         </div>
     </section>
-
-    <!-- footer section ends -->
 
 
     <!-- swiper js link -->
