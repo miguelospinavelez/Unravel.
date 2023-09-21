@@ -17,7 +17,7 @@ if (isset($_SESSION['user_id'])) {
     <title>Unravel. | Products</title>
 
     <!-- favicon link -->
-    <link rel="icon" type="image/x-icon" href="imgs/icons/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="imgs/icons/fav/6.ico">
 
     <!-- swiper css link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
