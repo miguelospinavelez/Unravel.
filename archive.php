@@ -51,7 +51,9 @@ if (isset($_SESSION['user_id'])) {
     </section>
 
 
-<div class="heading" style="background: url(imgs/bg/wallpaper-wavy.jpg) no-repeat;">
+<div class="heading" style="background: url(imgs/bg/<?php
+echo(rand(1,10));
+?>.jpg) no-repeat;">
     <h1>Archive</h1>
 </div>
 
