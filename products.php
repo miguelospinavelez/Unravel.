@@ -120,7 +120,7 @@ if (isset($_SESSION['user_id'])) {
 
                         <div class="price">$<?php echo $fetch_product['price']; ?> USD</div>
 
-                        <input type="number" class="amount" min="1" name="product_quantity" value="1">
+                        <input type="number" class="amount" min="1" style="user-select: none; pointer-events: none; opacity:0.3;" name="product_quantity" value="1">
 
                         <input type="hidden" name="product_image" value="<?php echo $fetch_product['image']; ?>">
 
@@ -128,7 +128,7 @@ if (isset($_SESSION['user_id'])) {
 
                         <input type="hidden" name="product_price" value="<?php echo $fetch_product['price']; ?>">
 
-                        <a href="login.php" class="btn">Buy now</a>
+                        <a href="login.php" class="btn" >Buy now</a>
 
                     </form>
 
