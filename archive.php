@@ -4,7 +4,7 @@ include 'config.php';
 session_start();
 if (isset($_SESSION['user_id'])) {
     header('location:package.php');
-    exit; 
+    exit;
 }
 
 ?>
@@ -51,13 +51,13 @@ if (isset($_SESSION['user_id'])) {
     </section>
 
 
-<div class="heading" style="background: url(imgs/bg/<?php
-echo(rand(1,10));
-?>.jpg) no-repeat;">
-    <h1>Archive</h1>
-</div>
 
-<!-- archive -->
+
+    <!-- archive -->
+
+    <div class="heading" style="background: url(imgs/bg/<?php echo (rand(1, 10));?>.jpg) no-repeat;">
+        <h1>Archive</h1>
+    </div>
 
     <section class="archive">
 
