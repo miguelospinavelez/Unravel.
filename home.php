@@ -286,10 +286,6 @@ if (isset($_GET['logout'])) {
         </div>
     </section>
 
-    <!-- footer section ends -->
-
-
-
 
     <!-- swiper js link -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
@@ -297,6 +293,7 @@ if (isset($_GET['logout'])) {
 
     <!-- custom js file link -->
     <script src="js/script.js"></script>
+
 
 </body>
 
