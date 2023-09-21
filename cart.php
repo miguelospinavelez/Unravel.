@@ -179,13 +179,13 @@ if(isset($_GET['delete_all'])){
                             data-epayco-tax-ico='0.00'               
                             data-epayco-tax-base='<?php echo $grand_total; ?>'
                             data-epayco-name='Botánicos' 
-                            data-epayco-description='Productos botánicos a base de setas.' 
+                            data-epayco-description='Productos botánicos' 
                             data-epayco-currency='usd'    
                             data-epayco-country='CO' 
                             data-epayco-test='true' 
                             data-epayco-external='false' 
                             data-epayco-response=''  
-                            data-epayco-confirmation='confirmation.php' 
+                            data-epayco-confirmation='' 
                             data-epayco-button='https://multimedia.epayco.co/dashboard/btns/btn3.png'> 
                         </script> 
                      </form> <!-- ================================================================== -->
