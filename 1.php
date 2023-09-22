@@ -40,7 +40,7 @@ if (isset($_POST['add_to_cart'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unravel. | Browse Our Products</title>
+    <title>Unravel. | Psilocybin & Lion Mane Capsules</title>
 
     <!-- favicon link -->
     <link rel="icon" type="image/x-icon" href="imgs/icons/fav/6.ico">
@@ -66,7 +66,7 @@ if (isset($_POST['add_to_cart'])) {
             <a href="home.php">home</a>
             <a href="about.php">about</a>
             <a href="package.php">archive</a>
-            <a style="color:blueviolet; pointer-events: none;">products</a>
+            <a href="book.php">products</a>
             <a href="index.php">Profile</a>
             <a href="book.php?logout=<?php echo $user_id; ?>" onclick="return confirm('are you sure you want to log out?')">exit</a>
         </nav>
@@ -89,75 +89,25 @@ if (isset($_POST['add_to_cart'])) {
 
 
 
-    <!-- home -->
-
-    <section class="home">
-
-        <div class="swiper home-slider">
-
-            <div class="swiper-wrapper">
-
-                <div class="swiper-slide slide" style="background-image: url(imgs/microdose.jpg);">
-                    <div class="content">
-                        <span>microdose</span>
-                        <h3>Psilocybin & Lion Mane Capsules</h3>
-
-                        <a href="micro.php" class="btn">learn more</a>
-                    </div>
-                </div>
-
-
-
-                <div class="swiper-slide slide" style="background-image:url(imgs/dust.jpg)">
-                    <div class="content">
-                        <span>mushroom powders</span>
-                        <h3>Psilocybin Mushroom Powder</h3>
-
-                        <a href="powder.php" class="btn">learn more</a>
-
-                    </div>
-                </div>
-
-                <div class="swiper-slide slide" style="background-image:url(imgs/cubensis.jpg)">
-                    <div class="content">
-                        <span>Grow</span>
-                        <h3>Psilocybin Starter Kit</h3>
-
-                        <a href="grow.php" class="btn">learn more</a>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-
-        </div>
-    </section>
-
-
-    <!-- products -->
+    <!-- product -->
 
     <section class="products">
-        <h1>Try our Products</h1>
+        <h1>Psilocybin & Lion Mane Capsules</h1>
         <a href="cart.php" class="cart-btn">cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
        
             <div class="box-container">
 
                 <?php
-                $select_product = mysqli_query($conn, "SELECT * FROM `products`") or die('query failed');
+                $select_product = mysqli_query($conn, "SELECT * FROM `products` WHERE id = 1") or die('query failed');
                 if (mysqli_num_rows($select_product) > 0) {
                     while ($fetch_product = mysqli_fetch_assoc($select_product)) {
                 ?>
              
                         <form method="post" class="box" action="">
-                        <a href="<?php echo $fetch_product['id'];?>.php" class="product">
                             <div class="name"><?php echo $fetch_product['name']; ?></div>
 
                             <img class="image" alt="" src="imgs/<?php echo $fetch_product['image']; ?>">
-                        </a>
+                    
                             <div class="description"><?php echo $fetch_product['description']; ?></div>
 
                             <div class="price">$<?php echo $fetch_product['price']; ?> USD</div>
