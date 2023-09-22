@@ -42,7 +42,7 @@ if (isset($_GET['logout'])) {
 
 <body>
 
-    <!-- header section starts -->
+    <!-- header -->
 
     <section class="header">
 
@@ -61,14 +61,12 @@ if (isset($_GET['logout'])) {
 
     </section>
 
-    <!-- header section ends -->
-
 
     <div class="heading" style="background: url(imgs/abt/1.png) no-repeat;">
         <h1>about us</h1>
     </div>
 
-    <!-- about section starts -->
+    <!-- about -->
 
     <section class="about">
 
@@ -98,9 +96,8 @@ if (isset($_GET['logout'])) {
 
     </section>
 
-    <!-- about section ends -->
 
-    <!-- reviews section starts -->
+    <!-- reviews -->
 
     <section class="reviews">
 
@@ -168,14 +165,8 @@ if (isset($_GET['logout'])) {
 
     </section>
 
-    <!-- reviews section ends -->
 
-
-
-
-
-
-    <!-- footer section starts -->
+    <!-- footer -->
 
     <section class="footer">
 
@@ -219,8 +210,6 @@ if (isset($_GET['logout'])) {
             <p>© 2021 Unravel. All rights reserved | Created by <span>Myself</span> Web Design</p>
         </div>
     </section>
-
-    <!-- footer section ends -->
 
 
     <!-- swiper js link -->

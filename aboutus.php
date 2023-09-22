@@ -32,7 +32,7 @@ if (isset($_SESSION['user_id'])) {
 
 <body>
 
-    <!-- header section starts -->
+    <!-- header -->
 
     <section class="header">
 
@@ -50,14 +50,12 @@ if (isset($_SESSION['user_id'])) {
 
     </section>
 
-    <!-- header section ends -->
-
 
     <div class="heading" style="background: url(imgs/abt/2.png) no-repeat;">
         <h1>about us</h1>
     </div>
 
-    <!-- about section starts -->
+    <!-- about -->
 
     <section class="about">
 
@@ -87,9 +85,7 @@ if (isset($_SESSION['user_id'])) {
 
     </section>
 
-    <!-- about section ends -->
-
-    <!-- reviews section starts -->
+    <!-- reviews -->
 
     <section class="reviews">
 
@@ -157,14 +153,12 @@ if (isset($_SESSION['user_id'])) {
 
     </section>
 
-    <!-- reviews section ends -->
 
 
 
 
 
-
-    <!-- footer section starts -->
+    <!-- footer -->
 
     <section class="footer">
 
@@ -208,8 +202,6 @@ if (isset($_SESSION['user_id'])) {
             <p>© 2021 Unravel. All rights reserved | Created by <span>Myself</span> Web Design</p>
         </div>
     </section>
-
-    <!-- footer section ends -->
 
 
     <!-- swiper js link -->
