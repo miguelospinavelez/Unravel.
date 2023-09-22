@@ -664,6 +664,7 @@ section {
     background: var(--main-color);
     position:sticky;
     z-index: 100;
+    top: 130px;
 }
 
 .cart-btn:hover {
@@ -1037,6 +1038,11 @@ section {
     .cart table tbody .table-bottom:hover{
         transform: none;
     }
+
+    .products .cart-btn{      
+        top: 125px;
+        font-size: 18px;
+        }
 
 }
 
