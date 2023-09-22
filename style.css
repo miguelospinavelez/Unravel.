@@ -129,21 +129,6 @@ section {
     background: var(--light-black);
 }
 
-.cart-btn{
-    margin-top: 1rem;
-    display: inline-block;
-    font-size: 1.7rem;
-    padding: 1rem 1.5rem;
-    cursor: pointer;
-    border-radius: 50px;
-    color: var(--white);
-    background: var(--main-color);
-}
-
-.cart-btn:hover {
-    background:#222;
-}
-
 .heading-title {
     text-align: center;
     margin-bottom: 3rem;
@@ -668,6 +653,22 @@ section {
     transform: scale(1.1);
 }
 
+.cart-btn{
+    margin-top: 1rem;
+    display: inline-block;
+    font-size: 1.7rem;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    border-radius: 50px;
+    color: var(--white);
+    background: var(--main-color);
+    position:sticky;
+    z-index: 100;
+}
+
+.cart-btn:hover {
+    background:#222;
+}
 
 
 /* SHOPPING CART */
