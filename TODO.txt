@@ -2,12 +2,14 @@ TO DO:
 
 -Nav re-size fix
 -Products fixes
+-Product page
 -Cart button
 -Cart styles
 -Order form
 -Payment gateway
 -Profile
 -Archive & home grid fixes
+-Footer img fixes
 -Terms of use
 -Privacy
 -Sanitize forms

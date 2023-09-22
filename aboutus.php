@@ -85,6 +85,8 @@ if (isset($_SESSION['user_id'])) {
 
     </section>
 
+    
+
     <!-- reviews -->
 
     <section class="reviews">

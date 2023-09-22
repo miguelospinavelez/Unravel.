@@ -966,7 +966,7 @@ section {
 
 }
 
-@media (max-width: 991px) {
+@media (max-width: 891px) {
     html {
         font-size: 55%;
     }
@@ -1002,7 +1002,7 @@ section {
         }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 668px) {
     #menu-btn {
         display: inline;
         transition: 0.2s linear;
