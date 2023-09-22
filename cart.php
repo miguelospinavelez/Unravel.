@@ -14,19 +14,19 @@ if (isset($_GET['logout'])) {
     header('location:products.php');
 };
 
-if(isset($_POST['update_cart'])){
+if (isset($_POST['update_cart'])) {
     $update_quantity = $_POST['cart_quantity'];
     $update_id = $_POST['cart_id'];
     mysqli_query($conn, "UPDATE `cart` SET quantity = '$update_quantity' WHERE id = '$update_id'") or die('query failed');
     $message[] = 'cart quantity updated';
 };
 
-if(isset($_GET['remove'])){
+if (isset($_GET['remove'])) {
     $remove_id = $_GET['remove'];
     mysqli_query($conn, "DELETE FROM `cart` WHERE id = '$remove_id'") or die('query failed');
 }
 
-if(isset($_GET['delete_all'])){
+if (isset($_GET['delete_all'])) {
     mysqli_query($conn, "DELETE FROM `cart` WHERE user_id = '$user_id'") or die('query failed');
 }
 
@@ -73,7 +73,7 @@ if(isset($_GET['delete_all'])){
     </section>
 
 
-        <!-- button -->
+    <!-- button -->
 
     <div>
         <?php
@@ -127,7 +127,7 @@ if(isset($_GET['delete_all'])){
                                         <input type="hidden" name="cart_id" value="<?php echo $fetch_cart['id']; ?>">
 
                                         <input type="number" min="1" class="quantity" name="cart_quantity" value="<?php echo $fetch_cart['quantity']; ?>">
-                                        
+
                                         <input type="submit" name="update_cart" id="" class="option-btn" value="update">
 
                                     </form>
@@ -143,7 +143,7 @@ if(isset($_GET['delete_all'])){
                     <?php
                             $grand_total += $sub_total;
                         };
-                    }else{ 
+                    } else {
                         echo '<tr style="box-shadow: none; min-height: 470px;"><td style="padding: 20px; text-transform: capitalize; font-size: 25px; text-align: center; " colspan="6" >cart is empty</td></tr>';
                     }
                     ?>
@@ -164,17 +164,55 @@ if(isset($_GET['delete_all'])){
 
             </table>
 
-            <div class="checkout-btn" >
+            <div class="checkout-btn">
                 <div class="checkout-btn <?php echo ($grand_total > 1) ? '' : 'disabled'; ?>">
                     <button class="btn" id="checkoutButton">Check Out</button>
-                 </div>     
-             </div>
-     </div>
+                </div>
+            </div>
+        </div>
 
     </section>
 
 
-    
+    <!-- order modal -->
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <h1>Order Details</h1>
+            <form action="" method="post">
+                
+<!-- ===== /// Botón de pago ePayco /// ===== -->
+
+        <button class="pay-btn" type="submit">
+         <form>
+            <script src='https://checkout.epayco.co/checkout.js'
+                data-epayco-key='0fc69c553288c82a6a6e83653039b150' 
+                class='epayco-button' 
+                data-epayco-amount='<?php echo $grand_total?>' 
+                data-epayco-tax='0.00'  
+                data-epayco-tax-ico='0.00'               
+                data-epayco-tax-base='<?php echo $grand_total?>'
+                data-epayco-name='Botánicos' 
+                data-epayco-description='Botánicos' 
+                data-epayco-currency='usd'    
+                data-epayco-country='CO' 
+                data-epayco-test='true' 
+                data-epayco-external='false' 
+                data-epayco-response=''  
+                data-epayco-confirmation='' 
+                data-epayco-button='https://multimedia.epayco.co/dashboard/btns/btn3.png'
+                > 
+            </script> 
+        </form>
+        </button>
+
+        <!-- =========== -->
+
+       <!-- <input type="submit" value="Proceed to Payment" class="btn"> -->
+            </form>
+            <span class="close">&times;</span>
+        </div>
+    </div>
 
 
 
@@ -229,5 +267,38 @@ if(isset($_GET['delete_all'])){
 
 </body>
 
+<script>
+ // Get the modal element and the close button
+var modal = document.getElementById('myModal');
+var closeButton = document.getElementsByClassName('close')[0];
+
+// Function to open the modal
+function openModal() {
+  modal.style.display = 'block';
+}
+
+// Function to close the modal
+function closeModal() {
+  modal.style.display = 'none';
+}
+
+// Event listener for the "check out" button
+var checkoutButton = document.getElementById('checkoutButton');
+checkoutButton.addEventListener('click', openModal);
+
+// Event listener for the close button
+closeButton.addEventListener('click', closeModal);
+
+closeButton.addEventListener('click', closeModal);
+
+var cartButtons = document.querySelectorAll('');
+cartButtons.forEach(function(button) {
+  button.addEventListener('click', function(event) {
+    event.preventDefault();
+    // Your code to handle the click event (e.g., adding the product to the cart) goes here
+  });
+});
+
+</script>
 </html>
 

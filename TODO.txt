@@ -1,19 +1,21 @@
+
+
 TO DO:
 
 
--Order form
--Payment gateway
--Products fixes
--Product page
--Profile
--Cart button fixes
--Cart styles
+*Order form
+*Payment gateway
+*Products fixes
+*Product page
+*Profile
+
 -Sanitize forms
 -Footer fixes
 -Terms of use
 -Privacy
 -Imgs sizes and preload
 -Responsiveness
+-Sessions fixes
 -Content
 -Languages
 -Confirmation emails

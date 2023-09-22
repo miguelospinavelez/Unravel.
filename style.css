@@ -76,7 +76,7 @@ section {
 
 .message {
     position:sticky;
-    top: 0;
+    top: 10px;
     left: 0;
     right: 0;
     padding: 5px 5px;
@@ -776,6 +776,76 @@ section {
     opacity: 0.7;
     user-select: none;
 }
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    backdrop-filter: blur(5px);
+    
+    
+  }
+  
+  /* Styles for the modal content */
+  .modal-content {
+    opacity: 0.9;
+    border-radius: 5px;
+    background-color: #ffd5d5 ;
+    margin: 15% auto;
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+    width: 80%;
+    max-width: 450px;
+    min-height: 500px;
+    position: relative;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .modal-content h1{
+    text-align: center;
+    padding-bottom: 2rem;
+  }
+
+  .modal-content form{
+    padding: 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .modal-content .pay-btn{
+    position: absolute;
+    bottom: 2rem;
+  }
+
+  .modal-content .pay-btn:hover{
+    transform: scale(1.02);
+    cursor: pointer;
+  }
+  
+  /* Style for the close button */
+  .close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    cursor: pointer;
+    color: rgb(207, 90, 90);
+    transform: scale(2);
+  }
+
+  .close:hover{
+    transform: scale(2.2);
+  }
 
 
 /* LOGIN/REGISTRATION */

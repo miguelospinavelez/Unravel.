@@ -89,8 +89,6 @@ if (isset($_POST['add_to_cart'])) {
 
 
 
-
-
     <!-- home -->
 
     <section class="home">
@@ -146,7 +144,7 @@ if (isset($_POST['add_to_cart'])) {
         <h1>Try our Products</h1>
         <a href="cart.php" class="cart-btn">cart <i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
         <div class="box-container">
-            
+
             <?php
             $select_product = mysqli_query($conn, "SELECT * FROM `products`") or die('query failed');
             if (mysqli_num_rows($select_product) > 0) {
@@ -171,7 +169,7 @@ if (isset($_POST['add_to_cart'])) {
 
                         <input type="hidden" name="product_price" value="<?php echo $fetch_product['price']; ?>">
 
-                        <input type="submit" value="add to cart" name="add_to_cart" class="btn">
+                        <button type="submit" value="add to cart" name="add_to_cart" class="btn">add to cart</button>
 
 
                     </form>
@@ -240,7 +238,7 @@ if (isset($_POST['add_to_cart'])) {
 
     <!-- custom js file link -->
     <script src="js\script.js"></script>
-
 </body>
+
 
 </html>
