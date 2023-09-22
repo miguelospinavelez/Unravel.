@@ -177,38 +177,41 @@ if (isset($_GET['delete_all'])) {
     <!-- order modal -->
 
     <div id="myModal" class="modal">
+        <?php
+        $select_user = mysqli_query($conn, "SELECT * FROM `user_form` WHERE id = '$user_id'") or die('query failed');
+        if (mysqli_num_rows($select_user) > 0) {
+            $fetch_user = mysqli_fetch_assoc($select_user);
+        };
+        ?>
         <div class="modal-content">
             <h1>Order Details</h1>
             <form action="" method="post">
-                
-<!-- ===== /// Botón de pago ePayco /// ===== -->
+                <div>
+                    <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+                    <h3>Contact information</h3>
+                    <p class="box"> email : <span><?php echo $fetch_user['email']; ?></span> </p>
+                    <p class="box">phone : <span><?php echo $fetch_user['phone']; ?></span> </p>
+                </div>
+                <div>
+                    <h3>Shipping information</h3>
+                    <p class="box">address : <span><?php echo $fetch_user['address']; ?></span> </p>
+                    <p class="box">city : <span><?php echo $fetch_user['city']; ?></span></p>
+                    <p class="box">state : <span><?php echo $fetch_user['state']; ?></span> </p>
+                    <p class="box">Country : <span><?php echo $fetch_user['country']; ?></span> </p>
+                </div>
 
-        <button class="pay-btn" type="submit">
-         <form>
-            <script src='https://checkout.epayco.co/checkout.js'
-                data-epayco-key='0fc69c553288c82a6a6e83653039b150' 
-                class='epayco-button' 
-                data-epayco-amount='<?php echo $grand_total?>' 
-                data-epayco-tax='0.00'  
-                data-epayco-tax-ico='0.00'               
-                data-epayco-tax-base='<?php echo $grand_total?>'
-                data-epayco-name='Botánicos' 
-                data-epayco-description='Botánicos' 
-                data-epayco-currency='usd'    
-                data-epayco-country='CO' 
-                data-epayco-test='true' 
-                data-epayco-external='false' 
-                data-epayco-response=''  
-                data-epayco-confirmation='' 
-                data-epayco-button='https://multimedia.epayco.co/dashboard/btns/btn3.png'
-                > 
-            </script> 
-        </form>
-        </button>
+                <!-- ===== /// Botón de pago ePayco /// ===== -->
 
-        <!-- =========== -->
+                <button class="pay-btn" type="submit">
+                    <form>
+                        <script src='https://checkout.epayco.co/checkout.js' data-epayco-key='0fc69c553288c82a6a6e83653039b150' class='epayco-button' data-epayco-amount='<?php echo $grand_total ?>' data-epayco-tax='0.00' data-epayco-tax-ico='0.00' data-epayco-tax-base='<?php echo $grand_total ?>' data-epayco-name='Botánicos' data-epayco-description='Botánicos' data-epayco-currency='usd' data-epayco-country='CO' data-epayco-test='true' data-epayco-external='false' data-epayco-response='' data-epayco-confirmation='' data-epayco-button='https://multimedia.epayco.co/dashboard/btns/btn3.png'>
+                        </script>
+                    </form>
+                </button>
 
-       <!-- <input type="submit" value="Proceed to Payment" class="btn"> -->
+                <!-- =========== -->
+
+                <!-- <input type="submit" value="Proceed to Payment" class="btn"> -->
             </form>
             <span class="close">&times;</span>
         </div>
@@ -268,37 +271,36 @@ if (isset($_GET['delete_all'])) {
 </body>
 
 <script>
- // Get the modal element and the close button
-var modal = document.getElementById('myModal');
-var closeButton = document.getElementsByClassName('close')[0];
+    // Get the modal element and the close button
+    var modal = document.getElementById('myModal');
+    var closeButton = document.getElementsByClassName('close')[0];
 
-// Function to open the modal
-function openModal() {
-  modal.style.display = 'block';
-}
+    // Function to open the modal
+    function openModal() {
+        modal.style.display = 'block';
+    }
 
-// Function to close the modal
-function closeModal() {
-  modal.style.display = 'none';
-}
+    // Function to close the modal
+    function closeModal() {
+        modal.style.display = 'none';
+    }
 
-// Event listener for the "check out" button
-var checkoutButton = document.getElementById('checkoutButton');
-checkoutButton.addEventListener('click', openModal);
+    // Event listener for the "check out" button
+    var checkoutButton = document.getElementById('checkoutButton');
+    checkoutButton.addEventListener('click', openModal);
 
-// Event listener for the close button
-closeButton.addEventListener('click', closeModal);
+    // Event listener for the close button
+    closeButton.addEventListener('click', closeModal);
 
-closeButton.addEventListener('click', closeModal);
+    closeButton.addEventListener('click', closeModal);
 
-var cartButtons = document.querySelectorAll('');
-cartButtons.forEach(function(button) {
-  button.addEventListener('click', function(event) {
-    event.preventDefault();
-    // Your code to handle the click event (e.g., adding the product to the cart) goes here
-  });
-});
-
+    var cartButtons = document.querySelectorAll('');
+    cartButtons.forEach(function(button) {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+            // Your code to handle the click event (e.g., adding the product to the cart) goes here
+        });
+    });
 </script>
-</html>
 
+</html>

@@ -815,16 +815,15 @@ section {
   .modal-content form{
     padding: 1.5rem;
     text-align: center;
-    display: flex;
-    flex-wrap: wrap;
+    align-content: center;
     justify-content: center;
-    align-items: center;
-    gap: 2rem;
   }
 
   .modal-content .pay-btn{
     position: absolute;
     bottom: 2rem;
+    right: 19rem;
+    background-color: #ffd5d5 ;
   }
 
   .modal-content .pay-btn:hover{
