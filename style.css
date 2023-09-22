@@ -65,6 +65,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+    user-select: none;
 }
 
 .heading h1 {
@@ -72,6 +73,7 @@ section {
     text-transform: uppercase;
     color: var(--white);
     text-shadow: var(--text-shadow);
+    user-select: none;
 }
 
 .message {
@@ -133,6 +135,7 @@ section {
     font-size: 6rem;
     text-transform: uppercase;
     color: var(--black);
+    user-select: none;
 }
 
 /* HEADER */
@@ -190,11 +193,15 @@ section {
     background-position: center !important;
     min-height: 45rem;
 }
+.home:hover{
+    cursor: pointer;
+}
 
 .home .slide .content {
     width: 85rem;
     display: none;
     cursor: pointer;
+    user-select: none;
 }
 
 .home .swiper-slide-active .content {
