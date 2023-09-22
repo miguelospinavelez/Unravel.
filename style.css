@@ -828,7 +828,6 @@ section {
     cursor: pointer;
 }
 
-/* Style for the close button */
 .close {
     position: absolute;
     top: 0;
@@ -840,7 +839,7 @@ section {
 }
 
 .close:hover {
-    transform: scale(2.2);
+    transform: scale(3);
 }
 
 /* LOGIN/REGISTRATION */
