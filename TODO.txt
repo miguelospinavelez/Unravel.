@@ -11,7 +11,7 @@ TO DO:
 -Terms of use
 -Privacy
 -Sanitize forms
--Minify imgs
+-Imgs size and preload
 -Responsiveness
 -Content
 -Languages
