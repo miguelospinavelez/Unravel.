@@ -3,22 +3,24 @@
 TO DO:
 
 
+*cart fixes
 *Order form
-*Payment gateway
-*Products fixes
 *Product page
+*Back to store
 *Profile
 
--back to store btn
--Sanitize forms
+-Archive fixes & links
 -Footer fixes
+-Sanitize forms
+-Imgs sizes and preload
+-Sessions fixes
 -Terms of use
 -Privacy
--Imgs sizes and preload
--Responsiveness
--Sessions fixes
+-Confirmation emails
 -Content
 -Languages
--Confirmation emails
 -Newsletter
 -Dark mode
+-Testing phase
+-Security
+-Revise

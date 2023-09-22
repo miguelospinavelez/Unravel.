@@ -1170,4 +1170,19 @@ section {
     .cart-btn {
         transform: scale(1.1);
     }
+
+    .footer{
+        background-size: cover;
+    }
+
+}
+
+@media (max-width: 300px) {
+    html {
+        font-size: 50%;
+    }
+
+    .heading-title {
+        font-size: 3.5rem;
+    }
 }

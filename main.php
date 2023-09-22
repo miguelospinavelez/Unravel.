@@ -133,9 +133,6 @@ if (isset($_SESSION['user_id'])) {
     <!-- about -->
 
     <section class="home-about">
-        <div class="image">
-            <img src="imgs/" alt="">
-        </div>
 
         <div class="content">
             <h3>about us</h3>
