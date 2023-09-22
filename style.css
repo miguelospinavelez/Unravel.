@@ -396,6 +396,7 @@ section {
 .about .content {
     flex: 1 1 41rem;
     text-align: center;
+    justify-content: center;
 }
 
 .about .content h3 {
@@ -1050,6 +1051,12 @@ section {
         padding: 3rem 2rem;
     }
 
+    .about .content{
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
     .home .slide {
         min-height: 59rem;
     }
@@ -1079,6 +1086,8 @@ section {
         top: 125px;
         font-size: 18px;
     }
+
+    
 }
 
 @media (max-width: 768px) {

@@ -4,7 +4,7 @@ include 'config.php';
 session_start();
 if (isset($_SESSION['user_id'])) {
     header('location:about.php');
-    exit; 
+    exit;
 }
 
 ?>
@@ -44,7 +44,7 @@ if (isset($_SESSION['user_id'])) {
             <a href="book.php">products</a>
             <a href="login.php">Log in</a>
         </nav>
-        
+
         <div id="menu-btn" class="fas fa-bars"></div>
 
 
@@ -59,14 +59,12 @@ if (isset($_SESSION['user_id'])) {
 
     <section class="about">
 
-        <div class="image">
-            <img src="imgs/" alt="">
-        </div>
-
         <div class="content">
             <h3>why choose us?</h3>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reiciendis reprehenderit officia mollitia possimus omnis ducimus odio molestiae earum temporibus est.</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam aspernatur nihil ut laborum obcaecati, dolores cum cumque fugit. Maxime sunt adipisci qui quo obcaecati quis aspernatur! Id recusandae dignissimos voluptatum.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, voluptatem! Corrupti ipsum minus, eum, quam, recusandae ducimus similique cum magni voluptates tempora delectus autem debitis veniam nesciunt deserunt cupiditate dolor adipisci totam voluptas esse enim sed earum. Ratione id cupiditate cum placeat totam excepturi veniam voluptatum eligendi fugit labore! Harum placeat iusto officia, alias illum quo. Facere dolorem esse quibusdam assumenda et tempore, optio totam reprehenderit pariatur autem unde quos?</p>
+
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste quia atque incidunt iure, fuga dolore perspiciatis tempora blanditiis odio itaque expedita voluptatibus totam, nostrum asperiores! Minus cupiditate quia fuga? Atque libero porro officia inventore. Dignissimos dolore totam neque consequuntur quos! Porro itaque ut fugiat, sint, earum necessitatibus iure aut deserunt perferendis veniam quidem qui perspiciatis vel. In asperiores facere incidunt iure error necessitatibus repellendus voluptas, dolor fugiat odit beatae deserunt ex? Libero voluptates quibusdam optio amet ducimus quaerat nesciunt, dolores, reiciendis voluptatibus quod totam sint facilis inventore tempore, voluptatum laudantium cumque temporibus eum nihil eius distinctio id. Aperiam, temporibus est!</p>
+            
             <div class="icons-container">
                 <div class="icons">
                     <i class="fas fa-map"></i>
@@ -85,7 +83,7 @@ if (isset($_SESSION['user_id'])) {
 
     </section>
 
-    
+
 
     <!-- reviews -->
 
