@@ -122,7 +122,7 @@ if(isset($_GET['delete_all'])){
                                 <td>$<?php echo $fetch_cart['price']; ?> USD</td>
 
                                 <td>
-                                    <form action="" method="post">
+                                    <form action="" method="post" id="cart">
 
                                         <input type="hidden" name="cart_id" value="<?php echo $fetch_cart['id']; ?>">
 
@@ -144,7 +144,7 @@ if(isset($_GET['delete_all'])){
                             $grand_total += $sub_total;
                         };
                     }else{ 
-                        echo '<tr><td style="padding: 20px; text-transform: capitalize" colspan="6" >cart is empty</td></tr>';
+                        echo '<tr style="box-shadow: none; min-height: 470px;"><td style="padding: 20px; text-transform: capitalize; font-size: 25px; text-align: center; " colspan="6" >cart is empty</td></tr>';
                     }
                     ?>
 
@@ -155,7 +155,7 @@ if(isset($_GET['delete_all'])){
                         <td>$<?php echo $grand_total; ?>.00 USD</td>
 
                         <td>
-                            <a href="cart.php?delete_all" onclick="return confirm('remove all from cart?');" class="delete-btn <?php echo ($grand_total > 1) ? '' : 'disabled'; ?>">remove all</a>
+                            <a href="cart.php?delete_all" onclick="return confirm('remove all from cart?');" id="delete" class="delete-btn <?php echo ($grand_total > 1) ? '' : 'disabled'; ?>">remove all</a>
                         </td>
 
                     </tr>
@@ -164,36 +164,17 @@ if(isset($_GET['delete_all'])){
 
             </table>
 
-            <div class="checkout-btn">
+            <div class="checkout-btn" >
                 <div class="checkout-btn <?php echo ($grand_total > 1) ? '' : 'disabled'; ?>">
-
-                    <!-- =====================================================================
-                ///////////   Este es su botón de Botón de pago ePayco   ///////////
-                ===================================================================== -->
-                     <form class="">
-                        <script src='https://checkout.epayco.co/checkout.js'
-                            data-epayco-key='0fc69c553288c82a6a6e83653039b150' 
-                            class='epayco-button' 
-                            data-epayco-amount='<?php echo $grand_total; ?>' 
-                            data-epayco-tax='0.00'  
-                            data-epayco-tax-ico='0.00'               
-                            data-epayco-tax-base='<?php echo $grand_total; ?>'
-                            data-epayco-name='Botánicos' 
-                            data-epayco-description='Productos botánicos' 
-                            data-epayco-currency='usd'    
-                            data-epayco-country='CO' 
-                            data-epayco-test='true' 
-                            data-epayco-external='false' 
-                            data-epayco-response=''  
-                            data-epayco-confirmation='' 
-                            data-epayco-button='https://multimedia.epayco.co/dashboard/btns/btn3.png'> 
-                        </script> 
-                     </form> <!-- ================================================================== -->
+                    <button class="btn" id="checkoutButton">Check Out</button>
                  </div>     
              </div>
      </div>
 
     </section>
+
+
+    
 
 
 
@@ -249,3 +230,4 @@ if(isset($_GET['delete_all'])){
 </body>
 
 </html>
+

@@ -1,19 +1,18 @@
 TO DO:
 
--Nav re-size fix
--Products fixes
--Product page
--Cart button
--Cart styles
+
 -Order form
 -Payment gateway
+-Products fixes
+-Product page
 -Profile
--Archive & home grid fixes
--Footer img fixes
+-Cart button fixes
+-Cart styles
+-Sanitize forms
+-Footer fixes
 -Terms of use
 -Privacy
--Sanitize forms
--Imgs size and preload
+-Imgs sizes and preload
 -Responsiveness
 -Content
 -Languages
