@@ -1013,9 +1013,9 @@ section {
 
 /* MEDIA QUERIES */
 
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
     section {
-        padding: 3rem 5%;
+        padding: 3rem 1%;
     }
 
     .cart .container thead {
@@ -1041,7 +1041,7 @@ section {
     }
 }
 
-@media (max-width: 1001px) {
+@media (max-width: 1010px) {
     html {
         font-size: 55%;
     }
@@ -1055,7 +1055,11 @@ section {
     }
 
     .home .slide .content h3 {
-        font-size: 10vw;
+        font-size: 8vw;
+    }
+
+    .home .slide{
+        height: 48rem;
     }
 
     .cart .container thead {

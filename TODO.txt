@@ -9,6 +9,7 @@ TO DO:
 *Product page
 *Profile
 
+-back to store btn
 -Sanitize forms
 -Footer fixes
 -Terms of use
