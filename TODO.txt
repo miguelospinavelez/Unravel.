@@ -18,6 +18,7 @@ TO DO:
 -Privacy
 -Confirmation emails
 -Content
+-External content 
 -Languages
 -Newsletter
 -Dark mode

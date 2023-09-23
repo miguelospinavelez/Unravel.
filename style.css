@@ -674,6 +674,7 @@ section {
     background: #222;
 }
 
+
 /* SHOPPING CART */
 
 .cart {
@@ -689,18 +690,12 @@ section {
 }
 
 .cart table {
-    min-height: 500px;
     width: 100%;
+    
 }
 
 .cart table thead {
     padding: 1.5rem;
-}
-
-.cart .container {
-    align-items: center;
-    display: inline;
-    justify-content: center;
 }
 
 .cart table thead th {
@@ -755,12 +750,12 @@ section {
 .cart .checkout-btn {
     margin-top: 10px;
     text-align: center;
-    transform: scale(1.18);
+    transform: scale(1);
 }
 
 .cart .checkout-btn:hover {
     color: var(--main-color);
-    transform: scale(1.2);
+    transform: scale(1.05);
 }
 
 .cart .checkout-btn .disabled {
@@ -769,13 +764,10 @@ section {
     opacity: 0.7;
     user-select: none;
     transform: none;
+    cursor: not-allowed;
 }
 
-.cart .checkout-btn .disabled:hover {
-    transform: none;
-}
-
-.delete-btn .disabled {
+.cart .delete-btn .disabled {
     pointer-events: none;
     opacity: 0.7;
     user-select: none;
@@ -1075,19 +1067,6 @@ section {
         height: 48rem;
     }
 
-    .cart .container thead {
-        display: none;
-    }
-
-    .cart .container tr {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .cart table tbody .table-bottom:hover {
-        transform: none;
-    }
-
     .products .cart-btn {
         top: 125px;
         font-size: 18px;
@@ -1128,33 +1107,11 @@ section {
         text-align: center;
     }
 
-    .cart .container {
-        align-items: center;
-        display: inline;
-        justify-content: center;
-    }
-
-    .cart .container h1 {
-        padding-bottom: 5rem;
-    }
-
-    .cart .container thead {
-        display: none;
-    }
-
-    .cart .container tr {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .cart table tbody .table-bottom:hover {
-        transform: none;
-    }
-
     .products .cart-btn {
         top: 125px;
     }
 }
+
 
 @media (max-width: 450px) {
     html {
@@ -1169,16 +1126,8 @@ section {
         width: 600px;
     }
 
-    .cart table tbody .table-bottom:hover {
-        transform: none;
-    }
-
     .cart-btn {
         transform: scale(1.1);
-    }
-
-    .footer{
-        background-size: cover;
     }
 
 }
