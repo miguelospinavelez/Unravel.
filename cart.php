@@ -95,7 +95,6 @@ if (isset($_GET['delete_all'])) {
 
             <table>
 
-
                 <tbody>
 
                     <?php

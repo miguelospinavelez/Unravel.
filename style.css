@@ -727,6 +727,10 @@ section {
     padding: 1.5rem;
 }
 
+.cart table tbody .checkout-product:hover{
+    transform: scale(1.01);
+}
+
 .cart table tbody td {
     font-size: 15px;
     padding: 1rem;
