@@ -133,7 +133,7 @@ section {
     padding-left: 1rem;
     padding-right: 1rem;
     font-size: small;
-    margin-top: 1rem;
+    margin: 1rem;
 }
 
 .edit-btn:hover{
@@ -827,7 +827,7 @@ section {
     opacity: 0.9;
     border-radius: 10px;
     background-color: #ffd5d5;
-    margin: 13.5% auto;
+    margin: 11% auto;
     padding: 15px;
     box-shadow: var(--box-shadow);
     width: 80%;
@@ -866,7 +866,7 @@ section {
     align-items: center;
     justify-content: center;
     background: none;
-    margin-top: 2rem;
+    margin-top: 1rem;
     border-radius: 10px;
 }
 
@@ -1161,7 +1161,7 @@ section {
     }
 
     .modal-content{
-        margin: 13% auto;
+        margin: 15% auto;
     }
 }
 

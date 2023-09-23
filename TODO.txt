@@ -3,13 +3,12 @@
 TO DO:
 
 
-*cart fixes
 *Order form
 *Product page
 *Back to store
 *Profile
+*Archive fixes & links
 
--Archive fixes & links
 -Footer fixes
 -Sanitize forms
 -Imgs sizes and preload

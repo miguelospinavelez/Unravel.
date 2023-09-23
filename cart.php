@@ -208,16 +208,15 @@ if (isset($_GET['delete_all'])) {
                     <label class="box"><b>Country</b> : <span><?php echo $fetch_user['country']; ?></span> </label>
                     <br>
                     <br>
+                    <button type="button" class="edit-btn">edit details</button>
+                    <br>
+                    <br>
                     <label for="shipment-address"><b>Use this address : </b></label>
                     <input type="checkbox" name="shipment-address" id="" value="">
                     <br>
                     <label for="terms-agreements"><b>I have read the terms & agreements : </b></label>
                     <input type="checkbox" name="terms-agreements" id="" value="">
                 </div>
-                <br>
-
-                <button type="button" class="edit-btn">edit details</button>
-
                 <br>
 
                 <!-- === /// Botón de pago ePayco /// === -->
