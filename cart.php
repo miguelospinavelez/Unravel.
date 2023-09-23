@@ -226,7 +226,22 @@ if (isset($_GET['delete_all'])) {
 
                 <button class="pay-btn" type="submit">
                     <form>
-                        <script src='https://checkout.epayco.co/checkout.js' data-epayco-key='0fc69c553288c82a6a6e83653039b150' class='epayco-button' data-epayco-amount='<?php echo $grand_total ?>' data-epayco-tax='0.00' data-epayco-tax-ico='0.00' data-epayco-tax-base='<?php echo $grand_total ?>' data-epayco-name='Botánicos' data-epayco-description='Botánicos' data-epayco-currency='usd' data-epayco-country='CO' data-epayco-test='true' data-epayco-external='false' data-epayco-response='' data-epayco-confirmation='' data-epayco-button='imgs/icons/Proceed to Payment.png'>
+                        <script src='https://checkout.epayco.co/checkout.js' 
+                        data-epayco-key='0fc69c553288c82a6a6e83653039b150' 
+                        class='epayco-button' 
+                        data-epayco-amount='<?php echo $grand_total ?>' 
+                        data-epayco-tax='0.00' 
+                        data-epayco-tax-ico='0.00' 
+                        data-epayco-tax-base='<?php echo $grand_total ?>' 
+                        data-epayco-name='Botánicos' 
+                        data-epayco-description='Botánicos' 
+                        data-epayco-currency='usd' 
+                        data-epayco-country='CO' 
+                        data-epayco-test='true' 
+                        data-epayco-external='false' 
+                        data-epayco-response='' 
+                        data-epayco-confirmation='' 
+                        data-epayco-button='imgs/icons/Proceed to Payment.png'>
                         </script>
                     </form>
                 </button>

@@ -3,17 +3,18 @@
 TO DO:
 
 
-*Order form
+*Order form functionality
 *Product page
-*Back to store
+*Back to store button
 *Profile
 *Archive fixes & links
 
 -Footer fixes
+-Block access to config.php and other PHP files
 -Sanitize forms
 -Prevent defaults
 -Imgs sizes and preload
--Sessions fixes
+-Multiple sessions fixes
 -Terms of use
 -Privacy
 -Confirmation emails
