@@ -717,8 +717,8 @@ section {
 }
 
 .cart .container h1 {
-    font-size: 3.5rem;
-    padding-bottom: 5rem;
+    font-size: 3.8rem;
+    padding-bottom: 1.5rem;
 }
 
 .cart table {
@@ -776,6 +776,8 @@ section {
 
 .cart table tbody .table-bottom .total {
     font-size: 25px;
+    white-space: nowrap;
+    color: #61794f;
 }
 
 .cart table tbody .table-bottom{
