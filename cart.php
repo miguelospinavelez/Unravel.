@@ -337,6 +337,9 @@ if (isset($_GET['delete_all'])) {
 </body>
 
 <script>
+
+    // MODAL \\
+
     // Get the modal element and the close button
     var modal = document.getElementById('myModal');
     var closeButton = document.getElementsByClassName('close')[0];
@@ -360,22 +363,36 @@ if (isset($_GET['delete_all'])) {
 
     closeButton.addEventListener('click', closeModal);
 
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+
+
+    // CHECKBOXES \\
+
     // Get the checkbox element
     var shipmentAddressCheckbox = document.getElementById('shipment-address');
+    var termsAgreementsCheckbox = document.getElementById('terms-agreements');
+    var paymentButton = document.getElementById('pay-btn');
 
     // Get the fields you want to disable/enable
     var contactInfoFields = document.querySelectorAll('.contact-info input');
     var shippingFields = document.querySelectorAll('.shipping input');
+    var payButton = document.getElementById('pay-btn');
 
     // Function to enable or disable fields based on checkbox state
     function toggleFields() {
         var isChecked = shipmentAddressCheckbox.checked;
+
         contactInfoFields.forEach(function (field) {
             field.disabled = isChecked;
         });
         shippingFields.forEach(function (field) {
             field.disabled = isChecked;
         });
+
     }
 
     // Add an event listener to the checkbox
@@ -383,6 +400,17 @@ if (isset($_GET['delete_all'])) {
 
     // Initial call to set the initial state
     toggleFields();
+
+    function togglePaymentButton() {
+        paymentButton.disabled = !(shipmentAddressCheckbox.checked && termsAgreementsCheckbox.checked);
+    }
+
+    // Add event listeners to the checkboxes
+    shipmentAddressCheckbox.addEventListener('change', togglePaymentButton);
+    termsAgreementsCheckbox.addEventListener('change', togglePaymentButton);
+
+    // Initial call to set the initial state
+    togglePaymentButton();
 </script>
 
 </html>
