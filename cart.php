@@ -109,7 +109,7 @@ if (isset($_GET['delete_all'])) {
 
                                 <td><b><?php echo $fetch_cart['name']; ?></b></td>
 
-                                <td>$<?php echo $fetch_cart['price']; ?> USD</td>
+                                <td style="white-space: nowrap;">$<?php echo $fetch_cart['price']; ?> <b>USD</b></td>
 
                                 <td>
                                     <form action="" method="post" id="cart">
@@ -123,7 +123,7 @@ if (isset($_GET['delete_all'])) {
                                     </form>
                                 </td>
 
-                                <td>subtotal : <em>$<?php echo $sub_total = number_format($fetch_cart['price'] * $fetch_cart['quantity']); ?>.00</em> USD</td>
+                                <td style="white-space: nowrap;"><em><b>subtotal : </b>$<?php echo $sub_total = number_format($fetch_cart['price'] * $fetch_cart['quantity']); ?>.00</em> <b>USD</b></td>
 
                                 <td>
                                     <a href="cart.php?remove=<?php echo $fetch_cart['id']; ?>" class="delete-btn" onclick="return confirm('remove item from cart?')"><i class="fa-solid fa-trash"></i></a>
