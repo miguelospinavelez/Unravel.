@@ -184,11 +184,14 @@ if (isset($_GET['delete_all'])) {
                 <div class="contact-info">
                     <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
                     <br>
+                    <label class="box"><b>name</b> : </label>
+                    <span><?php echo $fetch_user['name']; ?></span> 
+                    <br>
                     <label class="box"> <b>email</b> : </label>
-                
                     <span><?php echo $fetch_user['email']; ?></span> 
-
-                    <p class="box"><b>phone</b> : <span><?php echo $fetch_user['phone']; ?></span> </p>
+                    <br>
+                    <label class="box"><b>phone</b> : </label>
+                    <span><?php echo $fetch_user['phone']; ?></span> 
                 </div>
 
                 <br>
@@ -212,10 +215,10 @@ if (isset($_GET['delete_all'])) {
                     <br>
                     <br>
                     <label for="shipment-address"><b>Use this address : </b></label>
-                    <input type="checkbox" name="shipment-address" id="" value="">
+                    <input type="checkbox" name="shipment-address" required id="" value="">
                     <br>
                     <label for="terms-agreements"><b>I have read the terms & agreements : </b></label>
-                    <input type="checkbox" name="terms-agreements" id="" value="">
+                    <input type="checkbox" name="terms-agreements" required id="" value="">
                 </div>
                 <br>
 
