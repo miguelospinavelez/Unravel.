@@ -75,7 +75,7 @@ if (isset($_POST['add_to_cart'])) {
 
     </section>
 
-    <!-- button -->
+    <!-- message -->
 
     <div>
         <?php
@@ -122,7 +122,7 @@ if (isset($_POST['add_to_cart'])) {
                         <span>Grow</span>
                         <h3>Psilocybin Starter Kit</h3>
 
-                        <a href="g3.php" class="btn">learn more</a>
+                        <a href="3.php" class="btn">learn more</a>
                     </div>
                 </div>
 

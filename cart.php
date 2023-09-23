@@ -1,5 +1,4 @@
 <?php
-
 include 'config.php';
 session_start();
 $user_id =  $_SESSION['user_id'];
@@ -96,14 +95,6 @@ if (isset($_GET['delete_all'])) {
 
             <table>
 
-                <thead>
-                    <th>image</th>
-                    <th>name</th>
-                    <th>price</th>
-                    <th>quantity</th>
-                    <th>total price</th>
-                    <th>action</th>
-                </thead>
 
                 <tbody>
 
@@ -113,11 +104,11 @@ if (isset($_GET['delete_all'])) {
                     if (mysqli_num_rows($cart_query) > 0) {
                         while ($fetch_cart = mysqli_fetch_assoc($cart_query)) {
                     ?>
-                            <tr>
+                            <tr class="checkout-product">
 
                                 <td><img src="imgs/<?php echo $fetch_cart['image']; ?>" alt="" height="110"></td>
 
-                                <td><?php echo $fetch_cart['name']; ?></td>
+                                <td><b><?php echo $fetch_cart['name']; ?></b></td>
 
                                 <td>$<?php echo $fetch_cart['price']; ?> USD</td>
 
@@ -133,24 +124,24 @@ if (isset($_GET['delete_all'])) {
                                     </form>
                                 </td>
 
-                                <td>$<?php echo $sub_total = number_format($fetch_cart['price'] * $fetch_cart['quantity']); ?>.00 USD</td>
+                                <td>subtotal : <em>$<?php echo $sub_total = number_format($fetch_cart['price'] * $fetch_cart['quantity']); ?>.00</em> USD</td>
 
                                 <td>
-                                    <a href="cart.php?remove=<?php echo $fetch_cart['id']; ?>" class="delete-btn" onclick="return confirm('remove item from cart?')">remove</a>
+                                    <a href="cart.php?remove=<?php echo $fetch_cart['id']; ?>" class="delete-btn" onclick="return confirm('remove item from cart?')"><i class="fa-solid fa-trash"></i></a>
                                 </td>
-
+                                
                             </tr>
                     <?php
                             $grand_total += $sub_total;
                         };
                     } else {
-                        echo '<tr style="box-shadow: none; min-height: 470px;"><td style="padding: 20px; text-transform: capitalize; font-size: 25px; text-align: center; " colspan="6" >cart is empty</td></tr>';
+                        echo '<tr style="box-shadow: none; min-height: 440px;"><td style="padding: 20px; text-transform: capitalize; font-size: 25px; text-align: center; " colspan="6" >cart is empty</td></tr>';
                     }
                     ?>
 
                     <tr class="table-bottom">
 
-                        <td colspan="4">total :</td>
+                        <td colspan="4" class="total">total :</td>
 
                         <td>$<?php echo $grand_total; ?>.00 USD</td>
 
