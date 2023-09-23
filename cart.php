@@ -176,22 +176,25 @@ if (isset($_GET['delete_all'])) {
         ?>
 
         <div class="modal-content">
-            <h1>Order Details</h1>
-            <form action="" method="post">
+         <h1>Order Details</h1>
+         
+          <form action="" method="post">
 
             <h3>Contact information</h3>
 
                 <div class="contact-info">
+
                     <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
                     <br>
-                    <label class="box"><b>name</b> : </label>
-                    <span><?php echo $fetch_user['name']; ?></span> 
+                    <label class="box" for="name"><b>name</b> : </label>
+                    <input required style="background: none;" type="text" id="name" value="<?php echo $fetch_user['name']; ?>"></input> 
                     <br>
-                    <label class="box"> <b>email</b> : </label>
-                    <span><?php echo $fetch_user['email']; ?></span> 
+                    <label class="box" for="email"> <b>email</b> : </label>
+                    <input required style="background: none;" type="email" id="email" value="<?php echo $fetch_user['email']; ?>"></input> 
                     <br>
-                    <label class="box"><b>phone</b> : </label>
-                    <span><?php echo $fetch_user['phone']; ?></span> 
+                    <label class="box" for="phone"><b>phone</b> : </label>
+                    <input required style="background: none;" type="tel" id="number" value="<?php echo $fetch_user['phone']; ?>"></input> 
+
                 </div>
 
                 <br>
@@ -200,18 +203,23 @@ if (isset($_GET['delete_all'])) {
                 
                 <div class="shipping">
                     <br>
-                    <label class="box"><b>address</b> : </label>
-                    <span><?php echo $fetch_user['address']; ?></span> 
+                    <label class="box" for="zip"><b>ZIP</b> : </label>
+                    <input required type="text" style="background: none;" id="zip" value=""></input> 
                     <br>
-                    <label class="box"><b>city </b>: </label>
-                    <span><?php echo $fetch_user['city']; ?></span>
+                    <label class="box" for="address"><b>address</b> : </label>
+                    <input required type="text" style="width: 34rem; background: none;" id="address" value="<?php echo $fetch_user['address']; ?>"></input> 
                     <br>
-                    <label class="box"><b>state</b> : <span><?php echo $fetch_user['state']; ?></span> </label>
+                    <label class="box" for="city"><b>city </b>: </label>
+                    <input required style="background: none;" type="text" id="city" value="<?php echo $fetch_user['city']; ?>"></input>
                     <br>
-                    <label class="box"><b>Country</b> : <span><?php echo $fetch_user['country']; ?></span> </label>
+                    <label class="box" for="state"><b>state</b> : </label>
+                    <input required style="background: none;" type="text" id="state" value="<?php echo $fetch_user['state']; ?>"></input>
+                    <br>
+                    <label class="box" for="country"><b>Country</b> : </label>
+                    <input required style="background: none;" type="text" id="country" value="<?php echo $fetch_user['country']; ?>"></input> 
                     <br>
                     <br>
-                    <button type="button" class="edit-btn">edit details</button>
+                    <button type="submit" class="edit-btn">edit details</button>
                     <br>
                     <br>
                     <label for="shipment-address"><b>Use this address : </b></label>
@@ -247,7 +255,7 @@ if (isset($_GET['delete_all'])) {
                 </button>
 
                 <!-- =========== -->
-            </form>
+         </form>
             <span class="close">&times;</span>
         </div>
     </div>

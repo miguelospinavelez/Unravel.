@@ -15,9 +15,13 @@ TO DO:
 -Prevent defaults
 -Imgs sizes and preload
 -Multiple sessions fixes
+-Transport fees & stock info
+-Lost password
 -Terms of use
 -Privacy
 -Confirmation emails
+Cookies
+-APIs
 -Content
 -External content 
 -Languages
@@ -26,3 +30,4 @@ TO DO:
 -Testing phase
 -Security
 -Revise
+-Host
