@@ -177,32 +177,52 @@ if (isset($_GET['delete_all'])) {
         <div class="modal-content">
             <h1>Order Details</h1>
             <form action="" method="post">
-                <div>
+
+            <h3>Contact information</h3>
+                <div class="contact-info">
                     <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
-                    <h3>Contact information</h3>
-                    <p class="box"> email : <span><?php echo $fetch_user['email']; ?></span> </p>
-                    <p class="box">phone : <span><?php echo $fetch_user['phone']; ?></span> </p>
-                </div>
-                <div>
-                    <h3>Shipping information</h3>
-                    <p class="box">address : <span><?php echo $fetch_user['address']; ?></span> </p>
-                    <p class="box">city : <span><?php echo $fetch_user['city']; ?></span></p>
-                    <p class="box">state : <span><?php echo $fetch_user['state']; ?></span> </p>
-                    <p class="box">Country : <span><?php echo $fetch_user['country']; ?></span> </p>
+                    <br>
+                    <label class="box"> <b>email</b> : </label>
+                
+                    <span><?php echo $fetch_user['email']; ?></span> 
+
+                    <p class="box"><b>phone</b> : <span><?php echo $fetch_user['phone']; ?></span> </p>
                 </div>
 
-                <!-- ===== /// Botón de pago ePayco /// ===== -->
+                <br>
+
+                <h3>Shipping information</h3>
+                <div class="shipping">
+                    <br>
+                    <label class="box"><b>address</b> : </label>
+                    <span><?php echo $fetch_user['address']; ?></span> 
+                    <br>
+                    <label class="box"><b>city </b>: </label>
+                    <span><?php echo $fetch_user['city']; ?></span>
+                    <br>
+                    <label class="box"><b>state</b> : <span><?php echo $fetch_user['state']; ?></span> </label>
+                    <br>
+                    <label class="box"><b>Country</b> : <span><?php echo $fetch_user['country']; ?></span> </label>
+                    <br>
+                    <br>
+                    <label for="shipment-address"><b>Use this address : </b></label>
+                    <input type="checkbox" name="shipment-address" id="" value="">
+                </div>
+
+                <button type="button" class="edit-btn">edit details</button>
+
+                <br>
+
+                <!-- === /// Botón de pago ePayco /// === -->
 
                 <button class="pay-btn" type="submit">
                     <form>
-                        <script src='https://checkout.epayco.co/checkout.js' data-epayco-key='0fc69c553288c82a6a6e83653039b150' class='epayco-button' data-epayco-amount='<?php echo $grand_total ?>' data-epayco-tax='0.00' data-epayco-tax-ico='0.00' data-epayco-tax-base='<?php echo $grand_total ?>' data-epayco-name='Botánicos' data-epayco-description='Botánicos' data-epayco-currency='usd' data-epayco-country='CO' data-epayco-test='true' data-epayco-external='false' data-epayco-response='' data-epayco-confirmation='' data-epayco-button='https://multimedia.epayco.co/dashboard/btns/btn3.png'>
+                        <script src='https://checkout.epayco.co/checkout.js' data-epayco-key='0fc69c553288c82a6a6e83653039b150' class='epayco-button' data-epayco-amount='<?php echo $grand_total ?>' data-epayco-tax='0.00' data-epayco-tax-ico='0.00' data-epayco-tax-base='<?php echo $grand_total ?>' data-epayco-name='Botánicos' data-epayco-description='Botánicos' data-epayco-currency='usd' data-epayco-country='CO' data-epayco-test='true' data-epayco-external='false' data-epayco-response='' data-epayco-confirmation='' data-epayco-button='imgs/icons/Proceed to Payment.png'>
                         </script>
                     </form>
                 </button>
 
                 <!-- =========== -->
-
-                <!-- <input type="submit" value="Proceed to Payment" class="btn"> -->
             </form>
             <span class="close">&times;</span>
         </div>

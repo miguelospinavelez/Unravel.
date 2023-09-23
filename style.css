@@ -125,7 +125,20 @@ section {
     background-color: rgb(207, 90, 90);
 }
 
+.edit-btn{
+    background-color: var(--black);
+    color: var(--white);
+    border-radius: 20px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: small;
+    margin: 2rem;
+}
 
+.edit-btn:hover{
+    background-color: var(--main-color);
+    transform: scale(1.01);
+}
 
 .delete-btn:hover,
 .option-btn:hover{
@@ -797,9 +810,14 @@ section {
     backdrop-filter: blur(5px);
 }
 
+.modal .modal-content form .details{
+    border: #222;
+
+}
+
 .modal-content {
     opacity: 0.9;
-    border-radius: 5px;
+    border-radius: 10px;
     background-color: #ffd5d5;
     margin: 15% auto;
     padding: 20px;
@@ -816,6 +834,7 @@ section {
 .modal-content h1 {
     text-align: center;
     padding-bottom: 2rem;
+    font-size: 25px;
 }
 
 .modal-content form {
@@ -823,15 +842,19 @@ section {
     text-align: center;
     align-content: center;
     justify-content: center;
+    font-size: 15px;
+}
+
+.modal-content form .shipping,
+.modal-content form .contact-info{
+    text-align: left;
 }
 
 .modal-content .pay-btn {
-    bottom: 1rem;
-    right: 10.07rem;
     position: absolute;
     align-items: center;
     justify-content: center;
-    background-color: #ffd5d5;
+    background: none;
 }
 
 .modal-content .pay-btn:hover {
@@ -1045,10 +1068,6 @@ section {
     .products .cart-btn {
         top: 125px;
         font-size: 18px;
-    }
-
-    .modal-content .pay-btn {
-        right: 18.46rem;
     }
 }
 
