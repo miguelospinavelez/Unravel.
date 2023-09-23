@@ -831,8 +831,11 @@ section {
 
 .modal-content h1 {
     text-align: center;
-    padding-bottom: 2rem;
-    font-size: 25px;
+    font-size: 27px;
+}
+
+.modal-content h2{
+    font-size: 20px;
 }
 
 .modal-content form {
