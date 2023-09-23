@@ -204,7 +204,7 @@ if (isset($_GET['delete_all'])) {
                 <div class="shipping">
                     <br>
                     <label class="box" for="zip"><b>ZIP</b> : </label>
-                    <input required type="text" style="background: none;" id="zip" value=""></input> 
+                    <input required type="text" style="background: none;" id="zip" value="<?php echo $fetch_user['zip']; ?>"></input> 
                     <br>
                     <label class="box" for="address"><b>address</b> : </label>
                     <input required type="text" style="width: 34rem; background: none;" id="address" value="<?php echo $fetch_user['address']; ?>"></input> 
