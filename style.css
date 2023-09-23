@@ -109,12 +109,13 @@ section {
 .delete-btn,
 .option-btn {
     display: inline-block;
-    padding: 1rem 2rem;
+    padding: .5rem 1rem;
     cursor: pointer;
     font-size: 1.5rem;
     color: var(--white);
     margin-right: 1rem;
-    border-radius: 20rem;
+    border-radius: 30rem;
+    white-space: nowrap;
 }
 
 .option-btn{
@@ -507,6 +508,7 @@ section {
     margin-top: 1rem;
 }
 
+
 /* ARCHIVE */
 
 .archive .box-container {
@@ -569,7 +571,11 @@ section {
     margin-top: 2rem;
 }
 
+
 /* CONTACT */
+
+
+
 
 /* PRODUCTS */
 
@@ -768,6 +774,10 @@ section {
     box-shadow: none;
 }
 
+.cart table tbody .table-bottom .total {
+    font-size: 25px;
+}
+
 .cart table tbody .table-bottom{
     margin-top: 2rem;
 }
@@ -817,12 +827,12 @@ section {
     opacity: 0.9;
     border-radius: 10px;
     background-color: #ffd5d5;
-    margin: 15% auto;
+    margin: 13.5% auto;
     padding: 15px;
     box-shadow: var(--box-shadow);
     width: 80%;
     max-width: 450px;
-    min-height: 480px;
+    min-height: 450px;
     position: relative;
     align-content: center;
     justify-content: center;
@@ -1108,6 +1118,9 @@ section {
         font-size: 18px;
     }
 
+    .modal-content{
+        margin: 14% auto;
+    }
     
 }
 
@@ -1145,6 +1158,10 @@ section {
 
     .products .cart-btn {
         top: 125px;
+    }
+
+    .modal-content{
+        margin: 13% auto;
     }
 }
 

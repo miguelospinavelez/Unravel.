@@ -140,9 +140,9 @@ if (isset($_GET['delete_all'])) {
 
                     <tr class="table-bottom">
 
-                        <td colspan="4" class="total">total :</td>
+                        <td colspan="4" class="total"><b>total : </b></td>
 
-                        <td>$<?php echo $grand_total; ?>.00 USD</td>
+                        <td class="total"><b>$<?php echo $grand_total; ?>.00 USD</b></td>
 
                         <td>
                             <a href="cart.php?delete_all" onclick="return confirm('remove all from cart?');" id="delete" class="delete-btn <?php echo ($grand_total > 1) ? '' : 'disabled'; ?>">remove all</a>
@@ -210,7 +210,11 @@ if (isset($_GET['delete_all'])) {
                     <br>
                     <label for="shipment-address"><b>Use this address : </b></label>
                     <input type="checkbox" name="shipment-address" id="" value="">
+                    <br>
+                    <label for="terms-agreements"><b>I have read the terms & agreements : </b></label>
+                    <input type="checkbox" name="terms-agreements" id="" value="">
                 </div>
+                <br>
 
                 <button type="button" class="edit-btn">edit details</button>
 
