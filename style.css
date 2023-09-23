@@ -829,7 +829,7 @@ section {
     opacity: 0.9;
     border-radius: 10px;
     background-color: #ffd5d5;
-    margin: 11% auto;
+    margin: 12% auto;
     padding: 15px;
     box-shadow: var(--box-shadow);
     width: 80%;
@@ -1088,6 +1088,7 @@ section {
     }
 }
 
+
 @media (max-width: 1010px) {
     html {
         font-size: 55%;
@@ -1125,6 +1126,7 @@ section {
     }
     
 }
+
 
 @media (max-width: 768px) {
     #menu-btn {
