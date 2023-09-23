@@ -879,6 +879,14 @@ section {
     filter: hue-rotate(180deg)
 }
 
+.modal-content .pay-btn.disabled {
+    pointer-events: none;
+    opacity: 0.7;
+    user-select: none;
+    transform: none;
+    cursor: not-allowed;
+}
+
 .close {
     position: absolute;
     top: 0;

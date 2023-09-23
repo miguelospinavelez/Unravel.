@@ -16,11 +16,12 @@ TO DO:
 -Imgs sizes and preload
 -Multiple sessions fixes
 -Transport fees & stock info
+-Email confirmation
 -Lost password
 -Terms of use
 -Privacy
 -Confirmation emails
-Cookies
+-Cookies
 -APIs
 -Content
 -External content 

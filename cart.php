@@ -190,19 +190,19 @@ if (isset($_GET['delete_all'])) {
 
                     <label class="box" for="name"><b>name</b> : </label>
 
-                    <input required style="background: none;" type="text" id="name" value="<?php echo $fetch_user['name']; ?>"></input> 
+                    <input required style="background: none;" type="text" id="name" value="<?php echo $fetch_user['name']; ?>"> 
 
                     <br>
 
                     <label class="box" for="email"> <b>email</b> : </label>
 
-                    <input required style="background: none;" type="email" id="email" value="<?php echo $fetch_user['email']; ?>"></input> 
+                    <input required style="background: none;" type="email" id="email" value="<?php echo $fetch_user['email']; ?>"> 
 
                     <br>
 
                     <label class="box" for="phone"><b>phone</b> : </label>
 
-                    <input required style="background: none;" type="tel" id="number" value="<?php echo $fetch_user['phone']; ?>"></input> 
+                    <input required style="background: none;" type="tel" id="phone" value="<?php echo $fetch_user['phone']; ?>"> 
 
                 </div>
 
@@ -216,34 +216,34 @@ if (isset($_GET['delete_all'])) {
 
                     <label class="box" for="zip"><b>ZIP</b> : </label>
 
-                    <input required type="text" style="background: none;" id="zip" value="<?php echo $fetch_user['zip']; ?>"></input> 
+                    <input required type="text" style="background: none;" id="zip" value="<?php echo $fetch_user['zip']; ?>">
 
                     <br>
 
                     <label class="box" for="address"><b>address</b> : </label>
 
-                    <input required type="text" style="width: 34rem; background: none;" id="address" value="<?php echo $fetch_user['address']; ?>"></input> 
+                    <input required type="text" style="width: 34rem; background: none;" id="address" value="<?php echo $fetch_user['address']; ?>">
 
                     <br>
 
                     <label class="box" for="city"><b>city </b>: </label>
 
-                    <input required style="background: none;" type="text" id="city" value="<?php echo $fetch_user['city']; ?>"></input>
+                    <input required style="background: none;" type="text" id="city" value="<?php echo $fetch_user['city']; ?>">
 
                     <br>
 
                     <label class="box" for="state"><b>state</b> : </label>
 
-                    <input required style="background: none;" type="text" id="state" value="<?php echo $fetch_user['state']; ?>"></input>
+                    <input required style="background: none;" type="text" id="state" value="<?php echo $fetch_user['state']; ?>">
 
                     <br>
 
                     <label class="box" for="country"><b>Country</b> : </label>
 
-                    <input required style="background: none;" type="text" id="country" value="<?php echo $fetch_user['country']; ?>"></input>
+                    <input required style="background: none;" type="text" id="country" value="<?php echo $fetch_user['country']; ?>">
 
                     <br>
-                    <br>
+                    
 
                 </div>
 
@@ -251,15 +251,18 @@ if (isset($_GET['delete_all'])) {
                     <input type="checkbox" name="shipment-address" required id="shipment-address" value="">
 
                     <br>
+                    <br>
 
                     <label for="terms-agreements"><b>I have read the terms & agreements : </b></label>
                     <input type="checkbox" name="terms-agreements" required id="terms-agreements" value="">
                 <br>
 
                 <!-- === /// Botón de pago ePayco /// === -->
-                <button class="pay-btn" type="submit">
+
+                <button class="pay-btn" type="submit" id="pay-btn" >
                     <form>
-                        <script src='https://checkout.epayco.co/checkout.js' 
+                        <script
+                        src='https://checkout.epayco.co/checkout.js' 
                         data-epayco-key='0fc69c553288c82a6a6e83653039b150' 
                         class='epayco-button' 
                         data-epayco-amount='<?php echo $grand_total ?>' 
@@ -272,12 +275,14 @@ if (isset($_GET['delete_all'])) {
                         data-epayco-country='CO' 
                         data-epayco-test='true' 
                         data-epayco-external='false' 
-                        data-epayco-response='' 
-                        data-epayco-confirmation='' 
-                        data-epayco-button='imgs/icons/Proceed to Payment.png'>
+                        data-epayco-response='response.php' 
+                        data-epayco-confirmation='confirmation.php' 
+                        data-epayco-button='imgs/icons/Proceed to Payment.png'
+                        >
                         </script>
                     </form>
                 </button>
+            
                 <!-- =========== -->
          </form>
             <span class="close">&times;</span>
@@ -336,7 +341,10 @@ if (isset($_GET['delete_all'])) {
 
 </body>
 
+    <!-- script -->
+
 <script>
+   document.addEventListener('DOMContentLoaded', function () {
 
     // MODAL \\
 
@@ -371,18 +379,16 @@ if (isset($_GET['delete_all'])) {
 
 
     // CHECKBOXES \\
-
+ 
     // Get the checkbox element
     var shipmentAddressCheckbox = document.getElementById('shipment-address');
-    var termsAgreementsCheckbox = document.getElementById('terms-agreements');
-    var paymentButton = document.getElementById('pay-btn');
-
+    
     // Get the fields you want to disable/enable
     var contactInfoFields = document.querySelectorAll('.contact-info input');
     var shippingFields = document.querySelectorAll('.shipping input');
-    var payButton = document.getElementById('pay-btn');
 
-    // Function to enable or disable fields based on checkbox state
+    // Function to check the state of checkboxes and enable/disable the button
+
     function toggleFields() {
         var isChecked = shipmentAddressCheckbox.checked;
 
@@ -400,17 +406,9 @@ if (isset($_GET['delete_all'])) {
 
     // Initial call to set the initial state
     toggleFields();
+});
 
-    function togglePaymentButton() {
-        paymentButton.disabled = !(shipmentAddressCheckbox.checked && termsAgreementsCheckbox.checked);
-    }
-
-    // Add event listeners to the checkboxes
-    shipmentAddressCheckbox.addEventListener('change', togglePaymentButton);
-    termsAgreementsCheckbox.addEventListener('change', togglePaymentButton);
-
-    // Initial call to set the initial state
-    togglePaymentButton();
+    
 </script>
 
 </html>
