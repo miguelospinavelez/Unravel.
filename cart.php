@@ -168,17 +168,20 @@ if (isset($_GET['delete_all'])) {
     <!-- order modal -->
 
     <div id="myModal" class="modal">
+
         <?php
         $select_user = mysqli_query($conn, "SELECT * FROM `user_form` WHERE id = '$user_id'") or die('query failed');
         if (mysqli_num_rows($select_user) > 0) {
             $fetch_user = mysqli_fetch_assoc($select_user);
         };
         ?>
+
         <div class="modal-content">
             <h1>Order Details</h1>
             <form action="" method="post">
 
             <h3>Contact information</h3>
+
                 <div class="contact-info">
                     <input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
                     <br>
@@ -192,6 +195,7 @@ if (isset($_GET['delete_all'])) {
                 <br>
 
                 <h3>Shipping information</h3>
+                
                 <div class="shipping">
                     <br>
                     <label class="box"><b>address</b> : </label>
