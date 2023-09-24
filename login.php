@@ -62,8 +62,6 @@ if (isset($_POST['submit'])) {
 
     </section>
 
-    <!-- header -->
-
 
     <!-- login -->
 
