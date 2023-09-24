@@ -216,7 +216,7 @@ if (isset($_GET['logout'])) {
     <section class="home-offer">
         <div class="content">
             <h3>Grow your own mushrooms</h3>
-            <img src="imgs/growbox.jpg" alt="">
+            <img src="imgs/growbox.png" alt="">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero vel voluptatem ea nam maxime porro deserunt aspernatur voluptatibus, quia odio.</p>
             <a href="book.php" class="btn">Starter Kit</a>
         </div>

@@ -275,8 +275,8 @@ if (isset($_GET['delete_all'])) {
                         data-epayco-country='CO' 
                         data-epayco-test='true' 
                         data-epayco-external='false' 
-                        data-epayco-response='response.php' 
-                        data-epayco-confirmation='confirmation.php' 
+                        data-epayco-response='http://localhost/project/cart.php' 
+                        data-epayco-confirmation='http://localhost/project/cart.php' 
                         data-epayco-button='imgs/icons/Proceed to Payment.png'
                         >
                         </script>
