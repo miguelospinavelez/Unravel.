@@ -407,8 +407,6 @@ if (isset($_GET['delete_all'])) {
     // Initial call to set the initial state
     toggleFields();
 });
-
-    
 </script>
 
 </html>

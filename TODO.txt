@@ -3,12 +3,18 @@
 TO DO:
 
 
-*Order form functionality
-*Product page
-*Back to store button
-*Profile
-*Archive fixes & links
+ 
+>>Order form
 
+*Pay button disable/checkbox require
+*Database
+*Handle form
+
+-Product page
+-Register modal
+-Back to store button
+-Profile
+-Archive fixes & links
 -Footer fixes
 -Block access to config.php and other PHP files
 -Sanitize forms
