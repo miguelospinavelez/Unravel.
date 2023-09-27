@@ -340,8 +340,6 @@ if (isset($_GET['delete_all'])) {
     <!-- custom js file link -->
     <script src="js\script.js"></script>
 
-</body>
-
     <!-- script -->
 
 <script>
@@ -372,18 +370,13 @@ if (isset($_GET['delete_all'])) {
             modal.style.display = 'none';
         }
     }
-
-
+    
     // CHECKBOXES \\
  
-    // Get the checkbox element
     var shipmentAddressCheckbox = document.getElementById('shipment-address');
     
-    // Get the fields you want to disable/enable
     var contactInfoFields = document.querySelectorAll('.contact-info input');
     var shippingFields = document.querySelectorAll('.shipping input');
-
-    // Function to check the state of checkboxes and enable/disable the button
 
     function toggleFields() {
         var isChecked = shipmentAddressCheckbox.checked;
@@ -397,12 +390,11 @@ if (isset($_GET['delete_all'])) {
 
     }
 
-    // Add an event listener to the checkbox
     shipmentAddressCheckbox.addEventListener('change', toggleFields);
 
-    // Initial call to set the initial state
     toggleFields();
 });
 </script>
 
+</body>
 </html>
