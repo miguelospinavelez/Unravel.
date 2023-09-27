@@ -283,8 +283,9 @@ if (isset($_GET['delete_all'])) {
                     </form>
                 </button>
             
-                <!-- =========== -->
+                <!-- =================================== -->
          </form>
+
             <span class="close">&times;</span>
         </div>
     </div>
@@ -348,25 +349,20 @@ if (isset($_GET['delete_all'])) {
 
     // MODAL \\
 
-    // Get the modal element and the close button
     var modal = document.getElementById('myModal');
     var closeButton = document.getElementsByClassName('close')[0];
 
-    // Function to open the modal
     function openModal() {
         modal.style.display = 'block';
     }
 
-    // Function to close the modal
     function closeModal() {
         modal.style.display = 'none';
     }
 
-    // Event listener for the "check out" button
     var checkoutButton = document.getElementById('checkoutButton');
     checkoutButton.addEventListener('click', openModal);
 
-    // Event listener for the close button
     closeButton.addEventListener('click', closeModal);
 
     closeButton.addEventListener('click', closeModal);

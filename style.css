@@ -863,6 +863,14 @@ section {
     text-align: left;
 }
 
+.modal-content .pay-btn.disabled {
+    pointer-events: none;
+    opacity: 0.7;
+    user-select: none;
+    transform: none;
+    cursor: not-allowed;
+}
+
 .modal-content .pay-btn {
     position: relative;
     align-items: center;
@@ -877,14 +885,6 @@ section {
     cursor: pointer;
     opacity: 1;
     filter: hue-rotate(180deg)
-}
-
-.modal-content .pay-btn.disabled {
-    pointer-events: none;
-    opacity: 0.7;
-    user-select: none;
-    transform: none;
-    cursor: not-allowed;
 }
 
 .close {
