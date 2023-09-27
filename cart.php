@@ -72,7 +72,7 @@ if (isset($_GET['delete_all'])) {
     </section>
 
 
-    <!-- button -->
+    <!-- message -->
 
     <div>
         <?php
