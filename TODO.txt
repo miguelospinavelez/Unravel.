@@ -27,9 +27,9 @@
 -Back to store button
 -Clear cart on payment confirmation
 -Border-radius for all buttons(1-5px)
--Profile
 -Product page
 -Register/login modal & new fields
+-Profile
 -Email confirmation
 -Lost password
 -Currencies 
@@ -39,7 +39,6 @@
 
 -Archive fixes & links
 -Footer fixes
--Dark mode
 -Block access to config.php and other PHP files
 -Sanitize forms
 -Prevent defaults
@@ -66,6 +65,7 @@
 -Advertising
 -Social media
 -Communications
+-Dark mode*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<---FINAL PHASE--->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
