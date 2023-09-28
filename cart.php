@@ -190,19 +190,19 @@ if (isset($_GET['delete_all'])) {
 
                     <label class="box" for="name"><b>name</b> : </label>
 
-                    <input required style="background: none;" type="text" id="name" value="<?php echo $fetch_user['name']; ?>"> 
+                    <input required style="background: none;" type="text" id="name" name="name" value="<?php echo $fetch_user['name']; ?>"> 
 
                     <br>
 
                     <label class="box" for="email"> <b>email</b> : </label>
 
-                    <input required style="background: none;" type="email" id="email" value="<?php echo $fetch_user['email']; ?>"> 
+                    <input required style="background: none;" type="email" id="email" name="email" value="<?php echo $fetch_user['email']; ?>"> 
 
                     <br>
 
                     <label class="box" for="phone"><b>phone</b> : </label>
 
-                    <input required style="background: none;" type="tel" id="phone" value="<?php echo $fetch_user['phone']; ?>"> 
+                    <input required style="background: none;" type="tel" id="phone" name="phone" value="<?php echo $fetch_user['phone']; ?>"> 
 
                 </div>
 
@@ -216,31 +216,31 @@ if (isset($_GET['delete_all'])) {
 
                     <label class="box" for="zip"><b>ZIP</b> : </label>
 
-                    <input required type="text" style="background: none;" id="zip" value="<?php echo $fetch_user['zip']; ?>">
+                    <input required type="text" style="background: none;" name="zip" id="zip" value="<?php echo $fetch_user['zip']; ?>">
 
                     <br>
 
                     <label class="box" for="address"><b>address</b> : </label>
 
-                    <input required type="text" style="width: 34rem; background: none;" id="address" value="<?php echo $fetch_user['address']; ?>">
+                    <input required type="text" name="address" style="width: 34rem; background: none;" id="address" value="<?php echo $fetch_user['address']; ?>">
 
                     <br>
 
                     <label class="box" for="city"><b>city </b>: </label>
 
-                    <input required style="background: none;" type="text" id="city" value="<?php echo $fetch_user['city']; ?>">
+                    <input required style="background: none;" type="text" id="city" name="city" value="<?php echo $fetch_user['city']; ?>">
 
                     <br>
 
                     <label class="box" for="state"><b>state</b> : </label>
 
-                    <input required style="background: none;" type="text" id="state" value="<?php echo $fetch_user['state']; ?>">
+                    <input required style="background: none;" type="text" id="state" name="state" value="<?php echo $fetch_user['state']; ?>">
 
                     <br>
 
                     <label class="box" for="country"><b>Country</b> : </label>
 
-                    <input required style="background: none;" type="text" id="country" value="<?php echo $fetch_user['country']; ?>">
+                    <input required style="background: none;" type="text" id="country" name="country" value="<?php echo $fetch_user['country']; ?>">
 
                     <br>
                     
@@ -255,7 +255,8 @@ if (isset($_GET['delete_all'])) {
 
                     <label for="terms-agreements"><b>I have read the terms & agreements : </b></label>
                     <input type="checkbox" name="terms-agreements" required id="terms-agreements" value="">
-                <br>
+                    
+                    <br>
 
                 <!-- === /// Botón de pago ePayco /// === -->
 
@@ -392,8 +393,7 @@ if (isset($_GET['delete_all'])) {
 
     shipmentAddressCheckbox.addEventListener('change', toggleFields);
 
-    toggleFields();
-});
+    toggleFields();});
 </script>
 
 </body>
