@@ -178,7 +178,7 @@ if (isset($_GET['delete_all'])) {
         <div class="modal-content">
          <h1>Order Details</h1>
          
-          <form action="" method="post" class="order-form">
+          <form action="" method="" class="order-form">
 
             <h3>Contact information</h3>
 
@@ -260,7 +260,7 @@ if (isset($_GET['delete_all'])) {
 
                 <!-- === /// Botón de pago ePayco /// === -->
 
-                <button class="pay-btn" type="submit" id="pay-btn" >
+                <button class="pay-btn" type="submit" id="pay-btn" name="pay-btn">
                     <form>
                         <script
                         src='https://checkout.epayco.co/checkout.js' 
