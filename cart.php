@@ -260,7 +260,7 @@ if (isset($_GET['delete_all'])) {
 
                 <!-- === /// Botón de pago ePayco /// === -->
 
-                <button class="pay-btn" type="submit" id="pay-btn" name="pay-btn">
+                <!-- <button class="pay-btn" type="submit" id="pay-btn" name="pay-btn">
                     <form>
                         <script
                         src='https://checkout.epayco.co/checkout.js' 
@@ -282,7 +282,7 @@ if (isset($_GET['delete_all'])) {
                         >
                         </script>
                     </form>
-                </button>
+                </button> -->
             
                 <!-- =================================== -->
          </form>
@@ -342,59 +342,58 @@ if (isset($_GET['delete_all'])) {
     <script src="js\script.js"></script>
 
     <!-- script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
 
-<script>
-   document.addEventListener('DOMContentLoaded', function () {
+        // MODAL \\
 
-    // MODAL \\
+        var modal = document.getElementById('myModal');
+        var closeButton = document.getElementsByClassName('close')[0];
 
-    var modal = document.getElementById('myModal');
-    var closeButton = document.getElementsByClassName('close')[0];
+        function openModal() {
+            modal.style.display = 'block';
+        }
 
-    function openModal() {
-        modal.style.display = 'block';
-    }
-
-    function closeModal() {
-        modal.style.display = 'none';
-    }
-
-    var checkoutButton = document.getElementById('checkoutButton');
-    checkoutButton.addEventListener('click', openModal);
-
-    closeButton.addEventListener('click', closeModal);
-
-    closeButton.addEventListener('click', closeModal);
-
-    window.onclick = function(event) {
-        if (event.target == modal) {
+        function closeModal() {
             modal.style.display = 'none';
         }
-    }
+
+        var checkoutButton = document.getElementById('checkoutButton');
+        checkoutButton.addEventListener('click', openModal);
+
+        closeButton.addEventListener('click', closeModal);
+
+        closeButton.addEventListener('click', closeModal);
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+        
+        // CHECKBOXES \\
     
-    // CHECKBOXES \\
- 
-    var shipmentAddressCheckbox = document.getElementById('shipment-address');
-    
-    var contactInfoFields = document.querySelectorAll('.contact-info input');
-    var shippingFields = document.querySelectorAll('.shipping input');
+        var shipmentAddressCheckbox = document.getElementById('shipment-address');
+        
+        var contactInfoFields = document.querySelectorAll('.contact-info input');
+        var shippingFields = document.querySelectorAll('.shipping input');
 
-    function toggleFields() {
-        var isChecked = shipmentAddressCheckbox.checked;
+        function toggleFields() {
+            var isChecked = shipmentAddressCheckbox.checked;
 
-        contactInfoFields.forEach(function (field) {
-            field.disabled = isChecked;
-        });
-        shippingFields.forEach(function (field) {
-            field.disabled = isChecked;
-        });
+            contactInfoFields.forEach(function (field) {
+                field.disabled = isChecked;
+            });
+            shippingFields.forEach(function (field) {
+                field.disabled = isChecked;
+            });
 
-    }
+        }
 
-    shipmentAddressCheckbox.addEventListener('change', toggleFields);
+        shipmentAddressCheckbox.addEventListener('change', toggleFields);
 
-    toggleFields();});
-</script>
+        toggleFields();});
+    </script>
 
 </body>
 </html>
