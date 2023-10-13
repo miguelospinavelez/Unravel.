@@ -97,7 +97,6 @@ if (isset($_SESSION['user_id'])) {
     </section>
 
 
-
     <!-- products -->
 
     <section class="products">
@@ -211,3 +210,4 @@ if (isset($_SESSION['user_id'])) {
 </body>
 
 </html>
+

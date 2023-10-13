@@ -4,7 +4,7 @@ include 'config.php';
 session_start();
 if (isset($_SESSION['user_id'])) {
     header('location:home.php');
-    exit; 
+    exit;
 }
 
 ?>
@@ -15,7 +15,7 @@ if (isset($_SESSION['user_id'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Unravel. | Microdosing & Mushroom Cultivation  </title>
+    <title> Unravel. | Microdosing & Mushroom Cultivation </title>
 
     <!-- favicon link -->
     <link rel="icon" type="image/x-icon" href="imgs/icons/favicon.ico">
@@ -42,8 +42,8 @@ if (isset($_SESSION['user_id'])) {
             <a href="about.php">about</a>
             <a href="package.php">archive</a>
             <a href="book.php">products</a>
-            <a href="login.php">Log in</a>
-                </nav>
+            <a id="loginButton">Log in</a>
+        </nav>
         <div id="menu-btn" class="fas fa-bars"></div>
 
 
@@ -260,6 +260,55 @@ if (isset($_SESSION['user_id'])) {
     </section>
 
 
+    <!-- login modal -->
+
+    <div id="myModal" class="modal">
+
+        <?php
+        $select_user = mysqli_query($conn, "SELECT * FROM `user_form` WHERE id = '$user_id'") or die('query failed');
+        if (mysqli_num_rows($select_user) > 0) {
+            $fetch_user = mysqli_fetch_assoc($select_user);
+        };
+        ?>
+
+        <div class="modal-content">
+
+            <h1>Log In</h1>
+
+            <a href="register.php">
+                <h3>Don't have an account? Sign up</h3>
+                <?php
+                if (isset($message)) {
+                    foreach ($message as $message) {
+                        echo '<div class="message" onclick="this.remove();">' . $message . '</div>';
+                    }
+                }
+                ?>
+            </a>
+
+            <form action="" method="post" class="">
+
+
+                <div>
+                    <span>email :</span>
+                    <input type="email" required placeholder="Email" name="email">
+                </div>
+
+                <div>
+                    <span>password :</span>
+                    <input type="password" required placeholder="Password" name="password">
+                </div>
+
+
+                <input type="submit" value="Log in" class="btn" name="submit">
+
+                <a href="forgot-password.php">Forgot your password?</a>
+
+            </form>
+
+            <span class="close">&times;</span>
+        </div>
+    </div>
 
 
     <!-- swiper js link -->
@@ -268,6 +317,34 @@ if (isset($_SESSION['user_id'])) {
 
     <!-- custom js file link -->
     <script src="js/script.js"></script>
+
+    <script>
+        // MODAL \\
+
+        var modal = document.getElementById('myModal');
+        var closeButton = document.getElementsByClassName('close')[0];
+
+        function openModal() {
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        var checkoutButton = document.getElementById('loginButton');
+        checkoutButton.addEventListener('click', openModal);
+
+        closeButton.addEventListener('click', closeModal);
+
+        closeButton.addEventListener('click', closeModal);
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
 
 </body>
 
