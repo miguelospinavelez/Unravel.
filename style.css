@@ -155,6 +155,7 @@ section {
     user-select: none;
 }
 
+
 /* HEADER */
 
 .header {
@@ -194,6 +195,7 @@ section {
     display: none;
 }
 
+
 /* HOME */
 
 .home {
@@ -210,6 +212,7 @@ section {
     background-position: center !important;
     min-height: 45rem;
 }
+
 .home:hover{
     cursor: pointer;
 }
@@ -399,6 +402,7 @@ section {
     line-height: 2;
     padding: 1rem 0;
 }
+
 
 /* ABOUT */
 
@@ -893,6 +897,7 @@ section {
     transform: scale(2.5);
 }
 
+
 /* LOGIN/REGISTRATION */
 
 .login {
@@ -1012,6 +1017,7 @@ section {
     max-width: 600px;
 }
 
+
 /* FOOTER */
 
 .footer {
@@ -1061,6 +1067,7 @@ section {
 .footer .credit span {
     color: var(--main-color);
 }
+
 
 /* MEDIA QUERIES */
 
