@@ -521,7 +521,7 @@ section {
     gap: 2rem;
 }
 
-.packages .box-container .box {
+.archive .box-container .box {
     border: var(--border);
     box-shadow: var(--box-shadow);
     background: var(--white);
@@ -900,90 +900,8 @@ section {
 
 /* LOGIN/REGISTRATION */
 
-.login {
-    background-image: url(imgs/wavy.jpg);
-    background-position: relative;
-    background-repeat: no-repeat;
-    background-size: 100%;
-}
 
-.login .heading-title {
-    color: var(--black);
-}
 
-.login-box {
-    background: opacity(0.8);
-}
-
-.login-box h3 {
-    text-align: center;
-    color: rgb(140, 69, 255);
-    font-size: large;
-}
-
-.login-box h3:hover {
-    text-align: center;
-    color: rgb(227, 58, 185);
-    font-size: large;
-}
-
-.login .form-container {
-    min-height: 50vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 50px;
-    padding-bottom: 30vh;
-}
-
-.login .book-form {
-    background-color: opacity(0.3px);
-}
-
-.login .form-container form {
-    width: 600px;
-    display: inline-block;
-}
-
-.login .book-form .flex {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
-
-.login .book-form .flex .inputBox {
-    flex: 1 1 41rem;
-}
-
-.login .book-form .flex .inputBox input {
-    width: 100%;
-    padding: 1.2rem 1.4rem;
-    font-size: 1.6rem;
-    color: var(--light-black);
-    text-transform: none;
-    margin-top: 1.5rem;
-    border: var(--border);
-    border-radius: 5px;
-    opacity: 0.6;
-}
-
-.login .book-form .flex .inputBox input:focus {
-    background: var(--black);
-    color: var(--white);
-}
-
-.login .book-form .flex .inputBox input:focus::placeholder {
-    color: var(--lightw-white);
-}
-
-.login .book-form .flex .inputBox span {
-    font-size: 1.5rem;
-    color: var(--light-black);
-}
-
-.login .book-form .flex .btn {
-    margin-top: 7rem;
-}
 
 /* PROFILE */
 

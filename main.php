@@ -5,22 +5,6 @@ session_start();
 if (isset($_SESSION['user_id'])) {
     header('location:home.php');
     exit;
-
-    if (isset($_POST['submit'])) {
-        $name = mysqli_real_escape_string($conn, $_POST['name']);
-        $email = mysqli_real_escape_string($conn, $_POST['email']);
-        $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
-        $cpass = mysqli_real_escape_string($conn, md5($_POST['cpassword']));
-
-        $select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE email = '$email' AND password = '$pass' ") or die('query failed');
-
-        if (mysqli_num_rows($select) > 0) {
-            $message[] = 'user already exists';
-        } else {
-            mysqli_query($conn, "INSERT INTO `user_form`(name, email, password) VALUES('$name','$email','$pass')") or die('query failed');
-            $message[] = 'registered successfully';
-        }
-    }
 }
 
 ?>
@@ -274,50 +258,98 @@ if (isset($_SESSION['user_id'])) {
 
 
 
+    <!-- register modal -->
+
+    <div id="myModal2" class="">
+
+    <?php
+    if(isset($_POST['sumbit'])){
+        $name = mysqli_real_escape_string($conn,$_POST['name']);
+        $email = mysqli_real_escape_string($conn,$_POST['email']);
+        $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
+
+        $select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE email = '$email' AND password = '$pass'") or die('query failed');
+
+        if(mysqli_num_rows($select) > 0){
+            $message['user already exists'];
+        };
+    }
+    ?>
+
+        <div class="">
+
+            <h1>Register</h1>
+
+            <a id="loginButton">
+                Already have an account? Log in
+            </a>
+
+            <?php
+            if (isset($message)) {
+                foreach ($message as $message) {
+                    echo '<div class="message" onclick="this.remove();">' . $message . '</div>';
+                }
+            }
+            ?>
+
+            <form action="" method="post">
+
+                <label for="name">name :</label>
+                <input type="text" required placeholder="Enter your name" name="name" class="box">
+                <br>
+                <label for="email">email :</label>
+                <input type="email" required placeholder="Enter your email" name="email">
+                <br>
+                <label for="password">password :</label>
+                <input type="password" required placeholder="Set password" name="password" class="box">
+                <br>
+                <label for="cpassword">Confirm password :</label>
+                <input type="password" required placeholder="Confirm password" name="cpassword" class="box">
+
+                <input type="submit" value="Register now" class="btn" name="submit">
+
+            </form>
+
+            <span class="close2">&times;</span>
+        </div>
+    </div>
+
+
+
     <!-- login modal -->
 
-    <div id="myModal" class="modal">
+    <div id="myModal" class="">
 
-        <?php
-        $select_user = mysqli_query($conn, "SELECT * FROM `user_form` WHERE id = '$user_id'") or die('query failed');
-        if (mysqli_num_rows($select_user) > 0) {
-            $fetch_user = mysqli_fetch_assoc($select_user);
-        };
-        ?>
 
-        <div class="modal-content">
+        <div class="">
 
             <h1>Log In</h1>
 
-            <a id="registerButton" style="cursor: pointer;">
+            <a id="registerButton">
                 Don't have an account? Sign up
             </a>
 
             <?php
-                if (isset($message)) {
-                    foreach ($message as $message) {
-                        echo '<div class="message" onclick="this.remove();">' . $message . '</div>';
-                    }
+            if (isset($message)) {
+                foreach ($message as $message) {
+                    echo '<div class="message" onclick="this.remove();">' . $message . '</div>';
                 }
-                ?>
+            }
+            ?>
 
-            <form action="" method="post" class="">
-
-
-                <div>
-                    <span>email :</span>
-                    <input type="email" required placeholder="Email" name="email">
-                </div>
-
-                <div>
-                    <span>password :</span>
-                    <input type="password" required placeholder="Password" name="password">
-                </div>
+            <form action="index.php" method="post" class="">
 
 
+
+                <label for="email">email :</label>
+                <input type="email" required placeholder="Email" name="email">
+                <br>
+                <label for="password">password :</label>
+                <input type="password" required placeholder="Password" name="password">
+                <br>
                 <input type="submit" value="Log in" class="btn" name="submit">
 
-                <a href="forgot-password.php">Forgot your password?</a>
+                <a href="">Forgot your password?</a>
 
             </form>
 
@@ -325,53 +357,10 @@ if (isset($_SESSION['user_id'])) {
         </div>
 
 
-                 <!-- register modal -->
 
-                <div id="myModal2" class="modal">
-                    <h1>Register</h1>
-                    <a id="loginButton">
-                        <h3>Already have an account? Log in</h3>
-                        <div>
-                            <?php
-                            if (isset($message)) {
-                                foreach ($message as $message) {
-                                    echo '<div class="message" onclick="this.remove();">' . $message . '</div>';
-                                }
-                            }
-                            ?>
-                        </div>
-                    </a>
-                    <div class="modal-content">
-                        <form action="" method="post">
-
-                            <span>name :</span>
-                            <input type="text" required placeholder="Enter your name" name="name" class="box">
-
-
-
-                            <span>email :</span>
-                            <input type="email" required placeholder="Enter your email" name="email">
-
-
-
-                            <span>password :</span>
-                            <input type="password" required placeholder="Set password" name="password" class="box">
-
-
-                            <span>Confirm password :</span>
-                            <input type="password" required placeholder="Re-enter password" name="cpassword" class="box">
-
-                            <input type="submit" value="Register now" class="btn" name="submit">
-                        </form>
-                        <span class="close">&times;</span>
-                    </div>
-                </div>
 
     </div>
 
-
-
-   
 
 
     <!-- swiper js link -->
@@ -386,8 +375,10 @@ if (isset($_SESSION['user_id'])) {
 
     <!-- modal scripts -->
     <script>
+
+        //LOGIN
+        {    
         var modal = document.getElementById('myModal');
-        var modal2 = document.getElementById('myModal2');
         var closeButton = document.getElementsByClassName('close')[0];
 
         function openModal() {
@@ -409,7 +400,14 @@ if (isset($_SESSION['user_id'])) {
             if (event.target == modal) {
                 modal.style.display = 'none';
             }
+          }
         }
+
+        //REGISTER
+
+        var modal2 = document.getElementById('myModal2');
+        var closeButton2 = document.getElementsByClassName('close2')[0];
+
         function openModal2() {
             modal2.style.display = 'block';
         }
@@ -419,11 +417,11 @@ if (isset($_SESSION['user_id'])) {
         }
 
         var registerButton = document.getElementById('registerButton');
-        registerButton.addEventListener('click', openModal);
+        registerButton.addEventListener('click', openModal2);
 
-        closeButton.addEventListener('click', closeModal);
+        closeButton2.addEventListener('click', closeModal2);
 
-        closeButton.addEventListener('click', closeModal);
+        closeButton2.addEventListener('click', closeModal2);
 
         window.onclick = function(event) {
             if (event.target == modal2) {

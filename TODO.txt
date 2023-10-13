@@ -18,8 +18,7 @@
 
 -I-
 
--Register/login modal & new fields
--Order confirmation email 
+-Register/login modal & new fields 
 -Stock info
 -Empty cart buttons hide 
 -Back to store button
@@ -27,30 +26,28 @@
 -Border-radius for all buttons(1-5px)
 -Product page
 -Profile
--Email confirmation
--Lost password
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
--II-
-
 -Sanitize forms
 -Archive fixes & links
 -Footer fixes
--Block access to config.php and other PHP files
--Prevent defaults
--Imgs sizes and preload
--Multiple sessions fixes
 -Contact
 -User feedback
 -404
 -Site map
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
--III-
+-II-
 
+-Block access to config.php and other PHP files
+-Prevent defaults
+-Imgs sizes and preload
+-Multiple sessions fixes
 -Terms of use
 -Privacy
 -Legal compliance
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-III-
+
 -Browsers & devices verification
 -Cookies
 -Additional APIs
@@ -62,6 +59,9 @@
 -Advertising
 -Social media
 -Communications
+-Email confirmation
+-Lost password
+-Order confirmation email
 -Dark mode*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
