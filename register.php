@@ -70,6 +70,7 @@ if (isset($_POST['submit'])) {
     <section class="login-box">
 
         <h1 class="heading-title">Registration</h1>
+
         <a href="login.php">
             <h3>Already have an account? Log in</h3>
             <div>
@@ -82,7 +83,9 @@ if (isset($_POST['submit'])) {
                 ?>
             </div>
         </a>
+
         <div class="form-container">
+            
             <form action="" method="post" class="book-form">
                 <div class="flex">
                     <div class="inputBox">
@@ -104,6 +107,7 @@ if (isset($_POST['submit'])) {
                 </div>
                 <input type="submit" value="Register now" class="btn" name="submit">
             </form>
+
         </div>
 
     </section>
