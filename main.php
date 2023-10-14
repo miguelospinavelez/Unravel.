@@ -7,6 +7,22 @@ if (isset($_SESSION['user_id'])) {
     exit;
 }
 
+if(isset($_POST['sumbit'])){
+    $name = mysqli_real_escape_string($conn,$_POST['name']);
+    $email = mysqli_real_escape_string($conn,$_POST['email']);
+    $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
+
+    $select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE email = '$email' AND password = '$pass'") or die('query failed');
+
+    if(mysqli_num_rows($select) > 0){
+        $message['user already exists'];
+    }else{
+        mysqli_query($conn,"INSERT INTO `user_form` (name, email, password) VALUES('$name', '$email', '$pass')") or die('query failed');
+
+        $message['Registered succesfully'];
+    };
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -260,27 +276,13 @@ if (isset($_SESSION['user_id'])) {
 
     <!-- register modal -->
 
-    <div id="myModal2" class="">
+    <div id="myModal2" class="modal">
 
-    <?php
-    if(isset($_POST['sumbit'])){
-        $name = mysqli_real_escape_string($conn,$_POST['name']);
-        $email = mysqli_real_escape_string($conn,$_POST['email']);
-        $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
-
-        $select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE email = '$email' AND password = '$pass'") or die('query failed');
-
-        if(mysqli_num_rows($select) > 0){
-            $message['user already exists'];
-        };
-    }
-    ?>
-
-        <div class="">
+        <div class="modal-content">
 
             <h1>Register</h1>
 
-            <a id="loginButton">
+            <a id="backButton" style="cursor: pointer;">
                 Already have an account? Log in
             </a>
 
@@ -293,23 +295,20 @@ if (isset($_SESSION['user_id'])) {
             ?>
 
             <form action="" method="post">
-
                 <label for="name">name :</label>
-                <input type="text" required placeholder="Enter your name" name="name" class="box">
+                <input type="text" required placeholder="Enter your name" name="name">
                 <br>
                 <label for="email">email :</label>
                 <input type="email" required placeholder="Enter your email" name="email">
                 <br>
                 <label for="password">password :</label>
-                <input type="password" required placeholder="Set password" name="password" class="box">
+                <input type="password" required placeholder="Set password" name="password">
                 <br>
                 <label for="cpassword">Confirm password :</label>
-                <input type="password" required placeholder="Confirm password" name="cpassword" class="box">
-
+                <input type="password" required placeholder="Confirm password" name="cpassword">
+                <br>
                 <input type="submit" value="Register now" class="btn" name="submit">
-
             </form>
-
             <span class="close2">&times;</span>
         </div>
     </div>
@@ -318,14 +317,12 @@ if (isset($_SESSION['user_id'])) {
 
     <!-- login modal -->
 
-    <div id="myModal" class="">
-
-
-        <div class="">
+    <div id="myModal" class="modal">
+        <div class="modal-content">
 
             <h1>Log In</h1>
 
-            <a id="registerButton">
+            <a id="registerButton" style="cursor: pointer;">
                 Don't have an account? Sign up
             </a>
 
@@ -338,9 +335,6 @@ if (isset($_SESSION['user_id'])) {
             ?>
 
             <form action="index.php" method="post" class="">
-
-
-
                 <label for="email">email :</label>
                 <input type="email" required placeholder="Email" name="email">
                 <br>
@@ -348,17 +342,10 @@ if (isset($_SESSION['user_id'])) {
                 <input type="password" required placeholder="Password" name="password">
                 <br>
                 <input type="submit" value="Log in" class="btn" name="submit">
-
                 <a href="">Forgot your password?</a>
-
             </form>
-
             <span class="close">&times;</span>
         </div>
-
-
-
-
     </div>
 
 
@@ -383,6 +370,14 @@ if (isset($_SESSION['user_id'])) {
 
         function openModal() {
             modal.style.display = 'block';
+            modal2.style.display = 'none';
+            menu.classList.toggle('fa-times');
+            navbar.classList.toggle('active') ; 
+        }
+
+        function openModalAgain() {
+            modal.style.display = 'block';
+            modal2.style.display = 'none';
         }
 
         function closeModal() {
@@ -410,6 +405,7 @@ if (isset($_SESSION['user_id'])) {
 
         function openModal2() {
             modal2.style.display = 'block';
+            modal.style.display = 'none';
         }
 
         function closeModal2() {
@@ -417,7 +413,11 @@ if (isset($_SESSION['user_id'])) {
         }
 
         var registerButton = document.getElementById('registerButton');
+        var backButton = document.getElementById('backButton')
+
         registerButton.addEventListener('click', openModal2);
+
+        backButton.addEventListener('click', openModalAgain);
 
         closeButton2.addEventListener('click', closeModal2);
 
@@ -428,6 +428,8 @@ if (isset($_SESSION['user_id'])) {
                 modal2.style.display = 'none';
             }
         }
+
+        
     </script>
 
 </body>
