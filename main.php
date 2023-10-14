@@ -6,25 +6,7 @@ if (isset($_SESSION['user_id'])) {
     header('location:home.php');
     exit;
 }
-
-if(isset($_POST['sumbit'])){
-    $name = mysqli_real_escape_string($conn,$_POST['name']);
-    $email = mysqli_real_escape_string($conn,$_POST['email']);
-    $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
-
-    $select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE email = '$email' AND password = '$pass'") or die('query failed');
-
-    if(mysqli_num_rows($select) > 0){
-        $message['user already exists'];
-    }else{
-        mysqli_query($conn,"INSERT INTO `user_form` (name, email, password) VALUES('$name', '$email', '$pass')") or die('query failed');
-
-        $message['Registered succesfully'];
-    };
-}
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -254,7 +236,7 @@ if(isset($_POST['sumbit'])){
                 <a href="#"> <i class="fas fa-phone"></i> +123-456-7890</a>
                 <a href="#"> <i class="fas fa-phone"></i> +111-222-3333</a>
                 <a href="#"> <i class="fas fa-envelope"></i> contact@unravel.com</a>
-                <a href="#"> <i class="fas fa-map"></i> Medellín, Colombia - 050020 </a>
+                <a href="#"> <i class="fas fa-map"></i> Santa Elena, Colombia - 054047 </a>
             </div>
 
             <div class="box">
@@ -268,7 +250,7 @@ if(isset($_POST['sumbit'])){
         </div>
 
         <div class="credit">
-            <p>© 2021 Unravel. All rights reserved | Created by <span>Myself</span> Web Design</p>
+            <p>© 2023 <span>Unravel.</span> | All rights reserved </p>
         </div>
     </section>
 
@@ -278,6 +260,23 @@ if(isset($_POST['sumbit'])){
 
     <div id="myModal2" class="modal">
 
+    <?php
+    if(isset($_POST['sumbit'])){
+        $name = mysqli_real_escape_string($conn,$_POST['name']);
+        $email = mysqli_real_escape_string($conn,$_POST['email']);
+        $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
+    
+        $select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE email = '$email' AND password = '$pass'") or die('query failed');
+    
+        if(mysqli_num_rows($select) > 0){
+            $message['user already exists'];
+        }else{
+            mysqli_query($conn,"INSERT INTO `user_form` (name, email, password) VALUES('$name', '$email', '$pass')") or die('query failed');
+    
+            $message['Registered succesfully'];
+        };
+    }
+    ?>
         <div class="modal-content">
 
             <h1>Register</h1>
@@ -307,7 +306,7 @@ if(isset($_POST['sumbit'])){
                 <label for="cpassword">Confirm password :</label>
                 <input type="password" required placeholder="Confirm password" name="cpassword">
                 <br>
-                <input type="submit" value="Register now" class="btn" name="submit">
+                <input type="submit" value="Register now" class="btn" name="submit" id="openModalOnceMore">
             </form>
             <span class="close2">&times;</span>
         </div>
@@ -318,6 +317,23 @@ if(isset($_POST['sumbit'])){
     <!-- login modal -->
 
     <div id="myModal" class="modal">
+            <?php
+            if(isset($_POST['sumbit'])){
+                $email = mysqli_real_escape_string($conn,$_POST['email']);
+                $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
+            
+                $select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE email = '$email' AND password = '$pass'") or die('query failed');
+            
+                if(mysqli_num_rows($select) > 0){
+                    $message['user already exists'];
+                }else{
+                    mysqli_query($conn,"INSERT INTO `user_form` (name, email, password) VALUES( '$email', '$pass')") or die('query failed');
+            
+                };
+            }
+            ?>
+    
+
         <div class="modal-content">
 
             <h1>Log In</h1>
@@ -334,7 +350,7 @@ if(isset($_POST['sumbit'])){
             }
             ?>
 
-            <form action="index.php" method="post" class="">
+            <form action="" method="post" class="">
                 <label for="email">email :</label>
                 <input type="email" required placeholder="Email" name="email">
                 <br>
@@ -380,6 +396,11 @@ if(isset($_POST['sumbit'])){
             modal2.style.display = 'none';
         }
 
+        function openModalOnceMore() {
+            modal.style.display = 'block';
+            modal2.style.display = 'none';
+        }
+
         function closeModal() {
             modal.style.display = 'none';
         }
@@ -419,7 +440,7 @@ if(isset($_POST['sumbit'])){
 
         backButton.addEventListener('click', openModalAgain);
 
-        closeButton2.addEventListener('click', closeModal2);
+        openModelOnceMore.addEventListener('click', openModalOnceMore);
 
         closeButton2.addEventListener('click', closeModal2);
 
