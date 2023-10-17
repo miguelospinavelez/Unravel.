@@ -261,20 +261,20 @@ if (isset($_SESSION['user_id'])) {
     <div id="myModal2" class="modal">
 
     <?php
-    if(isset($_POST['sumbit'])){
-        $name = mysqli_real_escape_string($conn,$_POST['name']);
-        $email = mysqli_real_escape_string($conn,$_POST['email']);
+    if (isset($_POST['submit'])) {
+        $name = mysqli_real_escape_string($conn, $_POST['name']);
+        $email = mysqli_real_escape_string($conn, $_POST['email']);
         $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
+        $cpass = mysqli_real_escape_string($conn, md5($_POST['cpassword']));
     
-        $select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE email = '$email' AND password = '$pass'") or die('query failed');
+        $select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE email = '$email' AND password = '$pass' ") or die('query failed');
     
-        if(mysqli_num_rows($select) > 0){
-            $message['user already exists'];
-        }else{
-            mysqli_query($conn,"INSERT INTO `user_form` (name, email, password) VALUES('$name', '$email', '$pass')") or die('query failed');
-    
-            $message['Registered succesfully'];
-        };
+        if (mysqli_num_rows($select) > 0) {
+            $message[] = 'user already exists';
+        } else {
+            mysqli_query($conn, "INSERT INTO `user_form`(name, email, password) VALUES('$name','$email','$pass')") or die('query failed');
+            $message[] = 'registered successfully';
+        }
     }
     ?>
         <div class="modal-content">
@@ -306,7 +306,7 @@ if (isset($_SESSION['user_id'])) {
                 <label for="cpassword">Confirm password :</label>
                 <input type="password" required placeholder="Confirm password" name="cpassword">
                 <br>
-                <input type="submit" value="Register now" class="btn" name="submit" id="openModalOnceMore">
+                <input type="submit" value="Register now" class="btn" name="submit" >
             </form>
             <span class="close2">&times;</span>
         </div>
@@ -318,18 +318,19 @@ if (isset($_SESSION['user_id'])) {
 
     <div id="myModal" class="modal">
             <?php
-            if(isset($_POST['sumbit'])){
-                $email = mysqli_real_escape_string($conn,$_POST['email']);
+            if (isset($_POST['submit'])) {
+                $email = mysqli_real_escape_string($conn, $_POST['email']);
                 $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
             
-                $select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE email = '$email' AND password = '$pass'") or die('query failed');
+                $select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE email = '$email' AND password = '$pass' ") or die('query failed');
             
-                if(mysqli_num_rows($select) > 0){
-                    $message['user already exists'];
-                }else{
-                    mysqli_query($conn,"INSERT INTO `user_form` (name, email, password) VALUES( '$email', '$pass')") or die('query failed');
-            
-                };
+                if (mysqli_num_rows($select) > 0) {
+                    $row = mysqli_fetch_assoc($select);
+                    $_SESSION['user_id'] = $row['id'];
+                    header('location:index.php');
+                } else {
+                    $message[] = 'incorrect password or email';
+                }
             }
             ?>
     
@@ -439,8 +440,6 @@ if (isset($_SESSION['user_id'])) {
         registerButton.addEventListener('click', openModal2);
 
         backButton.addEventListener('click', openModalAgain);
-
-        openModelOnceMore.addEventListener('click', openModalOnceMore);
 
         closeButton2.addEventListener('click', closeModal2);
 

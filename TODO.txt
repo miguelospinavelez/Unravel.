@@ -15,53 +15,42 @@
 |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 |*| Confirmation and dispatch info   
 |_______________________________________________________________________________________________________________________________________________________________________________________
-
--I-
+-TASKS-
 
 -Register/login modal & new fields
--Stock info
--Empty cart buttons hide 
--Back to store button
--Clear cart on payment confirmation
--Border-radius for all buttons(1-5px)
 -Product page
 -Profile
 -Sanitize forms
--Archive fixes & links
--Footer fixes
 -Contact
 -404
 -Site map
+-Terms of use
+-Privacy
+-Legal compliance
+-User feedback
+-Browsers & devices verification
+-Cookies
+-Additional APIs
+-Languages
+-Currencies 
+-Email confirmation
+-Lost password
+-Order confirmation email
+-Dark mode
+-Security 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
--II-
+-MINI-TASKS-
 
 -Block access to config.php and other PHP files
 -Prevent defaults
 -Imgs sizes and preload
 -Multiple sessions fixes
--Terms of use
--Privacy
--Legal compliance
--User feedback
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
--III-
-
--Browsers & devices verification
--Cookies
--Additional APIs
--Content
--External content 
--Languages
--Currencies 
--Newsletter
--Advertising
--Social media
--Communications
--Email confirmation
--Lost password
--Order confirmation email
--Dark mode*
+-Archive fixes & links
+-Footer fixes
+-Stock info
+-Empty cart buttons hide 
+-Back to store button
+-Clear cart on payment confirmation
+-Border-radius for all buttons(1-5px)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
