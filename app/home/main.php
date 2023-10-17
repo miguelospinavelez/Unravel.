@@ -16,7 +16,7 @@ if (isset($_SESSION['user_id'])) {
     <title> Unravel. | Microdosing & Mushroom Cultivation </title>
 
     <!-- favicon link -->
-    <link rel="icon" type="image/x-icon" href="imgs/icons/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/imgs/icons/favicon.ico">
 
     <!-- swiper css link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
@@ -25,7 +25,7 @@ if (isset($_SESSION['user_id'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!--custom css-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
@@ -57,7 +57,7 @@ if (isset($_SESSION['user_id'])) {
 
             <div class="swiper-wrapper">
 
-                <div class="swiper-slide slide" style="background-image: url(imgs/fungi.jpg);">
+                <div class="swiper-slide slide" style="background-image: url(/imgs/fungi.jpg);">
                     <div class="content">
                         <span>discover, heal, connect</span>
                         <h3>integrate the power of mushrooms into your life</h3>
@@ -65,7 +65,7 @@ if (isset($_SESSION['user_id'])) {
                     </div>
                 </div>
 
-                <div class="swiper-slide slide" style="background-image:url(imgs/heal.jpg)">
+                <div class="swiper-slide slide" style="background-image:url(/imgs/heal.jpg)">
                     <div class="content">
                         <span>discover, heal, connect</span>
                         <h3>unravel your self</h3>
@@ -73,7 +73,7 @@ if (isset($_SESSION['user_id'])) {
                     </div>
                 </div>
 
-                <div class="swiper-slide slide" style="background-image:url(imgs/couple-cover-image-holding-hands.jpg)">
+                <div class="swiper-slide slide" style="background-image:url(/imgs/couple-cover-image-holding-hands.jpg)">
                     <div class="content">
                         <span>discover, heal, connect</span>
                         <h3>connect with those you love</h3>
@@ -201,7 +201,7 @@ if (isset($_SESSION['user_id'])) {
     <section class="home-offer">
         <div class="content">
             <h3>Grow your own mushrooms</h3>
-            <img src="imgs/growbox.png" alt="">
+            <img src="/imgs/growbox.png" alt="">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero vel voluptatem ea nam maxime porro deserunt aspernatur voluptatibus, quia odio.</p>
             <a href="book.php" class="btn">Starter Kit</a>
         </div>
