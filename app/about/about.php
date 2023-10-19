@@ -28,7 +28,7 @@ if (isset($_GET['logout'])) {
     <title>Unravel. | About Us</title>
 
     <!-- favicon link -->
-    <link rel="icon" type="image/x-icon" href="imgs/icons/fav/9.ico">
+    <link rel="icon" type="image/x-icon" href="../imgs/icons/fav/9.ico">
 
     <!-- swiper css link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
@@ -37,7 +37,7 @@ if (isset($_GET['logout'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!--custom css-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
@@ -46,14 +46,14 @@ if (isset($_GET['logout'])) {
 
     <section class="header">
 
-        <a href="home.php" class="logo">Unravel.</a>
+        <a href="../home/home.php" class="logo">Unravel.</a>
         <nav class="navbar">
-            <a href="home.php">home</a>
+            <a href="../home/home.php">home</a>
             <a style="color:blueviolet; pointer-events: none;">about</a>
-            <a href="package.php">archive</a>
-            <a href="book.php">products</a>
-            <a href="index.php">Profile</a>
-            <a href="about.php?logout=<?php echo $user_id; ?>" onclick="return confirm('are you sure you want to log out?')">exit</a>
+            <a href="../archive/package.php">archive</a>
+            <a href="../products/book.php">products</a>
+            <a href="../index.php">Profile</a>
+            <a href="../about.php?logout=<?php echo $user_id; ?>" onclick="return confirm('are you sure you want to log out?')">exit</a>
         </nav>
         
         <div id="menu-btn" class="fas fa-bars"></div>
@@ -62,7 +62,7 @@ if (isset($_GET['logout'])) {
     </section>
 
 
-    <div class="heading" style="background: url(imgs/abt/1.png) no-repeat;">
+    <div class="heading" style="background: url(../imgs/abt/1.png) no-repeat;">
         <h1>about us</h1>
     </div>
 
@@ -173,16 +173,16 @@ if (isset($_GET['logout'])) {
 
             <div class="box">
                 <h3>quick links</h3>
-                <a href="home.php"> <i class="fas fa-angle-rig"></i>home</a>
-                <a href="about.php"> <i class="fas fa-angle-rig"></i>about</a>
-                <a href="package.php"> <i class="fas fa-angle-rig"></i>archive</a>
-                <a href="book.php"> <i class="fas fa-angle-rig"></i>products</a>
+                <a href="../home/home.php"> <i class="fas fa-angle-rig"></i>home</a>
+                <a href="../about/about.php"> <i class="fas fa-angle-rig"></i>about</a>
+                <a href="../archive/package.php"> <i class="fas fa-angle-rig"></i>archive</a>
+                <a href="../products/book.php"> <i class="fas fa-angle-rig"></i>products</a>
             </div>
 
             <div class="box">
                 <h3>extra links</h3>
                 <a href="#"> <i class="fas fa-angle-right"></i>ask questions</a>
-                <a href="contact.php"> <i class="fas fa-angle-right"></i>Contact us</a>
+                <a href="#"> <i class="fas fa-angle-right"></i>Contact us</a>
                 <a href="#"> <i class="fas fa-angle-right"></i>privacy policy</a>
                 <a href="#"> <i class="fas fa-angle-right"></i>terms of use</a>
             </div>

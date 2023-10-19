@@ -18,7 +18,7 @@ if (isset($_SESSION['user_id'])) {
     <title>Unravel. | About Us</title>
 
     <!-- favicon link -->
-    <link rel="icon" type="image/x-icon" href="imgs/icons/fav/9.ico">
+    <link rel="icon" type="image/x-icon" href="../imgs/icons/fav/9.ico">
 
     <!-- swiper css link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
@@ -27,7 +27,7 @@ if (isset($_SESSION['user_id'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!--custom css-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
@@ -38,11 +38,11 @@ if (isset($_SESSION['user_id'])) {
 
         <a href="home.php" class="logo">Unravel.</a>
         <nav class="navbar">
-            <a href="home.php">home</a>
+            <a href="../home/home.php">home</a>
             <a style="color:blueviolet; pointer-events: none;">about</a>
-            <a href="package.php">archive</a>
-            <a href="book.php">products</a>
-            <a href="login.php">Log in</a>
+            <a href="../archive/package.php">archive</a>
+            <a href="../products/book.php">products</a>
+            <a href="">Log in</a>
         </nav>
 
         <div id="menu-btn" class="fas fa-bars"></div>
@@ -51,7 +51,7 @@ if (isset($_SESSION['user_id'])) {
     </section>
 
 
-    <div class="heading" style="background: url(imgs/abt/2.png) no-repeat;">
+    <div class="heading" style="background: url(../imgs/abt/2.png) no-repeat;">
         <h1>about us</h1>
     </div>
 
@@ -166,10 +166,10 @@ if (isset($_SESSION['user_id'])) {
 
             <div class="box">
                 <h3>quick links</h3>
-                <a href="home.php"> <i class="fas fa-angle-rig"></i>home</a>
-                <a href="about.php"> <i class="fas fa-angle-rig"></i>about</a>
-                <a href="package.php"> <i class="fas fa-angle-rig"></i>archive</a>
-                <a href="book.php"> <i class="fas fa-angle-rig"></i>products</a>
+                <a href="../home/home.php"> <i class="fas fa-angle-rig"></i>home</a>
+                <a href="../about/about.php"> <i class="fas fa-angle-rig"></i>about</a>
+                <a href="../archive/package.php"> <i class="fas fa-angle-rig"></i>archive</a>
+                <a href="../products/book.php"> <i class="fas fa-angle-rig"></i>products</a>
             </div>
 
             <div class="box">
@@ -208,7 +208,7 @@ if (isset($_SESSION['user_id'])) {
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
     <!-- custom js file link -->
-    <script src="js/script.js"></script>
+    <script src="../js/script.js"></script>
 
 </body>
 

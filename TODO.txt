@@ -1,10 +1,9 @@
--TASKS-
+TASKS
 
 -Register/login modal & new fields
 -Order form
 -Product page
 -Profile
--Sanitize forms
 -Contact
 -404
 -Site map
@@ -21,9 +20,10 @@
 -Lost password
 -Order confirmation email
 -Dark mode
+-Sanitize forms
 -Security 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
--MINI-TASKS-
+MINI-TASKS
 
 -Block access to config.php and other PHP files
 -Prevent defaults

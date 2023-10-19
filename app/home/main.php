@@ -293,12 +293,12 @@ if (isset($_SESSION['user_id'])) {
             }
             ?>
 
-            <form action="" method="post" class="">
+            <form action="" method="post" class="login">
                 <label for="email">email :</label>
-                <input type="email" required placeholder="Email" name="email">
+                <input type="email" required placeholder="Email" name="email" id="email">
                 <br>
                 <label for="password">password :</label>
-                <input type="password" required placeholder="Password" name="password">
+                <input type="password" required placeholder="Password" name="password" id="password">
                 <br>
                 <input type="submit" value="Log in" class="btn" name="submit">
                 <a href="">Forgot your password?</a>
@@ -346,7 +346,7 @@ if (isset($_SESSION['user_id'])) {
             }
             ?>
 
-            <form action="" method="post">
+            <form action="" method="post" class="register">
                 <label for="name">name :</label>
                 <input type="text" required placeholder="Enter your name" name="name">
                 <br>
@@ -357,7 +357,7 @@ if (isset($_SESSION['user_id'])) {
                 <input type="password" required placeholder="Set password" name="password">
                 <br>
                 <label for="cpassword">Confirm password :</label>
-                <input type="password" required placeholder="Confirm password" name="cpassword">
+                <input type="password" required placeholder="Confirm password" name="cpassword" id="cpassword">
                 <br>
                 <input type="submit" value="Register now" class="btn" name="submit">
             </form>
