@@ -6,9 +6,6 @@ TASKS
 -Profile
 -Product page
 -Contact
--Terms of use
--Privacy
--Legal compliance
 -User feedback
 -Email confirmation
 -Lost password
@@ -20,6 +17,9 @@ TASKS
 -Currencies 
 -Sanitize forms
 -Security
+-Terms of use
+-Privacy policy
+-Legal compliance & disclaimer
 -Languages
 -Testing 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
