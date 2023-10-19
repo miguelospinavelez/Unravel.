@@ -42,7 +42,7 @@ if (isset($_SESSION['user_id'])) {
             <a href="../about/about.php">about</a>
             <a style="color:blueviolet; pointer-events: none;">archive</a>
             <a href="../products/book.php">products</a>
-            <a href="">Log in</a>
+            <a id="loginButton" style="cursor: pointer;">Log in</a>
         </nav>
 
         <div id="menu-btn" class="fas fa-bars"></div>

@@ -1,39 +1,39 @@
+
 TASKS
 
 -Register/login modal & new fields
 -Order form
--Product page
 -Profile
+-Product page
 -Contact
--404
--Site map
 -Terms of use
 -Privacy
 -Legal compliance
 -User feedback
--Browsers & devices verification
--Cookies
--Additional APIs
--Languages
--Currencies 
 -Email confirmation
 -Lost password
 -Order confirmation email
 -Dark mode
+-Browsers & devices verification
+-Cookies
+-Additional APIs
+-Currencies 
 -Sanitize forms
--Security 
+-Security
+-Languages
+-Testing 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 MINI-TASKS
 
--Block access to config.php and other PHP files
--Prevent defaults
--Imgs sizes and preload
--Multiple sessions fixes
--Archive fixes & links
--Footer fixes
--Stock info
+-Pay button modal
 -Empty cart buttons hide 
 -Back to store button
 -Clear cart on payment confirmation
--Border-radius for all buttons(1-5px)
--Pay button modal
+-Stock info
+-Multiple sessions fixes
+-Footer fixes
+-Block access to config.php and other PHP files
+-Prevent defaults
+-Imgs sizes and preload
+-404
+-Site map
