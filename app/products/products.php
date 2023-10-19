@@ -30,7 +30,7 @@ if (isset($_SESSION['user_id'])) {
 
 <body>
 
-    <!-- header section starts -->
+    <!-- header -->
 
     <section class="header">
 
@@ -47,8 +47,8 @@ if (isset($_SESSION['user_id'])) {
 
     </section>
 
-    <!-- home -->
 
+    <!-- home -->
 
     <section class="home">
 
@@ -126,7 +126,7 @@ if (isset($_SESSION['user_id'])) {
 
                         <input type="hidden" name="product_price" value="<?php echo $fetch_product['price']; ?>">
 
-                        <a href="login.php" class="btn" >Buy now</a>
+                        <a id="loginButton" class="btn" >Buy now</a>
 
                     </form>
 
