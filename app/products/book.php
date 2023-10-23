@@ -226,7 +226,7 @@ if (isset($_POST['add_to_cart'])) {
         </div>
 
         <div class="credit">
-            <p>© 2021 Unravel. All rights reserved | Created by <span>Myself</span> Web Design</p>
+            <p>© 2023 <span>Unravel.</span> | All rights reserved </p>
         </div>
     </section>
 

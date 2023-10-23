@@ -237,7 +237,7 @@ if (isset($_SESSION['user_id'])) {
                 <a href="#"> <i class="fas fa-phone"></i> +123-456-7890</a>
                 <a href="#"> <i class="fas fa-phone"></i> +111-222-3333</a>
                 <a href="#"> <i class="fas fa-envelope"></i> contact@unravel.com</a>
-                <a href="#"> <i class="fas fa-map"></i> Santa Elena, Colombia - 054047 </a>
+                <a href="#"> <i class="fas fa-map"></i> Envigado, Colombia - 050020 </a>
             </div>
 
             <div class="box">

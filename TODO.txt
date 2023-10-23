@@ -15,13 +15,12 @@ TASKS
 -Cookies
 -Additional APIs
 -Currencies 
--Sanitize forms
--Security
 -Terms of use
 -Privacy policy
 -Legal compliance & disclaimer
 -Languages
--Testing 
+-Testing & debugging
+-Security analysis 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 MINI-TASKS
 
