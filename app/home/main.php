@@ -7,6 +7,7 @@ if (isset($_SESSION['user_id'])) {
     exit;
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -256,80 +257,53 @@ if (isset($_SESSION['user_id'])) {
 
 
 
-    <!-- login modal -->
-
-    <div id="myModal" class="modal">
-        <?php
-        if (isset($_POST['submit'])) {
-            $email = mysqli_real_escape_string($conn, $_POST['email']);
-            $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
-
-            $select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE email = '$email' AND password = '$pass' ") or die('query failed');
-
-            if (mysqli_num_rows($select) > 0) {
-                $row = mysqli_fetch_assoc($select);
-                $_SESSION['user_id'] = $row['id'];
-                header('location:index.php');
-            } else {
-                $message[] = 'incorrect password or email';
-            }
-        }
-        ?>
-
-
-        <div class="modal-content">
-
-            <h1>Log In</h1>
-
-            <a id="registerButton" style="cursor: pointer;">
-                Don't have an account? Sign up
-            </a>
-
-            <?php
-            if (isset($message)) {
-                foreach ($message as $message) {
-                    echo '<div class="message" onclick="this.remove();">' . $message . '</div>';
-                }
-            }
-            ?>
-
-            <form action="" method="post" class="login">
-                <label for="email">email :</label>
-                <input type="email" required placeholder="Email" name="email" id="email">
-                <br>
-                <label for="password">password :</label>
-                <input type="password" required placeholder="Password" name="password" id="password">
-                <br>
-                <input type="submit" value="Log in" class="btn" name="submit">
-                <a href="">Forgot your password?</a>
-            </form>
-            <span class="close">&times;</span>
-        </div>
-    </div>
-
-
-
     <!-- register modal -->
 
     <div id="myModal2" class="modal">
 
         <?php
         if (isset($_POST['submit'])) {
-            $name = mysqli_real_escape_string($conn, $_POST['name']);
-            $email = mysqli_real_escape_string($conn, $_POST['email']);
-            $pass = mysqli_real_escape_string($conn, md5($_POST['password']));
-            $cpass = mysqli_real_escape_string($conn, md5($_POST['cpassword']));
+            $name = $_POST['name'];
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            $cpassword = $_POST['cpassword'];
 
-            $select = mysqli_query($conn, "SELECT * FROM `user_form` WHERE email = '$email' AND password = '$pass' ") or die('query failed');
+            // Add validation here
+            $errors = array();
 
-            if (mysqli_num_rows($select) > 0) {
-                $message[] = 'user already exists';
-            } else {
-                mysqli_query($conn, "INSERT INTO `user_form`(name, email, password) VALUES('$name','$email','$pass')") or die('query failed');
-                $message[] = 'registered successfully';
+            if (empty($name) || empty($email) || empty($password) || empty($cpassword)) {
+                $errors[] = 'All fields are required';
+            }
+
+            if ($password !== $cpassword) {
+                $errors[] = 'Passwords do not match';
+            }
+
+            // If there are no errors, proceed with registration
+            if (empty($errors)) {
+                // Use prepared statements
+                $stmt = $conn->prepare("SELECT * FROM user_form WHERE email = ?");
+                $stmt->bind_param("s", $email);
+                $stmt->execute();
+                $result = $stmt->get_result();
+
+                if ($result->num_rows > 0) {
+                    $errors[] = 'User already exists';
+                } else {
+                    // Use password_hash to securely hash the password
+                    $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+
+                    // Insert user into the database
+                    $stmt = $conn->prepare("INSERT INTO user_form (name, email, password) VALUES (?, ?, ?)");
+                    $stmt->bind_param("sss", $name, $email, $hashedPassword);
+                    $stmt->execute();
+
+                    $success = 'Registered successfully';
+                }
             }
         }
         ?>
+
         <div class="modal-content">
 
             <h1>Register</h1>
@@ -339,90 +313,116 @@ if (isset($_SESSION['user_id'])) {
             </a>
 
             <?php
-            if (isset($message)) {
-                foreach ($message as $message) {
-                    echo '<div class="message" onclick="this.remove();">' . $message . '</div>';
+            if (!empty($errors)) {
+                foreach ($errors as $error) {
+                    echo '<div class="message" onclick="this.remove();">' . $error . '</div>';
                 }
+            } elseif (isset($success)) {
+                echo '<div class="message" onclick="this.remove();">' . $success . '</div>';
             }
             ?>
 
             <form action="" method="post" class="register">
-                <label for="name">name :</label>
-                <input type="text" required placeholder="Enter your name" name="name">
+                <label for="register-name">Name:</label>
+                <input type="text" required placeholder="Enter your name" name="name" id="register-name">
                 <br>
-                <label for="email">email :</label>
-                <input type="email" required placeholder="Enter your email" name="email">
+                <label for="register-email">Email:</label>
+                <input type="email" required placeholder="Enter your email" name="email" id="register-email">
                 <br>
-                <label for="password">password :</label>
-                <input type="password" required placeholder="Set password" name="password">
+                <label for="register-password">Password:</label>
+                <input type="password" required placeholder="Set password" name="password" id="register-password">
                 <br>
-                <label for="cpassword">Confirm password :</label>
+                <label for="cpassword">Confirm Password:</label>
                 <input type="password" required placeholder="Confirm password" name="cpassword" id="cpassword">
                 <br>
-                <input type="submit" value="Register now" class="btn" name="submit">
+                <input type="submit" value="Register now" class="btn" name="submit" id="submit-registration">
             </form>
+
             <span class="close2">&times;</span>
         </div>
     </div>
 
 
 
+    <!-- login modal -->
+
+    <div id="myModal" class="modal">
+    <?php
+    if (isset($_POST['submit'])) {
+        $email = mysqli_real_escape_string($conn, $_POST['email']);
+        $password = $_POST['password']; // No need to escape since we'll use prepared statements
+
+        $stmt = mysqli_prepare($conn, "SELECT id, password FROM user_form WHERE email = ?");
+        mysqli_stmt_bind_param($stmt, "s", $email);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+
+        if ($row = mysqli_fetch_assoc($result)) {
+            $storedPassword = $row['password'];
+
+            // Verify the password using password_verify
+            if (password_verify($password, $storedPassword)) {
+                session_start();
+                $_SESSION['user_id'] = $row['id'];
+                header('location: index.php');
+            } else {
+                $message[] = 'Incorrect password';
+            }
+        } else {
+            $message[] = 'User not found';
+        }
+    }
+    ?>
+
+    <div class="modal-content">
+        <h1>Log In</h1>
+        <a id="registerButton" style="cursor: pointer;">
+            Don't have an account? Sign up
+        </a>
+
+        <?php
+        if (isset($message)) {
+            foreach ($message as $message) {
+                echo '<div class="message" onclick="this.remove();">' . $message . '</div>';
+            }
+        }
+        ?>
+
+        <form action="" method="post" class="login">
+            <label for="email">Email:</label>
+            <input type="email" required placeholder="Email" name="email" id="email">
+            <br>
+            <label for="password">Password:</label>
+            <input type="password" required placeholder="Password" name="password" id="password">
+            <br>
+            <input type="submit" value="Log in" class="btn" name="submit">
+            <a href="">Forgot your password?</a>
+        </form>
+        <span class="close">&times;</span>
+    </div>
+</div>
+
+
+</body>
+
+
     <!-- swiper js link -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
 
 
     <!-- custom js file link -->
     <script src="../js/script.js"></script>
 
 
-
-    <!-- modal scripts -->
+    <!-- modals script -->
     <script>
-        //LOGIN
-        {
-            var modal = document.getElementById('myModal');
-            var closeButton = document.getElementsByClassName('close')[0];
-
-            function openModal() {
-                modal.style.display = 'block';
-                modal2.style.display = 'none';
-                menu.classList.toggle('fa-times');
-                navbar.classList.toggle('active');
-            }
-
-            function openModalAgain() {
-                modal.style.display = 'block';
-                modal2.style.display = 'none';
-            }
-
-            function openModalOnceMore() {
-                modal.style.display = 'block';
-                modal2.style.display = 'none';
-            }
-
-            function closeModal() {
-                modal.style.display = 'none';
-            }
-
-            var loginButton = document.getElementById('loginButton');
-            loginButton.addEventListener('click', openModal);
-
-            closeButton.addEventListener('click', closeModal);
-
-            closeButton.addEventListener('click', closeModal);
-
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = 'none';
-                }
-            }
-        }
 
         //REGISTER
 
         var modal2 = document.getElementById('myModal2');
         var closeButton2 = document.getElementsByClassName('close2')[0];
+        var registerButton = document.getElementById('registerButton');
+        var backButton = document.getElementById('backButton')
 
         function openModal2() {
             modal2.style.display = 'block';
@@ -432,9 +432,6 @@ if (isset($_SESSION['user_id'])) {
         function closeModal2() {
             modal2.style.display = 'none';
         }
-
-        var registerButton = document.getElementById('registerButton');
-        var backButton = document.getElementById('backButton')
 
         registerButton.addEventListener('click', openModal2);
 
@@ -446,9 +443,48 @@ if (isset($_SESSION['user_id'])) {
             if (event.target == modal2) {
                 modal2.style.display = 'none';
             }
-        }
-    </script>
+        };
 
-</body>
+
+        //LOGIN
+
+        var modal = document.getElementById('myModal');
+        var closeButton = document.getElementsByClassName('close')[0];
+
+        function openModal() {
+            modal.style.display = 'block';
+            modal2.style.display = 'none';
+            menu.classList.toggle('fa-times');
+            navbar.classList.toggle('active');
+        }
+
+        function openModalAgain() {
+            modal.style.display = 'block';
+            modal2.style.display = 'none';
+        }
+
+        function openModalOnceMore() {
+            modal.style.display = 'block';
+            modal2.style.display = 'none';
+        }
+
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        var loginButton = document.getElementById('loginButton');
+        loginButton.addEventListener('click', openModal);
+
+        closeButton.addEventListener('click', closeModal);
+
+        closeButton.addEventListener('click', closeModal);
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+    </script>
 
 </html>
