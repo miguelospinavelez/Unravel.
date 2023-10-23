@@ -327,7 +327,7 @@ if (isset($_SESSION['user_id'])) {
                 <input type="text" required placeholder="Enter your name" name="name" id="register-name">
                 <br>
                 <label for="register-email">Email:</label>
-                <input type="email" required placeholder="Enter your email" name="email" id="register-email">
+                <input type="email" required placeholder="Enter your email" name="email" id="register-email" style="text-transform: lowercase;">
                 <br>
                 <label for="register-password">Password:</label>
                 <input type="password" required placeholder="Set password" name="password" id="register-password">
@@ -347,144 +347,141 @@ if (isset($_SESSION['user_id'])) {
     <!-- login modal -->
 
     <div id="myModal" class="modal">
-    <?php
-    if (isset($_POST['submit'])) {
-        $email = mysqli_real_escape_string($conn, $_POST['email']);
-        $password = $_POST['password']; // No need to escape since we'll use prepared statements
-
-        $stmt = mysqli_prepare($conn, "SELECT id, password FROM user_form WHERE email = ?");
-        mysqli_stmt_bind_param($stmt, "s", $email);
-        mysqli_stmt_execute($stmt);
-        $result = mysqli_stmt_get_result($stmt);
-
-        if ($row = mysqli_fetch_assoc($result)) {
-            $storedPassword = $row['password'];
-
-            // Verify the password using password_verify
-            if (password_verify($password, $storedPassword)) {
-                session_start();
-                $_SESSION['user_id'] = $row['id'];
-                header('location: index.php');
-            } else {
-                $message[] = 'Incorrect password';
-            }
-        } else {
-            $message[] = 'User not found';
-        }
-    }
-    ?>
-
-    <div class="modal-content">
-        <h1>Log In</h1>
-        <a id="registerButton" style="cursor: pointer;">
-            Don't have an account? Sign up
-        </a>
-
         <?php
-        if (isset($message)) {
-            foreach ($message as $message) {
-                echo '<div class="message" onclick="this.remove();">' . $message . '</div>';
+        if (isset($_POST['submit'])) {
+            $email = mysqli_real_escape_string($conn, $_POST['email']);
+            $password = $_POST['password']; // No need to escape since we'll use prepared statements
+
+            $stmt = mysqli_prepare($conn, "SELECT id, password FROM user_form WHERE email = ?");
+            mysqli_stmt_bind_param($stmt, "s", $email);
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
+
+            if ($row = mysqli_fetch_assoc($result)) {
+                $storedPassword = $row['password'];
+
+                // Verify the password using password_verify
+                if (password_verify($password, $storedPassword)) {
+                    session_start();
+                    $_SESSION['user_id'] = $row['id'];
+                    header('location: index.php');
+                } else {
+                    $message[] = 'Incorrect password';
+                }
+            } else {
+                $message[] = 'User not found';
             }
         }
         ?>
 
-        <form action="" method="post" class="login">
-            <label for="email">Email:</label>
-            <input type="email" required placeholder="Email" name="email" id="email">
-            <br>
-            <label for="password">Password:</label>
-            <input type="password" required placeholder="Password" name="password" id="password">
-            <br>
-            <input type="submit" value="Log in" class="btn" name="submit">
-            <a href="">Forgot your password?</a>
-        </form>
-        <span class="close">&times;</span>
+        <div class="modal-content">
+            <h1>Log In</h1>
+            <a id="registerButton" style="cursor: pointer;">
+                Don't have an account? Sign up
+            </a>
+
+            <?php
+            if (isset($message)) {
+                foreach ($message as $message) {
+                    echo '<div class="message" onclick="this.remove();">' . $message . '</div>';
+                }
+            }
+            ?>
+
+            <form action="" method="post" class="login">
+                <label for="email">Email:</label>
+                <input type="email" required placeholder="Email" name="email" id="email" style="text-transform: lowercase;">
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" required placeholder="Password" name="password" id="password">
+                <br>
+                <input type="submit" value="Log in" class="btn" name="submit">
+                <a href="">Forgot your password?</a>
+            </form>
+            <span class="close">&times;</span>
+        </div>
     </div>
-</div>
 
 
 </body>
 
 
-    <!-- swiper js link -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<!-- swiper js link -->
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
 
-    <!-- custom js file link -->
-    <script src="../js/script.js"></script>
+<!-- custom js file link -->
+
+<script src="../js/script.js"></script>
 
 
-    <!-- modals script -->
-    <script>
+<!-- modals script -->
 
-        //REGISTER
+<script>
+    //REGISTER
 
-        var modal2 = document.getElementById('myModal2');
-        var closeButton2 = document.getElementsByClassName('close2')[0];
-        var registerButton = document.getElementById('registerButton');
-        var backButton = document.getElementById('backButton')
+    var modal2 = document.getElementById('myModal2');
+    var closeButton2 = document.getElementsByClassName('close2')[0];
+    var registerButton = document.getElementById('registerButton');
+    var backButton = document.getElementById('backButton')
 
-        function openModal2() {
-            modal2.style.display = 'block';
+    function openModal2() {
+        modal2.style.display = 'block';
+        modal.style.display = 'none';
+    }
+
+    function closeModal2() {
+        modal2.style.display = 'none';
+    }
+
+    registerButton.addEventListener('click', openModal2);
+
+    backButton.addEventListener('click', openModalAgain);
+
+    closeButton2.addEventListener('click', closeModal2);
+
+    window.onclick = function(event) {
+        if (event.target == modal2) {
+            modal2.style.display = 'none';
+        } else if (event.target == modal) {
             modal.style.display = 'none';
         }
-
-        function closeModal2() {
-            modal2.style.display = 'none';
-        }
-
-        registerButton.addEventListener('click', openModal2);
-
-        backButton.addEventListener('click', openModalAgain);
-
-        closeButton2.addEventListener('click', closeModal2);
-
-        window.onclick = function(event) {
-            if (event.target == modal2) {
-                modal2.style.display = 'none';
-            }
-        };
+    };
 
 
-        //LOGIN
+    //LOGIN
 
-        var modal = document.getElementById('myModal');
-        var closeButton = document.getElementsByClassName('close')[0];
+    var modal = document.getElementById('myModal');
+    var closeButton = document.getElementsByClassName('close')[0];
 
-        function openModal() {
-            modal.style.display = 'block';
-            modal2.style.display = 'none';
-            menu.classList.toggle('fa-times');
-            navbar.classList.toggle('active');
-        }
+    function openModal() {
+        modal.style.display = 'block';
+        modal2.style.display = 'none';
+        menu.classList.toggle('fa-times');
+        navbar.classList.toggle('active');
+    }
 
-        function openModalAgain() {
-            modal.style.display = 'block';
-            modal2.style.display = 'none';
-        }
+    function openModalAgain() {
+        modal.style.display = 'block';
+        modal2.style.display = 'none';
+    }
 
-        function openModalOnceMore() {
-            modal.style.display = 'block';
-            modal2.style.display = 'none';
-        }
+    function openModalOnceMore() {
+        modal.style.display = 'block';
+        modal2.style.display = 'none';
+    }
 
-        function closeModal() {
-            modal.style.display = 'none';
-        }
+    function closeModal() {
+        modal.style.display = 'none';
+    }
 
-        var loginButton = document.getElementById('loginButton');
-        loginButton.addEventListener('click', openModal);
+    var loginButton = document.getElementById('loginButton');
+    loginButton.addEventListener('click', openModal);
 
-        closeButton.addEventListener('click', closeModal);
+    closeButton.addEventListener('click', closeModal);
 
-        closeButton.addEventListener('click', closeModal);
-
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = 'none';
-            }
-        }
-
-    </script>
+    closeButton.addEventListener('click', closeModal);
+</script>
 
 </html>

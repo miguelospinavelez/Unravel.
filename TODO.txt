@@ -1,7 +1,8 @@
 
 TASKS
 
--Register/login modal & new fields
+-Routes
+-Register/login modal styles
 -Order form
 -Profile
 -Product page
