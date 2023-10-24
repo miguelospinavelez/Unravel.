@@ -51,7 +51,7 @@ if (isset($_GET['logout'])) {
             <a href="../about/about.php">about</a>
             <a href="../archive/package.php">archive</a>
             <a href="../products/book.php">products</a>
-            <a href="../profile/index.php">Profile</a>
+            <a href="../user/index.php">Profile</a>
             <a href="./home.php?logout=<?php echo $user_id; ?>" onclick="return confirm('are you sure you want to log out?')">exit</a>
                 </nav>
         <div id="menu-btn" class="fas fa-bars"></div>

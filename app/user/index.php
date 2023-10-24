@@ -1,16 +1,16 @@
 <?php
-include 'config.php';
+include '../config.php';
 session_start();
 $user_id =  $_SESSION['user_id'];
 
 if (!isset($user_id)) {
-    header('location:login.php');
+    header('location:home.php');
 };
 
 if (isset($_GET['logout'])) {
     unset($user_id);
     session_destroy();
-    header('location:login.php');
+    header('location:home.php');
 };
 
 ?>
@@ -23,7 +23,7 @@ if (isset($_GET['logout'])) {
     <title>Unravel. | My Profile</title>
 
     <!-- favicon link -->
-    <link rel="icon" type="image/x-icon" href="imgs/icons/fav/3.ico">
+    <link rel="icon" type="image/x-icon" href="../imgs/icons/fav/3.ico">
 
     <!-- swiper css link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
@@ -32,7 +32,7 @@ if (isset($_GET['logout'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!--custom css-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body class="profile">
@@ -41,12 +41,12 @@ if (isset($_GET['logout'])) {
 
     <section class="header">
 
-        <a href="home.php" class="logo">Unravel.</a>
+        <a href="../home/home.php" class="logo">Unravel.</a>
         <nav class="navbar">
-            <a href="home.php">home</a>
-            <a href="about.php">about</a>
-            <a href="package.php">archive</a>
-            <a href="book.php">products</a>
+            <a href="../home/home.php">home</a>
+            <a href="../about/about.php">about</a>
+            <a href="../archive/package.php">archive</a>
+            <a href="../products/book.php">products</a>
             <a style="color:blueviolet; pointer-events: none;">Profile</a>
             <a href="index.php?logout=<?php echo $user_id; ?>" onclick="return confirm('are you sure you want to log out?')">exit</a>
         </nav>
@@ -149,7 +149,7 @@ if (isset($_GET['logout'])) {
 
 
     <!-- custom js file link -->
-    <script src="js/script.js"></script>
+    <script src="../js/script.js"></script>
 
 </body>
 
