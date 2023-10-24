@@ -350,7 +350,7 @@ if (isset($_SESSION['user_id'])) {
         <?php
         if (isset($_POST['submit'])) {
             $email = mysqli_real_escape_string($conn, $_POST['email']);
-            $password = $_POST['password']; // No need to escape since we'll use prepared statements
+            $password = $_POST['password']; 
 
             $stmt = mysqli_prepare($conn, "SELECT id, password FROM user_form WHERE email = ?");
             mysqli_stmt_bind_param($stmt, "s", $email);

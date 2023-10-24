@@ -1,7 +1,6 @@
 
 TASKS
 
--Routes
 -Register/login modal styles
 -Order form
 -Profile

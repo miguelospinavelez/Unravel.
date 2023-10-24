@@ -1,7 +1,6 @@
 <?php
 include '../config.php';
 if (isset($_POST['loginSubmit'])) {
-    // Ensure you have a valid database connection ($conn)
 
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
@@ -17,7 +16,7 @@ if (isset($_POST['loginSubmit'])) {
             // Password is correct
             session_start();
             $_SESSION['user_id'] = $row['id'];
-            header('location: index.php');
+            header('location: ./index.php');
         } else {
             $errors[] = 'Incorrect password';
         }
