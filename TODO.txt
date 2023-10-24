@@ -1,7 +1,6 @@
 
 TASKS
 
--Register/login modal styles
 -Order form
 -Profile
 -Product page
@@ -25,6 +24,7 @@ TASKS
 MINI-TASKS
 
 -Pay button modal
+-Register/login modal styles
 -Empty cart buttons hide 
 -Back to store button
 -Clear cart on payment confirmation

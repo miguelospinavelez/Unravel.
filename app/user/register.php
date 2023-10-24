@@ -1,14 +1,12 @@
 <?php
 include '../config.php';
-if (isset($_POST['registerSubmit'])) {
-    // Ensure you have a valid database connection ($conn)
 
+if (isset($_POST['registerSubmit'])) {
     $name = mysqli_real_escape_string($conn, $_POST['name']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
     $cpassword = mysqli_real_escape_string($conn, $_POST['cpassword']);
 
-    // Add validation here
     $errors = array();
 
     if (empty($name) || empty($email) || empty($password) || empty($cpassword)) {

@@ -16,7 +16,6 @@ if (isset($_POST['loginSubmit'])) {
             // Password is correct
             session_start();
             $_SESSION['user_id'] = $row['id'];
-            header('location: ./index.php');
         } else {
             $errors[] = 'Incorrect password';
         }

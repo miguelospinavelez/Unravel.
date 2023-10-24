@@ -1,5 +1,4 @@
 <?php
-
 include '../config.php';
 session_start();
 if (isset($_SESSION['user_id'])) {
@@ -268,7 +267,6 @@ if (isset($_SESSION['user_id'])) {
             $password = $_POST['password'];
             $cpassword = $_POST['cpassword'];
 
-            // Add validation here
             $errors = array();
 
             if (empty($name) || empty($email) || empty($password) || empty($cpassword)) {
@@ -279,9 +277,7 @@ if (isset($_SESSION['user_id'])) {
                 $errors[] = 'Passwords do not match';
             }
 
-            // If there are no errors, proceed with registration
             if (empty($errors)) {
-                // Use prepared statements
                 $stmt = $conn->prepare("SELECT * FROM user_form WHERE email = ?");
                 $stmt->bind_param("s", $email);
                 $stmt->execute();
@@ -290,10 +286,8 @@ if (isset($_SESSION['user_id'])) {
                 if ($result->num_rows > 0) {
                     $errors[] = 'User already exists';
                 } else {
-                    // Use password_hash to securely hash the password
                     $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
-                    // Insert user into the database
                     $stmt = $conn->prepare("INSERT INTO user_form (name, email, password) VALUES (?, ?, ?)");
                     $stmt->bind_param("sss", $name, $email, $hashedPassword);
                     $stmt->execute();
@@ -364,7 +358,6 @@ if (isset($_SESSION['user_id'])) {
                 if (password_verify($password, $storedPassword)) {
                     session_start();
                     $_SESSION['user_id'] = $row['id'];
-                    header('location: index.php');
                 } else {
                     $message[] = 'Incorrect password';
                 }
@@ -375,7 +368,9 @@ if (isset($_SESSION['user_id'])) {
         ?>
 
         <div class="modal-content">
+
             <h1>Log In</h1>
+
             <a id="registerButton" style="cursor: pointer;">
                 Don't have an account? Sign up
             </a>
