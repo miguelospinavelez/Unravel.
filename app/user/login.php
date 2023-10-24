@@ -1,7 +1,6 @@
 <?php
 include '../config.php';
 if (isset($_POST['loginSubmit'])) {
-
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = mysqli_real_escape_string($conn, $_POST['password']);
 
