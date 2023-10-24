@@ -324,16 +324,16 @@ if (isset($_SESSION['user_id'])) {
 
             <form action="" method="post" class="register">
                 <label for="register-name">Name:</label>
-                <input type="text" required placeholder="Enter your name" name="name" id="register-name">
+                <input type="text" required placeholder="Enter your name" name="name" id="register-name" style="background: none;">
                 <br>
                 <label for="register-email">Email:</label>
-                <input type="email" required placeholder="Enter your email" name="email" id="register-email" style="text-transform: lowercase;">
+                <input type="email" required placeholder="Enter your email" name="email" id="register-email" style="text-transform: lowercase; background: none">
                 <br>
                 <label for="register-password">Password:</label>
-                <input type="password" required placeholder="Set password" name="password" id="register-password">
+                <input type="password" required placeholder="Set password" name="password" id="register-password" style="background: none;">
                 <br>
                 <label for="cpassword">Confirm Password:</label>
-                <input type="password" required placeholder="Confirm password" name="cpassword" id="cpassword">
+                <input type="password" required placeholder="Confirm password" name="cpassword" id="cpassword"  style="background: none;">
                 <br>
                 <input type="submit" value="Register now" class="btn" name="submit" id="submit-registration">
             </form>
@@ -390,10 +390,10 @@ if (isset($_SESSION['user_id'])) {
 
             <form action="" method="post" class="login">
                 <label for="email">Email:</label>
-                <input type="email" required placeholder="Email" name="email" id="email" style="text-transform: lowercase;">
+                <input type="email" required placeholder="Email" name="email" id="email" style="text-transform: lowercase; background: none">
                 <br>
                 <label for="password">Password:</label>
-                <input type="password" required placeholder="Password" name="password" id="password">
+                <input type="password" required placeholder="Password" name="password" id="password" style="background: none;">
                 <br>
                 <input type="submit" value="Log in" class="btn" name="submit">
                 <a href="">Forgot your password?</a>
@@ -419,6 +419,7 @@ if (isset($_SESSION['user_id'])) {
 <!-- modals script -->
 
 <script>
+    
     //REGISTER
 
     var modal2 = document.getElementById('myModal2');
