@@ -105,7 +105,6 @@ if (isset($_GET['logout'])) {
 
 
 
-
     <!-- benefits -->
 
     <section class="services">
@@ -135,7 +134,6 @@ if (isset($_GET['logout'])) {
 
         </div>
     </section>
-
 
 
 
