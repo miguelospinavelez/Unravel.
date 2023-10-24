@@ -110,10 +110,10 @@ if (isset($_GET['logout'])) {
 
             <div class="box">
                 <h3>quick links</h3>
-                <a href="home.php"> <i class="fas fa-angle-rig"></i>home</a>
-                <a href="about.php"> <i class="fas fa-angle-rig"></i>about</a>
-                <a href="package.php"> <i class="fas fa-angle-rig"></i>archive</a>
-                <a href="book.php"> <i class="fas fa-angle-rig"></i>products</a>
+                <a href="../home/home.php"> <i class="fas fa-angle-rig"></i>home</a>
+                <a href="../about/about.php"> <i class="fas fa-angle-rig"></i>about</a>
+                <a href="../archive/package.php"> <i class="fas fa-angle-rig"></i>archive</a>
+                <a href="../products/book.php"> <i class="fas fa-angle-rig"></i>products</a>
             </div>
 
             <div class="box">

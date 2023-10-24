@@ -327,17 +327,22 @@ if (isset($_SESSION['user_id'])) {
                 <input type="submit" value="Log in" class="btn" name="submit">
                 <a href="">Forgot your password?</a>
             </form>
+
             <span class="close">&times;</span>
+            
         </div>
     </div>
 
 
     <!-- swiper js link -->
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
 
     <!-- custom js file link -->
+
     <script src="../js/script.js"></script>
+
 
     <!-- modals script -->
 

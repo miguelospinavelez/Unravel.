@@ -230,9 +230,9 @@ if (isset($_GET['logout'])) {
             <div class="box">
                 <h3>quick links</h3>
                 <a href="./home.php"> <i class="fas fa-angle-rig"></i>home</a>
-                <a href="../about.php"> <i class="fas fa-angle-rig"></i>about</a>
-                <a href="../package.php"> <i class="fas fa-angle-rig"></i>archive</a>
-                <a href="../book.php"> <i class="fas fa-angle-rig"></i>products</a>
+                <a href="../about/about.php"> <i class="fas fa-angle-rig"></i>about</a>
+                <a href="../archive/package.php"> <i class="fas fa-angle-rig"></i>archive</a>
+                <a href="../products/book.php"> <i class="fas fa-angle-rig"></i>products</a>
             </div>
 
             <div class="box">
@@ -268,10 +268,12 @@ if (isset($_GET['logout'])) {
 
 
     <!-- swiper js link -->
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
 
     <!-- custom js file link -->
+
     <script src="../js/script.js"></script>
 
 
