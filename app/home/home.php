@@ -202,7 +202,7 @@ if (isset($_GET['logout'])) {
 
         </div>
 
-        <div class="load-more"><a href="../package.php" class="btn">load more</a></div>
+        <div class="load-more"><a href="../archive/package.php" class="btn">load more</a></div>
 
     </section>
 
