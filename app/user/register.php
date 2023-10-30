@@ -17,10 +17,8 @@ if (isset($_POST['registerSubmit'])) {
     }
 
     if (empty($errors)) {
-        // Use password_hash to securely hash the password
         $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
-        // Insert user into the database
         $query = "INSERT INTO user_form (name, email, password) VALUES ('$name', '$email', '$hashedPassword')";
 
         if (mysqli_query($conn, $query)) {

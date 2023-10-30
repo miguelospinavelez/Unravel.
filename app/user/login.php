@@ -10,9 +10,7 @@ if (isset($_POST['loginSubmit'])) {
         $row = mysqli_fetch_assoc($select);
         $storedPassword = $row['password'];
 
-        // Use password_verify to check the entered password against the stored hash
         if (password_verify($password, $storedPassword)) {
-            // Password is correct
             session_start();
             $_SESSION['user_id'] = $row['id'];
         } else {
